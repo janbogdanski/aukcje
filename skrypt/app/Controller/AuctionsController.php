@@ -102,6 +102,7 @@ class AuctionsController extends AppController {
             if( $this->request->is( 'post' ) || $this->request->is( 'put' ) ){
                 
                 //save user
+                $this->Auction->id = $id;
                 if( $this->Auction->save( $this->request->data ) ){
 
                     //set to user's screen
