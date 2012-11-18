@@ -13,12 +13,11 @@ class AuctionsController extends AppController {
 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow('add', 'login');
     }
 
     public function index() {
         //to retrieve all users, need just one line
-        $this->set('users', $this->Auction->findAllByUserId($this->Auth->user('id')));
+        $this->set('users', $this->Auction->findAllByUserId($this->UserAuth->getUserId()));
     }
 
     public function add(){
@@ -29,7 +28,7 @@ class AuctionsController extends AppController {
             //save new user
 
             
-            $this->request->data['Auction']['user_id'] = $this->Auth->user('id');
+            $this->request->data['Auction']['user_id'] = $this->UserAuth->getUserId();
             
             if ($this->Auction->save($this->request->data)){
 
@@ -52,7 +51,7 @@ class AuctionsController extends AppController {
         $id = $this->request->params['pass'][0];
         $auction = $this->Auction->find('first', array(
             'fields' => array('Auction.*', 'Template.*'),
-            'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->Auth->user('id')),
+            'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId()),
             'joins' => array(
                 array('table' => 'templates',
                     'alias' => 'Template',
@@ -92,7 +91,7 @@ class AuctionsController extends AppController {
 
         //set the user id
         $auction = $this->Auction->find('first', array(
-            'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->Auth->user('id'))
+            'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId())
         ));
         $this->set('templates', $this->Template->prepareTemplates($this->Template->findAllByPrice('free')));
 
@@ -154,7 +153,7 @@ class AuctionsController extends AppController {
             }else{
                 //delete user
                 $auction = $this->Auction->find('first', array(
-                    'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->Auth->user('id'))
+                    'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId())
                 ));
                 if(($auction)){
 
