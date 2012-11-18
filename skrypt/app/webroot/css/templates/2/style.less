@@ -1,0 +1,115 @@
+@import "/css/bootstrap_less/less/bootstrap.less";
+
+@first-bck: #ff0000;
+@second-bck: #008000;
+@third-bck: #333;
+@fourth-bck: #008dff;
+
+body{
+    background: url("/common/images/2/bok.jpg");
+
+}
+h1, h2 {
+    color:#FFF;
+}
+.footer {
+    padding: 14px 15px 15px;
+    margin-bottom: 0;
+}
+body * {
+    font-family: 'Lato', sans-serif;
+}
+p {
+    font-weight:400;
+    font-size:15pt;
+    line-height:20pt;
+}
+h1 {
+    font-size:48pt;
+    font-weight:300;
+    line-height:60pt;
+}
+p a {
+    color:#FFFFFF;
+    text-decoration:underline;
+}
+p a:hover {
+    color:#FFF;
+    text-decoration:none;
+}
+
+/* colors */
+
+h1 {color:#FFFFFF;}
+h2 {color:#FFFFFF;}
+h3 {color:#FFFFFF;}
+h4 {color:#FFFFFF;}
+h5 {color:#FFFFFF;}
+h6 {color:#FFFFFF;}
+p {color:#FFFFFF;}
+
+.navbar-fixed-top {
+    position:fixed;
+    margin-bottom: 18px;
+    border-bottom: 1px solid black;
+}
+
+
+.story {
+    margin: 0 auto;
+    margin-top:60px;
+}
+
+
+/* pages */
+#home {
+    background: @first-bck /*url(img/firstBG.jpg) 50% -75px */no-repeat fixed;
+    color: white;
+    min-height: 500px;
+    padding: 160px 0 0 0;
+    opacity: 0.85;
+}
+#second {
+    background: @second-bck /*url(img/secondBG.jpg) 50% 0 */no-repeat fixed;
+    color: white;
+    min-height: 500px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+#third {
+    background: @third-bck;
+    margin: 0 auto;
+    padding: 40px 0 200px 0;
+}
+#fourth {
+    background: @fourth-bck /*url(img/thirdBG.jpg) 50% 0 */no-repeat fixed;
+    color: white;
+    min-height: 600px;
+    padding: 100px 0 0 0;
+    opacity: 0.92;
+
+}
+#fifth {
+    background: #8c31b7;
+    height: 800px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    opacity: 0.9;
+
+}
+
+.thumb img{
+//    .makeColumn(3);
+    margin: 10px;
+
+}
+
+/* footer */
+.footer {
+    background:#333333;
+}
+.footer p {font-size:11pt;}
+.footer p, .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, footer h6 {
+    color:#FFFFFF;
+}
