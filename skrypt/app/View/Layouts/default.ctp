@@ -26,7 +26,27 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
-	<?php
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <?php echo $this->Html->css('http://twitter.github.com/bootstrap/assets/css/bootstrap.css'); ?>
+
+
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-affix.js"></script>-->
+<!--    <script src="http://twitter.github.com/bootstrap/assets/js/application.js"></script>-->
+    <script src="http://webdesigntutsplus.s3.amazonaws.com/tuts/342_bootstrap_carousel/Carousel-Files-COMPLETE/js/bootstrap.min.js"></script>
+
+    <?php
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');

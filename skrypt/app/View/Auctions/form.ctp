@@ -10,7 +10,7 @@ echo $this->Html->script('ckeditor/ckeditor');
 //echo $this->cksource->ckeditor('example1');
 
 $config['toolbar'] = array(
-array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike','gmap' ),
 array( 'Image', 'Link', 'Unlink', 'Anchor' ),
 array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
 '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
@@ -19,6 +19,8 @@ array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'S
 );
 $config['width'] = 660;
 $config['height'] = 200;
+$config['extraPlugins'] = 'gmap,autogrow';
+$config['filebrowserImageBrowseUrl'] = '/galleries/imageBrowser';
 $events['instanceReady'] = 'function (ev) {
 //alert("Loaded: " + ev.editor.name);
 }';
@@ -41,12 +43,12 @@ echo $this->Form->create('Auction');
 echo $this->Form->input('title_list');
 echo $this->Form->input('title');
 //echo $this->Form->textarea('content');
-echo $this->cksource->ckeditor('Auction.content', array('config'=>$config, 'events'=>$events, 'escape' => false));
+echo $this->cksource->ckeditor('Auction.contents', array('config'=>$config, 'events'=>$events, 'escape' => false));
 
 echo $this->Form->input('field_1_header');
 
 $config['toolbar'] = array(
-    array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+    array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'gmap' ),
     array( 'Image', 'Link', 'Unlink', 'Anchor' ),
     array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
         '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
@@ -55,37 +57,18 @@ $config['toolbar'] = array(
 );
 $config['width'] = 400;
 $config['height'] = 200;
+$config['extraPlugins'] = 'gmap';
+
 
 //echo $this->Form->textarea('field_1_content');
 echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
 
 echo $this->Form->input('field_2_header');
 
-$config['toolbar'] = array(
-    array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
-    array( 'Image', 'Link', 'Unlink', 'Anchor' ),
-    array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-        '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
-    array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'ShowBlocks'),
 
-);
-$config['width'] = 400;
-$config['height'] = 200;
 
 echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
-
 echo $this->Form->input('field_3_header');
-
-$config['toolbar'] = array(
-    array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
-    array( 'Image', 'Link', 'Unlink', 'Anchor' ),
-    array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-        '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
-    array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'ShowBlocks'),
-
-);
-$config['width'] = 400;
-$config['height'] = 200;
 
 echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
 
