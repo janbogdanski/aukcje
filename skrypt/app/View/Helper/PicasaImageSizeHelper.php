@@ -8,11 +8,13 @@ App::uses('AppHelper', 'View/Helper');
 class PicasaImageSizeHelper extends AppHelper {
 
     const PHOTO_THUMB  = 150;
+    const PHOTO_THUMB_LIST  = 50;
     const PHOTO_SMALL  = 640;
     const PHOTO_MEDIUM = 800;
     const PHOTO_LARGE  = 1024;
     const PHOTO_GALLERY_FIRST  = 220;
     const PHOTO_GALLERY_THUMB  = 150;
+    const PHOTO_FULL  = 0;
     public function picasaImgScaledUrl($url, $size) {
 
         $suffix = basename($url);

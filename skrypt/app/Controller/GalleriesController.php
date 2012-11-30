@@ -59,71 +59,40 @@ class GalleriesController extends AppController {
 
 
     }
+    public function view(){
+        $id = $this->request->params['pass'][0];
+        if(!$id){
+            $this->redirect('/');
+        }
+
+        $gallery = $this->Gallery->find('first', array(
+            'conditions' => array('Gallery.id' => $id, 'Gallery.user_id' => $this->UserAuth->getUserId())
+        ));
+
+        if($gallery){
+
+            $this->set('gallery', $gallery);
+            if(isset($this->passedArgs['photo'])){
+                $photo = (int)$this->passedArgs['photo'];
+            } else{
+                $photo = 1;
+            }
+            $this->set('photo', (int)$photo);
+        }
+    }
 
 
     public function add(){
-        if($gallery = $this->Gallery->save(array())){
+        $data = array(
+            'Gallery' => array(
+                'user_id' => $this->UserAuth->getUserId(),
+            ),
+        );
+        $this->Gallery->create();
+        if($gallery = $this->Gallery->save($data)){
             $this->redirect('edit/'.$gallery['Gallery']['id']);
-        }
-        else{
-
-            die();
-
-        }
-
-
-
-        if ($this->request->is('post')){
-            //save new user
-
-            $this->request->data['Gallery']['user_id'] = $this->UserAuth->getUserId();
-
-
-
-            if ($gallery_id = $this->Gallery->save($this->request->data)){
-
-                $order = 1;
-                foreach ($this->request->data['GalleriesDetails']['image'] as $image){
-
-                    $this->GalleriesDetails->create();
-
-                    $data = array(
-                        'GalleriesDetails' => array(
-                            'gallery_id' => $gallery_id['Gallery']['id'],
-                            'image' => $image,
-                            'order' => $order,
-                        ),
-                    );
-                    if($gallery_details = $this->GalleriesDetails->save($data)){
-
-                        print_r($gallery_details);
-                    }
-                    $order++;
-                } //end foreach
-
-
-
-                //set flash to user screen
-                $this->Session->setFlash('Auction was added.');
-                //redirect to user list
-                $this->redirect(array('action' => 'index'));
-
-            }else{
-                //if save failed
-                $this->Session->setFlash('Unable to add user. Please, try again.');
-
-            }
-        }
-
-        if(isset($this->passedArgs['albumid']) && !empty($this->passedArgs['albumid'])){
-
-            $photos = $this->picasa->getAlbumPhotos($this->passedArgs['albumid']);
-            $this->set('photos', $photos);
-
         } else{
-
-            $albums = $this->picasa->getAlbums();
-            $this->set('albums', $albums);
+            die();
         }
     }
 

@@ -26,18 +26,18 @@
     <?php
 
     //loop to show all retrieved records
-    foreach( $galleries as $gallery ){
+    foreach( $galleries as $gallery ): ?>
 
-        echo "<tr>";
-        echo "<td>{$gallery['Gallery']['id']}</td>";
-        echo "<td>{$this->Html->image($gallery['Gallery']['mini'], array("alt" => "Brownies"))}</td>";
-        echo "<td>{$gallery['Gallery']['title']}</td>";
-
+        <tr>
+        <td><?php echo $gallery['Gallery']['id']; ?></td>
+        <td><?php echo $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($gallery['Gallery']['mini'] ,PicasaImageSizeHelper::PHOTO_THUMB_LIST), array("alt" => "Brownies")); ?></td>
+        <td><?php echo $gallery['Gallery']['title']; ?></td>
+<?php
 
         //here are the links to edit and delete actions
         echo "<td class='actions'>";
         echo $this->Html->link( 'Edit', array('action' => 'edit', $gallery['Gallery']['id']) );
-        echo $this->Html->link( 'Preview', array('action' => 'preview', $gallery['Gallery']['id']) );
+        echo $this->Html->link( 'Preview', array('action' => 'view', $gallery['Gallery']['id']) );
 
         //in cakephp 2.0, we won't use get request for deleting records
         //we use post request (for security purposes)
@@ -47,7 +47,7 @@
             'confirm'=>'Are you sure you want to delete that user?' ) );
         echo "</td>";
         echo "</tr>";
-    }
-    ?>
+        ?>
+        <?php endforeach;?>
 
 </table>

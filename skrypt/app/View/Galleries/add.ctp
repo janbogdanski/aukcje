@@ -100,6 +100,7 @@
                     type: 'POST',
                     url: "/galleries/ajax",
                     data: $(this.form).serialize(),
+                    cache: false,
                     success: function(html,status){
                         $("#liveGallery").html(html);
                     }
