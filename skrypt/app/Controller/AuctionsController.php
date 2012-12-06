@@ -17,7 +17,7 @@ class AuctionsController extends AppController {
 
     public function index() {
         //to retrieve all users, need just one line
-        $this->set('users', $this->Auction->findAllByUserId($this->UserAuth->getUserId()));
+        $this->set('auctions', $this->Auction->findAllByUserId($this->UserAuth->getUserId()));
     }
 
     public function add(){
@@ -33,7 +33,7 @@ class AuctionsController extends AppController {
             if ($this->Auction->save($this->request->data)){
 
                 //set flash to user screen
-                $this->Session->setFlash('Auction was added.');
+                $this->Session->setFlash('Auction was added.', 'good');
                 //redirect to user list
                 $this->redirect(array('action' => 'index'));
 
@@ -49,6 +49,12 @@ class AuctionsController extends AppController {
     public function preview(){
         $this->layout = 'ajax';
         $id = $this->request->params['pass'][0];
+
+        if( !$id ) {
+            $this->Session->setFlash('Invalid id for auction');
+            $this->redirect(array('action'=>'index'));
+        }
+
         $auction = $this->Auction->find('first', array(
             'fields' => array('Auction.*', 'Template.*'),
             'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId()),
@@ -89,7 +95,11 @@ class AuctionsController extends AppController {
         //get the id of the user to be edited
         $id = $this->request->params['pass'][0];
 
-        //set the user id
+        if( !$id ) {
+            $this->Session->setFlash('Invalid id for auction');
+            $this->redirect(array('action'=>'index'));
+        }
+
         $auction = $this->Auction->find('first', array(
             'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId())
         ));
@@ -106,7 +116,7 @@ class AuctionsController extends AppController {
                 if( $this->Auction->save( $this->request->data ) ){
 
                     //set to user's screen
-                    $this->Session->setFlash('Auction was edited.');
+                    $this->Session->setFlash('Auction was edited.', 'default', array(), 'good');
 
                     //redirect to user's list
                     $this->redirect(array('action' => 'index'));

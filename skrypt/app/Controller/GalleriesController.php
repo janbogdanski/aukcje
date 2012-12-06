@@ -30,20 +30,9 @@ class GalleriesController extends AppController {
 
     public function index(){
 
-//        $options['fields'] = array('Gallery.*','GalleriesDetails.*');
-//        $options['joins'] = array(
-//            array('table' => 'galleries_details',
-//                'alias' => 'GalleriesDetails',
-//                'type' => 'LEFT',
-//                'conditions' => array(
-//                    'GalleriesDetails.gallery_id = Gallery.id',
-//                )
-//            )
-//        );
-
-
-        $options['conditions'] = array('Gallery.user_id' => $this->UserAuth->getUserId());
-//        $galleries = $this->Gallery->find('al l', $options);
+        $options['conditions'] = array('Gallery.user_id' => $this->UserAuth->getUserId(),
+            'Gallery.status !=' =>  Gallery::STATUS_NEW,
+        );
 
         $this->Gallery->unbindModel(
             array('hasMany' => array('GalleriesDetails'))
@@ -61,8 +50,9 @@ class GalleriesController extends AppController {
     }
     public function view(){
         $id = $this->request->params['pass'][0];
-        if(!$id){
-            $this->redirect('/');
+        if( !$id ) {
+            $this->Session->setFlash('Invalid id for gallery');
+            $this->redirect(array('action'=>'index'));
         }
 
         $gallery = $this->Gallery->find('first', array(
@@ -99,6 +89,10 @@ class GalleriesController extends AppController {
     public function edit(){
 
         $id = $this->request->params['pass'][0];
+        if( !$id ) {
+            $this->Session->setFlash('Invalid id for gallery');
+            $this->redirect(array('action'=>'index'));
+        }
 
         $gallery = $this->Gallery->find('first', array(
             'conditions' => array('Gallery.id' => $id, 'Gallery.user_id' => $this->UserAuth->getUserId())
