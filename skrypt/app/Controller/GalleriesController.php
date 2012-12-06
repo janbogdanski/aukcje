@@ -5,6 +5,7 @@
  *
  * Creation date    17.10.12 20:23
  */
+App::uses('Gallery', 'Model');
 class GalleriesController extends AppController {
 
     public $uses = array('Auction','Gallery','GalleriesDetails', 'Usermgmt.User', 'Usermgmt.UserGroup', 'Usermgmt.LoginToken');
@@ -76,6 +77,7 @@ class GalleriesController extends AppController {
         $data = array(
             'Gallery' => array(
                 'user_id' => $this->UserAuth->getUserId(),
+                'status' => Gallery::STATUS_NEW,
             ),
         );
         $this->Gallery->create();
@@ -102,9 +104,14 @@ class GalleriesController extends AppController {
 
             if ($this->request->is('post') || ($this->request->is('put'))){
                 //save new user
+                if(count($this->request->data['GalleriesDetails']['image']) < 1){
+                    $this->Session->setFlash('Select images, gallery not saved', 'error');
+                    $this->redirect(array('action'=>'add', $id));
+                }
 
                 $this->request->data['Gallery']['user_id'] = $this->UserAuth->getUserId();
                 $this->request->data['Gallery']['mini'] = $this->request->data['GalleriesDetails']['image'][0];
+                $this->request->data['Gallery']['status'] = Gallery::STATUS_ACTIVE;
 
 //                print_r($this->request->data);
 //                die();
@@ -173,6 +180,44 @@ class GalleriesController extends AppController {
 
     public function delete(){
 
+        $id = $this->request->params['pass'][0];
+
+        //the request must be a post request
+        //that's why we use postLink method on our view for deleting user
+        if( $this->request->is('get') ){
+
+            $this->Session->setFlash('Delete method is not allowed.');
+            $this->redirect(array('action' => 'index'));
+
+            //since we are using php5, we can also throw an exception like:
+            //throw new MethodNotAllowedException();
+        }else{
+
+            if( !$id ) {
+                $this->Session->setFlash('Invalid id for user');
+                $this->redirect(array('action'=>'index'));
+
+            }else{
+                //delete user
+                $gallery = $this->Gallery->find('first', array(
+                    'conditions' => array('Gallery.id' => $id, 'Gallery.user_id' => $this->UserAuth->getUserId())
+                ));
+                if(($gallery)){
+
+                    if( $this->Gallery->delete($id) ){
+                        //set to screen
+                        $this->Session->setFlash('Auction was deleted.');
+                        //redirect to users's list
+                        $this->redirect(array('action'=>'index'));
+
+                    }else{
+                        //if unable to delete
+                        $this->Session->setFlash('Unable to delete user.');
+                        $this->redirect(array('action' => 'index'));
+                    }
+                }
+            }
+        }
     }
 
     private function albums(){
