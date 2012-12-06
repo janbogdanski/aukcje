@@ -10,7 +10,7 @@ echo $this->Html->script('ckeditor/ckeditor');
 //echo $this->cksource->ckeditor('example1');
 
 $config['toolbar'] = array(
-array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike','gmap' ),
+array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike','gmap','qrcodes' ),
 array( 'Image', 'Link', 'Unlink', 'Anchor' ),
 array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
 '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
@@ -19,7 +19,7 @@ array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'S
 );
 $config['width'] = 660;
 $config['height'] = 200;
-$config['extraPlugins'] = 'gmap,autogrow';
+$config['extraPlugins'] = 'gmap,autogrow,qrcodes';
 $config['filebrowserImageBrowseUrl'] = '/galleries/imageBrowser';
 $events['instanceReady'] = 'function (ev) {
 //alert("Loaded: " + ev.editor.name);
@@ -28,7 +28,7 @@ $events['instanceReady'] = 'function (ev) {
 //echo $this->cksource->ckeditor('example2', array('value'=>'It works!', 'config'=>$config, 'events'=>$events));
 //echo $this->cksource->end();
 ?>
-
+<div class="row-fluid">
 <h2><?php echo $this->fetch('title'); ?></h2>
 
 <!-- link to add new users page -->
@@ -81,4 +81,8 @@ echo $this->Form->input('template_id', array(
     'separator' => '--separator--',
     'options' => $templates
 ));
-echo $this->Form->end('Submit');
+    ?>
+    <?php echo $this->Form->submit('Submit', array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
+    <?php echo $this->Form->end(); ?>
+
+</div>

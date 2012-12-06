@@ -53,6 +53,8 @@ App::uses('CakeResponse', 'Network');
  * @property      TextHelper $Text
  * @property      TimeHelper $Time
  * @property      ViewBlock $Blocks
+ * @property      PicasaImageSizeHelper $PicasaImageSize
+ * @property      UserAuthHelper $UserAuth
  */
 class View extends Object {
 
