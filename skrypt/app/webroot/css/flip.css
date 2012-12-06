@@ -1,0 +1,412 @@
+
+.swipe {
+    /* cursor: url(../images/cursor_drag.png) 0 0, auto;*/
+}
+
+.panel {
+    z-index: 2;
+    min-height: 250px;
+    position: relative;
+    font-size: .8em;
+    margin-bottom: 30px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.folio_fix .panel {
+    width: 100%;
+}
+
+/* -- make sure to declare a default for every property that you want animated -- */
+/* -- general styles, including Y axis rotation -- */
+.panel .front {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: inherit;
+    min-height: inherit;
+
+    background: #fffff0;
+    text-align: center;
+
+
+
+}
+
+.animationflip .panel .front, .animation .panel .front {
+    /*-webkit-transform: rotateY(0deg);*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    /*-moz-transform: rotateY(0deg);*/
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+/**
+        
+        .panel.flip.left .front {
+            z-index: 900;
+            border-color: #eee;
+
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+        }
+        
+        **/
+
+.panel.fadepanel .front {
+    z-index: 900;
+    border-color: #eee;
+
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.panel .back {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 800;
+    width: inherit;
+    min-height: inherit;
+
+    background: #058be6;
+    opacity: 0;
+}
+
+.animationflip .panel .back, .animation .panel .back  {
+
+    opacity: 0;
+
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform: rotateY(180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+.panel.flip .back {
+    z-index: 1000;
+    opacity: 1;
+    /*-webkit-transform: rotateY(0deg);
+             -moz-transform: rotateY(0deg); */
+
+}
+
+
+
+.panel.fadepanel .back {
+    z-index: 1000;
+
+    opacity: 1;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+
+
+
+
+
+
+/* -- cosmetics -- */
+.panel .pad {padding: 7% 10% 5%;}
+.panel .pad  p{font-family:"Georgia",cursive; font-style:italic; text-align:left; color:#fff; font-size: 1em; padding: 0px; line-height:1.55em;}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .panel .pad  p{font-size:1.1em;}
+}
+
+@media (max-width: 767px) {
+    .panel .pad  p{font-size:12px;}
+}
+
+
+.panel.flip .action {display: none; }
+.block ol li {text-align: left; margin: 0 0 0 28px; }
+.block .action {display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }
+.block:hover .action {opacity: .7;}
+.circle div {border-radius: 100px; }
+.circle div h2 {padding-top: 3em; text-align: center; }
+
+#test
+{
+    width:500px;
+    height:300px;
+    background:#FFCCFF;
+}
+
+#info
+{
+    width:500px;
+
+}
+
+/* ---------------------------------------------------------------------------- 
+2 Column Portfolio		
+----------------------------------------------------------------------------  */
+.panel_2col {
+    z-index: 2;
+    min-height: 285px;
+    position: relative;
+    font-size: .8em;
+    margin: 0px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+/* -- make sure to declare a default for every property that you want animated -- */
+/* -- general styles, including Y axis rotation -- */
+.panel_2col .front {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: inherit;
+    min-height: inherit;
+
+    background: #fffff0;
+    text-align: center;
+
+}
+
+.animationflip .panel_2col .front, .animation .panel_2col .front{
+    /**-webkit-transform: rotateY(0deg);**/
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    /**-moz-transform: rotateY(0deg);**/
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.panel_2col.flip .front {
+    z-index: 900;
+    border-color: #eee;
+
+    /**-webkit-transform: rotateY(180deg);
+             -moz-transform: rotateY(180deg);**/
+}
+
+.panel_2col.fadepanel .front {
+    z-index: 900;
+    border-color: #eee;
+
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.panel_2col .back {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 800;
+    width: inherit;
+    min-height: inherit;
+
+    background: #058be6;
+    opacity: 0;
+}
+
+.animationflip .panel_2col .back, .animation .panel_2col .back   {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform: rotateY(180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.panel_2col.flip .back {
+    z-index: 1000;
+
+    opacity: 1;
+    /**-webkit-transform: rotateY(0deg);
+             -moz-transform: rotateY(0deg);**/
+
+}
+
+.panel_2col.fadepanel .back {
+    z-index: 1000;
+
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+/* -- cosmetics -- */
+.panel_2col .pad {padding: 10% 10% 5%;}
+.panel_2col .pad  p{font-family:"Georgia",cursive; font-style:italic; text-align:left; color:#fff; font-size:12px; line-height:1.55em;}
+.panel_2col.flip .action {display: none; }
+.block ol li {text-align: left; margin: 0 0 0 28px; }
+.block .action {display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }
+.block:hover .action {opacity: .7; }
+.circle div {border-radius: 100px; }
+.circle div h2 {padding-top: 3em; text-align: center; }
+
+#sidebar .work_post {
+    width: 100%;
+
+}
+
+
+
+#info
+{
+    width:500px;
+
+}
+
+.span6.animationflip {
+    padding-bottom: 10px;
+}
+
+.span4.animationflip {
+    padding-bottom: 10px;
+}
+
+@media (min-width: 1200px) {
+    .span6.animationflip {
+        padding-bottom: 15px;
+    }
+
+    .span4.animationflip {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .span6.animationflip {
+        width: 337px;
+    }
+
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    .span6.animationflip {
+        width: 352px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .span6.animationflip {
+        width: 280px;
+    }
+}
+.flipIcon {
+    font-size: 12px;
+    width: 45px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    display: none;
+    padding: 3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.flipHover .flipIcon {
+
+}
+
+.hoverBG {
+    width: inherit;
+    min-height: inherit;
+    opacity: .2;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    display: none;
+}
+
+.filterDisabled {
+
+    opacity: .1;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+
+}
+.filterEnabled {
+
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+
+}
