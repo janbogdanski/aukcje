@@ -18,7 +18,7 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div id="dashboard">
+<div id="dashboard" class="row-fluid">
 	<div style="float:left"><?php echo $this->Html->link(__("Dashboard",true),"/dashboard") ?></div>
 <?php   if ($this->UserAuth->isAdmin()) { ?>
 	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add User",true),"/addUser") ?></div>
