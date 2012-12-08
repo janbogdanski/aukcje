@@ -7,19 +7,19 @@
  */
 ?>
 
-<h2>Gallerys</h2>
+<h2><?php echo __('Galleries'); ?></h2>
 
-<?php echo $this->Html->link( '<i class="m-icon-swapright  m-icon-white"></i> New Gallery', array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
+<?php echo $this->Html->link( '<i class="m-icon-swapright  m-icon-white"></i> '.__('New Gallery'), array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
 
 
 <table class="table table-striped">
     <thead>
     <tr>
 
-    <th>ID</th>
-        <th>img</th>
-        <th>title</th>
-        <th>opt</th>
+    <th><?php echo __('ID'); ?></th>
+        <th><?php echo __('Thumbnail'); ?></th>
+        <th><?php echo __('Title'); ?></th>
+        <th><?php echo __('Options'); ?></th>
     </tr>
     </thead>
 
@@ -35,16 +35,17 @@
         <td class="options">
             <div class="m-btn-strip">
                 <div class="m-btn-group">
-        <?php echo $this->Html->link( 'Edit', array('action' => 'edit', $gallery['Gallery']['id']), array('class' => 'm-btn mini blue') );?>
-        <?php echo $this->Html->link( 'Preview', array('action' => 'view', $gallery['Gallery']['id']), array('class' => 'm-btn mini green') );?>
-            <?php echo $this->Html->link( 'Code', array('action' => 'preview', $gallery['Gallery']['id']), array('data-toggle' => 'modal', 'id' => 'getCode','class' => 'm-btn mini purple') );?>
+        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $gallery['Gallery']['id']), array('class' => 'm-btn mini blue') );?>
+        <?php echo $this->Html->link(__('Preview'), array('action' => 'view', $gallery['Gallery']['id']), array('class' => 'm-btn mini green') );?>
         <?php echo $this->Html->link(__('Code'), array('action' => 'code', $gallery['Gallery']['id']), array('data-toggle' => 'modal','class' => 'm-btn mini purple') );?>
 
 
-            <?php echo $this->Form->postLink( 'Delete', array(
+
+                    <?php echo $this->Form->postLink(__('Delete'), array(
             'action' => 'delete',
             $gallery['Gallery']['id']), array(
-            'confirm'=>'Are you sure you want to delete that user?','class' => 'm-btn mini red') );?>
+                    'confirm'=>__('Are you sure you want to delete that gallery??'),
+                    'class' => 'm-btn mini red') );?>
             </div>
             </div>
         </td>
@@ -54,5 +55,5 @@
 </table>
 <?php if(count($galleries) > 4): ?>
 
-<?php echo $this->Html->link( '<i class="m-icon-swapright m-icon-white"></i> New Gallery', array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
+<?php echo $this->Html->link( '<i class="m-icon-swapright m-icon-white"></i> '.__('New Gallery'), array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
 <?php endif; ?>

@@ -6,4 +6,4 @@
  * @var $this View
  */
 $this->extend('form');
-$this->assign('title', 'Edit');
+$this->assign('title', __('Edit'));

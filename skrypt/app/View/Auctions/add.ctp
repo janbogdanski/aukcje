@@ -7,4 +7,4 @@
  */
 
 $this->extend('form');
-$this->assign('title', 'Add');
+$this->assign('title', __('Add'));
