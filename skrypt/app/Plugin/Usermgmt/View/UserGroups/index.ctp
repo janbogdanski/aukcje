@@ -24,10 +24,9 @@
 	<div class="um_box_mid">
 		<div class="um_box_mid_content">
 			<div class="um_box_mid_content_top">
-				<span class="umstyle1"><?php echo __('All Groups'); ?></span>
-				<span class="umstyle2" style="float:right"><?php echo $this->Html->link(__("Home",true),"/") ?></span>
-				<div style="clear:both"></div>
-			</div>
+                <h2><?php echo __('All Groups'); ?></h2>
+                <div style="clear:both"></div>
+            </div>
 			<div class="umhr"></div>
 			<div class="um_box_mid_content_mid" id="index">
 				<table cellspacing="0" cellpadding="0" width="100%" border="0" >

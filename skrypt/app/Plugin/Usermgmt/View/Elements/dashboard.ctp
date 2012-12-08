@@ -19,19 +19,19 @@
 */
 ?>
 <div id="dashboard" class="row-fluid">
-	<div style="float:left"><?php echo $this->Html->link(__("Dashboard",true),"/dashboard") ?></div>
+	<div style="float:left"><?php echo $this->Html->link(__("Dashboard",true),"/dashboard", array('class' => 'm-btn mini blue')) ?></div>
 <?php   if ($this->UserAuth->isAdmin()) { ?>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add User",true),"/addUser") ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("All Users",true),"/allUsers") ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add Group",true),"/addGroup") ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("All Groups",true),"/allGroups") ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Permissions",true),"/permissions") ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Profile",true),"/viewUser/".$this->UserAuth->getUserId()) ?></div>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Edit Profile",true),"/editUser/".$this->UserAuth->getUserId()) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add User",true),"/addUser", array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("All Users",true),"/allUsers", array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add Group",true),"/addGroup", array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("All Groups",true),"/allGroups", array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Permissions",true),"/permissions", array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Profile",true),"/viewUser/".$this->UserAuth->getUserId(), array('class' => 'm-btn mini blue')) ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Edit Profile",true),"/editUser/".$this->UserAuth->getUserId(), array('class' => 'm-btn mini blue')) ?></div>
 <?php   } else {?>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Profile",true),"/myprofile") ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Profile",true),"/myprofile", array('class' => 'm-btn mini blue')) ?></div>
 <?php   } ?>
-	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Change Password",true),"/changePassword") ?></div>
-	<div style="float:right;padding-left:10px"><?php echo $this->Html->link(__("Sign Out",true),"/logout") ?></div>
+	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Change Password",true),"/changePassword", array('class' => 'm-btn mini blue')) ?></div>
+<!--	<div style="float:right;padding-left:10px">--><?php //echo $this->Html->link(__("Sign Out",true),"/logout", array('class' => 'm-btn mini red')) ?><!--</div>-->
 	<div style="clear:both"></div>
 </div>

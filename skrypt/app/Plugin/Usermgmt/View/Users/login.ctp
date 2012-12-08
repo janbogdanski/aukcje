@@ -23,36 +23,36 @@
 	<div class="um_box_mid">
 		<div class="um_box_mid_content">
 			<div class="um_box_mid_content_top">
-				<span class="umstyle1"><?php echo __('Sign In or'); ?></span>
+				<h2><?php echo __('Sign In or'); ?></h2>
 				<span  class="umstyle2"><?php echo $this->Html->link(__("Sign Up",true),"/register") ?></span>
-				<span class="umstyle2" style="float:right"><?php echo $this->Html->link(__("Home",true),"/") ?></span>
-				<div style="clear:both"></div>
-			</div>
+                <div style="clear:both"></div>
+            </div>
 			<div class="umhr"></div>
 			<div class="um_box_mid_content_mid" id="login">
 				<div class="um_box_mid_content_mid_left">
 					<?php echo $this->Form->create('User', array('action' => 'login')); ?>
 					<div>
 						<div class="umstyle3"><?php echo __('Email / Username');?></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+						<div class="umstyle4" ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"><?php echo __('Password');?></div>
-						<div class="umstyle4"><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"umstyle5" ))?></div>
+						<div class="umstyle4"><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"span3" ))?></div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 					<?php   if(!isset($this->request->data['User']['remember']))
 								$this->request->data['User']['remember']=true;
 					?>
-						<div class="umstyle3"><?php echo __('Remember me');?></div>
-						<div class="umstyle4"><?php echo $this->Form->input("remember" ,array("type"=>"checkbox",'label' => false))?></div>
+						<div class=""><?php echo __('Remember me');?>
+						<?php echo $this->Form->input("remember" ,array("type"=>"checkbox",'div' => false, 'label' => false))?>
+                        </div>
 						<div style="clear:both"></div>
 					</div>
 					<div>
 						<div class="umstyle3"></div>
-						<div class="umstyle4"><?php echo $this->Form->Submit(__('Sign In'));?></div>
+						<div class="umstyle4"><?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?></div>
 						<div style="clear:both"></div>
 					</div>
 					<?php echo $this->Form->end(); ?>
