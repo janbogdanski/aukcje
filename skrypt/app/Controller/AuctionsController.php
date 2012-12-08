@@ -183,4 +183,58 @@ class AuctionsController extends AppController {
             }
         }
     }
+
+    /**
+     * @deprecated
+     */
+    public function image(){
+        $this->layout = 'imageBrowser';
+
+        require_once(VENDORS.DS.'picasa.php');
+        $start = isset($_GET['start']) ? (int)$_GET['start'] : 1;
+        $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
+        $picasa = new Picasa('proaukcje', $start,$limit);
+//$picasa->setStart($_GET['start']);
+//$picasa->setLimit($_GET['limit']);
+//print_r($_GET);
+//die();
+
+        ?>
+
+
+    <?php
+        if(isset($_GET['albumid']) && !empty($_GET['albumid'])){
+
+
+
+            $photos = $picasa->getAlbumPhotos($_GET['albumid']);
+            foreach($photos as $photo){
+//                echo ' <a href="?feed='.$photo['image'].'"><img src="'.$photo['thumbnail']. '" /></a> ';
+
+                echo '<a href="javascript:select_image(\''.$photo['image'].'\')"><img src="'.$photo['thumbnail'].'"></a>';
+
+
+            }
+
+
+            $query = http_build_query(array(
+                'albumid' => $_GET['albumid'],
+                'start' => $picasa->getStart() + $picasa->getLimit(),
+                'limit' => $picasa->getLimit(),
+            ));
+            echo '<a href="?'.$query.'">'.$query.'</a> ';
+
+
+        } else{
+            $albums = $picasa->getAlbums();
+            foreach($albums as $album){
+                echo '<a href="?albumid='.$album['id'].'&CKEditorFuncNum='.$_GET['CKEditorFuncNum'].'"><img src="'.$album['thumbnail']. '" /></a> ';
+            }
+        }
+
+        die();
+
+    }
+
+
 }
