@@ -15,14 +15,13 @@
  * [GalleriesDetails][image]
  */
 
+$width = $gallery['Gallery']['size'];
+//print_r($gallery);
+//die();
+
 ?>
 <style type="text/css">
     .footborder {
-        /*width:90px;*/
-        /*right:10px;*/
-        /*bottom:16px;*/
-        /*position:absolute;*/
-        /*margin:auto;*/
     }
 
     .allborder {
@@ -34,14 +33,18 @@
     }
 
     .insideborder {
+      <?php if($gallery['Gallery']['showBorder']): ?>
         border:1px solid <?php echo $gallery['Gallery']['borderColor']; ?>;
+      <?php endif; ?>
         padding:5px 5px 15px;
         background: <?php echo $gallery['Gallery']['backgroundColor']; ?>;
 
     }
 
     #tabelka<?php echo $gallery['Gallery']['id']; ?> img {
+        <?php if($gallery['Gallery']['showBorder']): ?>
         border:1px solid <?php echo $gallery['Gallery']['borderColor']; ?>;
+        <?php endif; ?>
         margin:5px;
         padding:1px;
     }
@@ -78,7 +81,9 @@
     }
 
     #linkfoto {
+    <?php if($gallery['Gallery']['showBorder']): ?>
         border-bottom:1px solid <?php echo $gallery['Gallery']['borderColor']; ?>;
+        <?php endif; ?>
         margin:0 5px 5px;
         padding:2px 8px 5px;
     }
@@ -102,7 +107,7 @@
     .ppreview {
         width:300px;
         height:225px;
-        margin-bottom:20px;
+        margin-bottom:10px;
         margin-left:auto;
         margin-right:auto;
     }
@@ -110,9 +115,14 @@
 
 
     #tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadow img,#tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle img {
-        -moz-box-shadow:4px 4px 7px #7D7D7D;
-        -webkit-box-shadow:4px 4px 7px #7D7D7D;
-        box-shadow:4px 4px 7px #7D7D7D;
+
+    <?php if($gallery['Gallery']['showShadow']): ?>
+        -moz-box-shadow:2px 2px 7px #7D7D7D;
+        -webkit-box-shadow:2px 24px 7px #7D7D7D;
+        box-shadow:2px 2px 7px #7D7D7D;
+        <?php endif; ?>
+
+
     }
 
     #tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadow:hover img,#tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle:hover img {
@@ -125,7 +135,7 @@
 
 </style>
 <div id='tabelka<?php echo $gallery['Gallery']['id']; ?>'>
-    <div class="allborder" style="width:600px;">
+    <div class="allborder" style="width:<?php echo isset($width) ? $width : 600; ?>px;">
         <div class="insideborder" style="">
             <div id='linkfoto' style="">
                 <?php $galleryUrl =  $this->Html->link('Galeria zdjęć - kliknij, aby powiększyć',array(
@@ -172,6 +182,24 @@
                         array('escape' => false, 'target' => '_blank', 'class' => 'widthshadowmiddle imglist'));
                     ?>
                     <?php endforeach;?>
+                <?php elseif(isset($gallery['GalleriesDetails']) && is_array($gallery['GalleriesDetails'])): ?>
+
+                <?php foreach ($gallery['GalleriesDetails'] as $k =>  $image): ?>
+
+                    <?php
+                    echo $this->Html->link(
+                        $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($image['image'],PicasaImageSizeHelper::PHOTO_GALLERY_THUMB),
+                            array("alt" => "Brownies")),
+                        array(
+//                    'controller' => 'images',
+                            'action' => 'view',
+                            $gallery['Gallery']['id'],
+                            'photo' => $k + 1
+                        ),
+                        array('escape' => false, 'target' => '_blank', 'class' => 'widthshadowmiddle imglist'));
+                    ?>
+                    <?php endforeach;?>
+
                 <?php endif; ?>
                 <div style="clear:both;"></div>
 
