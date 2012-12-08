@@ -38,6 +38,7 @@
         <?php echo $this->Html->link( 'Edit', array('action' => 'edit', $gallery['Gallery']['id']), array('class' => 'm-btn mini blue') );?>
         <?php echo $this->Html->link( 'Preview', array('action' => 'view', $gallery['Gallery']['id']), array('class' => 'm-btn mini green') );?>
             <?php echo $this->Html->link( 'Code', array('action' => 'preview', $gallery['Gallery']['id']), array('data-toggle' => 'modal', 'id' => 'getCode','class' => 'm-btn mini purple') );?>
+        <?php echo $this->Html->link(__('Code'), array('action' => 'code', $gallery['Gallery']['id']), array('data-toggle' => 'modal','class' => 'm-btn mini purple') );?>
 
 
             <?php echo $this->Form->postLink( 'Delete', array(

@@ -7,9 +7,11 @@
  */
 
 //print_r($gallery);
-
+//print_r($gallery['GalleriesDetails']);
 //todo minimum 0
 $photoNum = $photo - 1;
+$count = count($gallery['GalleriesDetails']);
+$nextPhotoNUm = $photo >= $count ? 1 : $photo + 1;
 ?>
 
 <div class="container">
@@ -45,8 +47,15 @@ $photoNum = $photo - 1;
         <div>
             <?php if(isset($gallery['GalleriesDetails'][$photoNum])): ?>
 
-            <?php echo $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($gallery['GalleriesDetails'][$photoNum]['image'],PicasaImageSizeHelper::PHOTO_FULL),
-                array("alt" => "Brownies")); ?>
+            <?php echo $this->Html->link(
+                $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($gallery['GalleriesDetails'][$photoNum]['image'],PicasaImageSizeHelper::PHOTO_FULL),
+                array("alt" => "Brownies")),
+                array(
+//                    'controller' => 'images',
+//                    'action' => 'view',
+                    $gallery['Gallery']['id'],
+                    'photo' => $nextPhotoNUm),
+                array('escape' => false)); ?>
 
             <?php endif; ?>
             

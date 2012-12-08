@@ -49,7 +49,18 @@ class GalleriesController extends AppController {
 
 
     }
-    public function view(){
+
+    public function code(){
+        $this->layout = 'ajax';
+        $this->Gallery->id = $this->request->params['pass'][0];
+
+        $gallery = $this->Gallery->read();
+
+        $this->request->data = $gallery;
+        return $this->previewGallery();
+    }
+    public function preview(){
+        $this->layout = 'ajax';
         $id = $this->request->params['pass'][0];
         if( !$id ) {
             $this->Session->setFlash('Invalid id for gallery');
@@ -225,6 +236,8 @@ class GalleriesController extends AppController {
         $this->set('albums', $albums);
         $this->set('hasPicasa', $albums);
         $this->view = 'albums';
+        return true;
+
     }
     private function photos(){
         $photos = $this->picasa->getAlbumPhotos($_GET['albumid']);
