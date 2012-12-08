@@ -1,0 +1,569 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-12-08 17:51+0100\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Plugin\Usermgmt\Controller\UserGroupsController.php:45
+msgid "The group is successfully added"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UserGroupsController.php:63
+msgid "The group is successfully updated"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UserGroupsController.php:85
+msgid "Sorry some users are associated with this group, You cannot delete"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UserGroupsController.php:89
+msgid "Group is successfully deleted"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:94;130
+msgid "Incorrect Email/Username or Password"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:100
+msgid "Sorry your account is not active, please contact to Administrator"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:105
+msgid "Your registration has not been confirmed please verify your email or contact to Administrator"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:144
+msgid "You are successfully signed out"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:170
+msgid "Please select correct register as"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:198
+msgid "Please check your mail and confirm your registration"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:204
+msgid "Sorry new registration is currently disabled, please try again later"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:226
+msgid "Password changed successfully"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:252
+msgid "Password for %s changed successfully"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:278
+msgid "The user is successfully added"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:298
+msgid "The user is successfully updated"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:325
+msgid "User is successfully deleted"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:359
+msgid "User is successfully activated"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:361
+msgid "User is successfully deactivated"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:379
+msgid "User email is successfully verified"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:413
+msgid "Thank you, your account is activated now"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:416
+msgid "Thank you, your account is already activated"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:419;422
+msgid "Sorry something went wrong, please click on the link again"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:441;515
+msgid "Incorrect Email/Username"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:447
+msgid "Your registration has not been confirmed yet please verify your email before reset password"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:451
+msgid "Please check your mail for reset your password"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:481
+msgid "Your password has been reset successfully"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:484
+msgid "Something went wrong, please send password reset link again"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:487;491
+msgid "Something went wrong, please click again on the link in email"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:521
+msgid "Please check your mail to verify your email"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:523
+msgid "Your email is already verified"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:22
+#: Plugin\Usermgmt\View\Users\access_denied.ctp:32
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:27
+msgid "Dashboard"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:24
+#: Plugin\Usermgmt\View\Users\add_user.ctp:27;73
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:36
+#: View\Users\add.ctp:11
+msgid "Add User"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:25
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:37
+#: Plugin\Usermgmt\View\Users\index.ctp:27
+msgid "All Users"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:26
+#: Plugin\Usermgmt\View\UserGroups\add_group.ctp:27;55
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:38
+msgid "Add Group"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:27
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:27
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:39
+msgid "All Groups"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:28
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:40
+msgid "Permissions"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:29;32
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:41;45
+msgid "Profile"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:30
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:42
+msgid "Edit Profile"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\dashboard.ctp:34
+#: Plugin\Usermgmt\View\Users\change_password.ctp:27
+#: Plugin\Usermgmt\View\Users\dashboard.ctp:44
+msgid "Change Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:28
+msgid "User Group Permissions"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:30
+msgid "Select Controller"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:42
+msgid "Controller"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:43
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:40
+#: Plugin\Usermgmt\View\Users\index.ctp:43
+msgid "Action"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:44
+msgid "Permission"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:45
+msgid "Operation"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\add_group.ctp:34
+#: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:35
+msgid "Group Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\add_group.ctp:40
+#: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:41
+msgid "Alias Group Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\add_group.ctp:49
+#: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:47
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:38
+msgid "Allow Registration"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:27
+msgid "Edit Group"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:53
+msgid "Update Group"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:35
+msgid "Group Id"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:36
+#: Plugin\Usermgmt\View\Users\index.ctp:36
+msgid "Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:37
+msgid "Alias Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:39
+#: Plugin\Usermgmt\View\Users\index.ctp:42
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:82
+#: Plugin\Usermgmt\View\Users\view_user.ctp:84
+msgid "Created"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:61
+#: Plugin\Usermgmt\View\Users\index.ctp:85
+#: View\Auctions\index.ctp:53
+#: View\Galleries\index.ctp:43
+msgid "Delete"
+msgstr ""
+
+#: Plugin\Usermgmt\View\UserGroups\index.ctp:61
+msgid "Are you sure you want to delete this group? Delete it your own risk"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\access_denied.ctp:26
+msgid "Access Denied"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\activate_password.ctp:26
+msgid "Reset Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\activate_password.ctp:34
+#: Plugin\Usermgmt\View\Users\add_user.ctp:62
+#: Plugin\Usermgmt\View\Users\change_user_password.ctp:35
+#: Plugin\Usermgmt\View\Users\login.ctp:40
+#: Plugin\Usermgmt\View\Users\register.ctp:62
+msgid "Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\activate_password.ctp:39
+#: Plugin\Usermgmt\View\Users\add_user.ctp:67
+#: Plugin\Usermgmt\View\Users\change_password.ctp:45
+#: Plugin\Usermgmt\View\Users\change_user_password.ctp:40
+#: Plugin\Usermgmt\View\Users\register.ctp:67
+msgid "Confirm Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\activate_password.ctp:54
+msgid "Reset"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\add_user.ctp:36
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:37
+#: Plugin\Usermgmt\View\Users\index.ctp:39
+#: Plugin\Usermgmt\View\Users\register.ctp:36
+msgid "Group"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\add_user.ctp:42
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:43
+#: Plugin\Usermgmt\View\Users\index.ctp:37
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:44
+#: Plugin\Usermgmt\View\Users\register.ctp:42
+#: Plugin\Usermgmt\View\Users\view_user.ctp:44
+msgid "Username"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\add_user.ctp:47
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:48
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:48
+#: Plugin\Usermgmt\View\Users\view_user.ctp:48
+msgid "First Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\add_user.ctp:52
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:53
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:52
+#: Plugin\Usermgmt\View\Users\view_user.ctp:52
+msgid "Last Name"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\add_user.ctp:57
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:58
+#: Plugin\Usermgmt\View\Users\index.ctp:38
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:56
+#: Plugin\Usermgmt\View\Users\register.ctp:57
+#: Plugin\Usermgmt\View\Users\view_user.ctp:56
+msgid "Email"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\change_password.ctp:35
+msgid "Old Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\change_password.ctp:40
+msgid "New Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\change_password.ctp:51
+#: Plugin\Usermgmt\View\Users\change_user_password.ctp:46
+msgid "Change"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\change_user_password.ctp:27
+msgid "Change Password for "
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:27
+msgid "Edit User"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\edit_user.ctp:64
+msgid "Update User"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\email_verification.ctp:26
+#: Plugin\Usermgmt\View\Users\login.ctp:60
+msgid "Email Verification"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\email_verification.ctp:33
+#: Plugin\Usermgmt\View\Users\forgot_password.ctp:34
+msgid "Enter Email / Username"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\email_verification.ctp:39
+#: Plugin\Usermgmt\View\Users\forgot_password.ctp:40
+msgid "Send Email"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\forgot_password.ctp:26
+msgid "Forgot Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\index.ctp:35
+msgid "SL"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\index.ctp:40
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:60
+#: Plugin\Usermgmt\View\Users\view_user.ctp:60
+msgid "Email Verified"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\index.ctp:41
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:71
+#: Plugin\Usermgmt\View\Users\view_user.ctp:70
+msgid "Status"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\index.ctp:85
+msgid "Are you sure you want to delete this user?"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:26
+msgid "Sign In or"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:27
+#: Plugin\Usermgmt\View\Users\register.ctp:79
+msgid "Sign Up"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:35
+msgid "Email / Username"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:48
+msgid "Remember me"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:55
+#: Plugin\Usermgmt\View\Users\register.ctp:27
+msgid "Sign In"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:59
+msgid "Forgot Password?"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:27
+msgid "My Profile"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:36
+#: Plugin\Usermgmt\View\Users\view_user.ctp:36
+msgid "User Id"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\myprofile.ctp:40
+#: Plugin\Usermgmt\View\Users\view_user.ctp:40
+msgid "User Group"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\register.ctp:26
+msgid "Sign Up or"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\view_user.ctp:27
+msgid "User Detail"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\view_user.ctp:80
+msgid "Ip Address"
+msgstr ""
+
+#: View\Auctions\add.ctp:10
+msgid "Add"
+msgstr ""
+
+#: View\Auctions\edit.ctp:9
+#: View\Auctions\index.ctp:49
+#: View\Galleries\index.ctp:38
+msgid "Edit"
+msgstr ""
+
+#: View\Auctions\form.ctp:49
+msgid "List Auctions"
+msgstr ""
+
+#: View\Auctions\form.ctp:54
+msgid "Title on aukctions list"
+msgstr ""
+
+#: View\Auctions\form.ctp:55
+#: View\Auctions\index.ctp:33
+#: View\Galleries\index.ctp:21
+msgid "Title"
+msgstr ""
+
+#: View\Auctions\form.ctp:61
+msgid "1st section header"
+msgstr ""
+
+#: View\Auctions\form.ctp:80
+msgid "2nd section header"
+msgstr ""
+
+#: View\Auctions\form.ctp:86
+msgid "3rd section header"
+msgstr ""
+
+#: View\Auctions\form.ctp:104
+msgid "Select Template"
+msgstr ""
+
+#: View\Auctions\index.ctp:25
+msgid "Auctions"
+msgstr ""
+
+#: View\Auctions\index.ctp:27;68
+msgid "New Auction"
+msgstr ""
+
+#: View\Auctions\index.ctp:32
+#: View\Galleries\index.ctp:19
+msgid "ID"
+msgstr ""
+
+#: View\Auctions\index.ctp:34
+#: View\Galleries\index.ctp:22
+msgid "Options"
+msgstr ""
+
+#: View\Auctions\index.ctp:50
+#: View\Galleries\index.ctp:39
+msgid "Preview"
+msgstr ""
+
+#: View\Auctions\index.ctp:51
+#: View\Galleries\index.ctp:40
+msgid "Code"
+msgstr ""
+
+#: View\Auctions\index.ctp:56
+msgid "Are you sure you want to delete that auction?"
+msgstr ""
+
+#: View\Galleries\index.ctp:10
+msgid "Galleries"
+msgstr ""
+
+#: View\Galleries\index.ctp:12;56
+msgid "New Gallery"
+msgstr ""
+
+#: View\Galleries\index.ctp:20
+msgid "Thumbnail"
+msgstr ""
+
+#: View\Layouts\default.ctp:136
+msgid "Settings"
+msgstr ""
+
+#: View\Layouts\default.ctp:140
+msgid "Logout"
+msgstr ""
+
+#: View\Layouts\default.ctp:145
+#: View\Users\login.ctp:18
+msgid "Login"
+msgstr ""
+
+#: View\Users\add.ctp:20
+msgid "Submit"
+msgstr ""
+
+#: View\Users\login.ctp:12
+msgid "Please enter your username and password"
+msgstr ""
+
+#: Model\User.php:validation for field username
+msgid "A username is required"
+msgstr ""
+
+#: Model\User.php:validation for field password
+msgid "A password is required"
+msgstr ""
+
+#: Model\User.php:validation for field role
+msgid "Please enter a valid role"
+msgstr ""
+
