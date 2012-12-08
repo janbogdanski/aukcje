@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var $this View
+ */
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,11 +29,14 @@
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-affix.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/application.js"></script>
     <script type="text/javascript">
-        function select_image(imagePath) {
-            var CKEditorFuncNum = <?php echo $_GET['CKEditorFuncNum']; ?>;
-            window.parent.opener.CKEDITOR.tools.callFunction( CKEditorFuncNum, imagePath, '' );
-            self.close();
-        }
+        <?php if(isset($_GET['CKEditorFuncNum'])): ?>
+function select_image(imagePath) {
+    var CKEditorFuncNum = <?php echo $_GET['CKEditorFuncNum']; ?>;
+    window.parent.opener.CKEDITOR.tools.callFunction( CKEditorFuncNum, imagePath, '' );
+    self.close();
+}
+<?php endif; ?>
+
     </script>
 
 </head>
@@ -36,33 +44,8 @@
 <?php
 $user = $this->UserAuth->getUser();
 ?>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#setUser").submit(function(){
-            $.ajax({
-                type: 'POST',
-                url: "/galleries/ajax",
-                data: $(this).serialize()
-//                success: function(){}
-            }).done(function() {
-                    window.location.reload();
-                });
-            return false
-        });
-    });
-</script>
-<div>
-    <div>
+    <?php echo $this->element('picasa_set_user'); ?>
 
-        <!--        jesli brak usera    -->
-        <form method="post" id="setUser" action="#">
-            <input type="text" name="user" placeholder="Picasa username" value="<?php echo @$user['User']['picasa']; ?>" />
-            <input type="hidden" name="setUser">
-            <input type="submit" name="save" value="Zapisz">
-            <input type="button" name="cancel" value="Cancel">
-        </form>
-    </div>
-</div>
 			<?php echo $this->fetch('content'); ?>
 
             <?php echo $this->element('sql_dump'); ?>
