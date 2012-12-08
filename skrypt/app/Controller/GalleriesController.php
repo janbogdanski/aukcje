@@ -239,12 +239,18 @@ class GalleriesController extends AppController {
         return true;
 
     }
-    private function photos(){
-        $photos = $this->picasa->getAlbumPhotos($_GET['albumid']);
+    private function photos($albumid = null){
+        if(!is_null($albumid)){
+            $photos = $this->picasa->getAlbumPhotos($albumid);
+
+        } else{
+            $albumid = $_GET['albumid'];
+            $photos = $this->picasa->getAlbumPhotos($_GET['albumid']);
+        }
 
 
         $query = http_build_query(array(
-            'albumid' => $_GET['albumid'],
+            'albumid' => $albumid,
             'start' => $this->picasa->getStart() + $this->picasa->getLimit(),
             'limit' => $this->picasa->getLimit(),
         ));
@@ -253,6 +259,8 @@ class GalleriesController extends AppController {
         $this->set('query', $query);
 
         $this->view = 'photos';
+
+        return true;
 
     }
     private function setUser(){
@@ -323,6 +331,19 @@ class GalleriesController extends AppController {
 
         if(isset($_POST['action']) && 'previewGallery' == $_POST['action']){
 
+            return $this->previewGallery();
+        }
+        if(isset($_POST['action']) && 'getAlbumPhotos' == $_POST['action']){
+
+
+            return $this->photos($_POST['albumid']);
+        }
+        if(isset($_POST['action']) && 'getGalleryCode' == $_POST['action']){
+
+            $this->Gallery->id = $_POST['gallery'];
+            $gallery = $this->Gallery->read();
+
+            $this->request->data = $gallery;
             return $this->previewGallery();
         }
 
