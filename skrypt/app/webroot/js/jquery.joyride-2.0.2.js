@@ -580,7 +580,9 @@
 
       end : function () {
         if (settings.cookieMonster) {
-          $.cookie(settings.cookieName, 'ridden', { expires: 365, domain: settings.cookieDomain });
+
+           var pathPart = location.pathname.split('/').slice(0,3).join('/');
+          $.cookie(settings.cookieName, 'ridden', { expires: 365, path: pathPart, domain: settings.cookieDomain });
         }
 
         if (settings.timer > 0) {
