@@ -272,6 +272,21 @@ class GalleriesController extends AppController {
 
     }
 
+    public function galleryBrowser(){
+        $this->layout = 'imageBrowser';
+
+        $options['conditions'] = array('Gallery.user_id' => $this->UserAuth->getUserId(),
+            'Gallery.status !=' =>  Gallery::STATUS_NEW,
+        );
+
+        $this->Gallery->unbindModel(
+            array('hasMany' => array('GalleriesDetails'))
+        );
+        $this->set('galleries', $this->Gallery->find('all',$options));
+
+
+    }
+
     private function previewGallery(){
 
         $this->set('gallery', $this->request->data);
@@ -290,6 +305,7 @@ class GalleriesController extends AppController {
 
         }
 
+        return true;
     }
 
     public function ajax(){
