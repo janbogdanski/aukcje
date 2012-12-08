@@ -92,17 +92,17 @@ class User extends UserMgmtAppModel {
 						'message'=> 'Username must be greater than 3 characters',
 						'last'=>true),
 					),
-				'first_name'=> array(
-					'mustNotEmpty'=>array(
-						'rule' => 'notEmpty',
-						'message'=> 'Please enter first name')
-					),
-				'last_name'=> array(
-					'mustNotEmpty'=>array(
-						'rule' => 'notEmpty',
-						'on' => 'create',
-						'message'=> 'Please enter last name')
-					),
+//				'first_name'=> array(
+//					'mustNotEmpty'=>array(
+//						'rule' => 'notEmpty',
+//						'message'=> 'Please enter first name')
+//					),
+//				'last_name'=> array(
+//					'mustNotEmpty'=>array(
+//						'rule' => 'notEmpty',
+//						'on' => 'create',
+//						'message'=> 'Please enter last name')
+//					),
 				'email'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
