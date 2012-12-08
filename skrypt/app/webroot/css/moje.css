@@ -8,6 +8,8 @@ body{
 a{
 
     color: #008fd5;
+    outline: none !important;
+    border: none;
 }
 
 .footer_wrap {
@@ -301,11 +303,12 @@ ul.fancy_tags li a:hover {
 }
 
 .nav-tabs > li > a {
-    color: ;
+    /*color: ;*/
 }
 
 #sidebar .widget ul li > a:hover {
-    color: #fff;
+    color: #000;
+    text-decoration: none;
 }
 .accordion-heading a{ color: #737373; }
 .accordion-heading a:hover { color: #008fd5; }
@@ -402,4 +405,25 @@ p{
 }
 .gallery-options input[type=text]{
     width: 70px;
+}
+
+form .error-message{
+    font-size: 13px;
+    color: red;
+}
+
+section{
+    padding-top:0;
+}
+.templates_list{
+    margin-left: 0!important;
+    padding: 5px 15px;
+}
+.templates_list{
+    height: 220px;
+}
+
+.logo_holder a, .logo_holder  img{
+    outline: none;
+    border: none;
 }

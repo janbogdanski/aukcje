@@ -27,9 +27,9 @@ class AuctionsController extends AppController {
         if ($this->request->is('post')){
             //save new user
 
-            
+
             $this->request->data['Auction']['user_id'] = $this->UserAuth->getUserId();
-            
+
             if ($this->Auction->save($this->request->data)){
 
                 //set flash to user screen
@@ -83,8 +83,8 @@ class AuctionsController extends AppController {
 //        $html = $view->getVar('code');
 //        print_r($view);
 //        die();
-        
-        
+
+
 //        $this->set('code', ($auction['Template']['code']));
 
 //        $this->render(null,'ajax','/auctions/index/');
@@ -110,7 +110,7 @@ class AuctionsController extends AppController {
         if(($auction)){
 
             if( $this->request->is( 'post' ) || $this->request->is( 'put' ) ){
-                
+
                 //save user
                 $this->Auction->id = $id;
                 if( $this->Auction->save( $this->request->data ) ){

@@ -41,12 +41,12 @@ License URI: License.txt
 /*
 ==========================================
 Theme Styles
-========================================== 
+==========================================
 */
 /*
 ==========================================
 Nav Collapsed Button Styles
-========================================== 
+==========================================
 */
 @media (max-width: 979px) {
     .btn-flat {
@@ -139,7 +139,7 @@ hr {
 /*
 ==========================================
 Header
-========================================== 
+==========================================
 */
 #header h1 {
     margin: 0 auto;
@@ -220,7 +220,7 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);*/
     font-size: 12px;
 }
 .jqueryslidemenu > ul > li:hover > a {
-    /*background: #f8f8f8; 
+    /*background: #f8f8f8;
 -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
 -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);*/
@@ -477,7 +477,7 @@ End Social Nav
 /*
 ==========================================
 Content
-========================================== 
+==========================================
 */
 .circle_service h3 {
     text-align: center;
@@ -543,7 +543,7 @@ Read More Button
 /*
 ==========================================
 Latest Work (Home)
-========================================== 
+==========================================
 */
 .latest_work {
 
@@ -718,7 +718,7 @@ a.portfolio_link:hover {
 /*
 ==========================================
 Footer
-========================================== 
+==========================================
 */
 .footer_wrap {
 
@@ -961,7 +961,7 @@ footer .mesage {
 /*
 ==========================================
 Sub Footer
-========================================== 
+==========================================
 */
 .sub_footer{
     margin-bottom: 30px;
@@ -999,7 +999,7 @@ Sub Footer
 /*
 ==========================================
 Blog & Pages
-========================================== 
+==========================================
 */
 /*Post										*/
 /*------------------------------------------*/
@@ -1459,7 +1459,7 @@ a.post-edit-link:hover {
 /*
 ==========================================
 Post Quote
-========================================== 
+==========================================
 */
 .post-quote .post_title blockquote {
     font-size: 1.125em;
@@ -1471,7 +1471,7 @@ Post Quote
 /*
 ==========================================
 Post Image
-========================================== 
+==========================================
 */
 .post-image .flex-container {
     margin-bottom: 0;
@@ -1479,7 +1479,7 @@ Post Image
 /*
 ==========================================
 Sidebar
-========================================== 
+==========================================
 */
 #sidebar {
     position: relative;
@@ -2183,9 +2183,9 @@ ol.commentlist .comment-entry span.arrow_comment {
 	font-size:12px;
 	text-align:center;
 	box-shadow:none;
-	background: #ebeaea; 
-	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E0E0E0)); 
-	background: -moz-linear-gradient(top,  #FFFFFF,  #E0E0E0); 
+	background: #ebeaea;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E0E0E0));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #E0E0E0);
 	background: -o-linear-gradient(top, #FFFFFF, #E0E0E0);
     border-color: #CCCCCC #CCCCCC #AAAAAA;
     -webkit-border-radius: 3px;
@@ -2332,7 +2332,7 @@ ul.portfolio4 li {
 /*
 ==========================================
 Masonry
-========================================== 
+==========================================
 */
 #masonry_container {
     margin: 0 auto;
@@ -2468,7 +2468,7 @@ img[class*="wp-image-"],
 /*
 ==========================================
 Global Styles
-========================================== 
+==========================================
 */
 /*
 .box_b {
@@ -2553,7 +2553,7 @@ Global Styles
     }
     /*
        Audio Player
-       ========================================== 
+       ==========================================
        */
     .AudioPlayerV1 {
         width: 670px!important;
@@ -2563,7 +2563,7 @@ Global Styles
     }
     /*
        Video Player
-       ========================================== 
+       ==========================================
        */
     .format-video #post_video {
         height: 376px;
@@ -2576,7 +2576,7 @@ Global Styles
 @media (min-width: 979px) and (max-width: 1199px) {
     /*
        Audio Player
-       ========================================== 
+       ==========================================
        */
     .AudioPlayerV1 {
         width: 540px!important;
@@ -2586,7 +2586,7 @@ Global Styles
     }
     /*
        Video Player
-       ========================================== 
+       ==========================================
        */
     .format-video #post_video {
         height: 303px;
@@ -2608,7 +2608,7 @@ Global Styles
 @media (min-width: 768px) and (max-width: 978px) {
     /*
        Video Player
-       ========================================== 
+       ==========================================
        */
     .format-video #post_video {
         height: 232px;
@@ -2673,7 +2673,7 @@ Global Styles
     }
     /*
        Video Player
-       ========================================== 
+       ==========================================
        */
     .format-video #post_video {
         height: 370px;
@@ -2720,7 +2720,7 @@ Global Styles
     }
     /*
        Audio Player
-       ========================================== 
+       ==========================================
        */
     .AudioPlayerV1 {
         width: 359px!important;
@@ -3012,8 +3012,8 @@ input, textarea, .uneditable-input {
     padding: 10px;
     width: 100%;
     height: auto;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    /*-moz-box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
     box-sizing: border-box;
 }
 
