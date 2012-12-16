@@ -59,7 +59,7 @@ class GalleriesController extends AppController {
         $this->request->data = $gallery;
         return $this->previewGallery();
     }
-    public function preview(){
+    public function view(){
         $this->layout = 'ajax';
         $id = $this->request->params['pass'][0];
         if( !$id ) {
