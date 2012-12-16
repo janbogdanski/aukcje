@@ -13,11 +13,21 @@
     <title>
         <?php echo $title_for_layout; ?>
     </title>
+    <?php echo $this->Html->meta('description', @$metaDescription); ?>
+    <?php echo $this->Html->meta('keywords', @$metaKeywords); ?>
+
+    <meta property="og:title" content="<?php echo @$metaOgTitle; ?>" />
+    <meta property="og:url" content="<?php echo @$metaOgUrl; ?>" />
+    <meta property="og:description" content="<?php echo @$metaOgTitle; ?>" />
+    <meta property="og:site_name" content="<?php echo @$metaOgSiteName; ?>" />
+<!--    <meta property="og:image" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
+    <meta property="og:type" content="<?php echo @$metaOgType; ?>" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--    <meta name="description" content="">-->
+
 
     <!-- Google Web Font -->
     <link href='http://fonts.googleapis.com/css?family=Dosis:200,400,600' rel='stylesheet' type='text/css'>
@@ -32,10 +42,10 @@
     <?php
     echo $this->Html->css('frontend');
     echo $this->Html->css('style');
-//    echo $this->Html->css('bootstrap/css/bootstrap');
+    echo $this->Html->css('bootstrap/css/bootstrap');
 //    echo $this->Html->css('bootstrap/css/bootstrap-responsive.min');
 
-    echo $this->Html->css('microsoft/css/bootstrap.min');
+//    echo $this->Html->css('microsoft/css/bootstrap.min');
     echo $this->Html->css('microsoft/css/bootstrap-responsive.min');
     echo $this->Html->css('microsoft/css/styles');
     echo $this->Html->css('microsoft/css/m-styles.min');
@@ -68,6 +78,7 @@
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->fetch('script');
+
     ?>
 </head>
 
