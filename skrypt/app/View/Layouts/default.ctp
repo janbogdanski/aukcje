@@ -49,9 +49,14 @@
     echo $this->Html->css('flexslider');
     echo $this->Html->css('flip');
     echo $this->Html->css('flipit');
+    echo $this->Html->css('joyride-2.0.2');
     echo $this->Html->css('moje');
+
+
     echo $this->Html->script('jquery-1.8.3.min');
     echo $this->Html->script('global');
+    echo $this->Html->script('jquery.cookie');
+    echo $this->Html->script('jquery.joyride-2.0.2');
 
     if(isset($this->request->params['prefix']) && 'admin' == $this->request->params['prefix'] ){
       echo   $this->Html->script('admin');
@@ -203,14 +208,41 @@
 
             <section id="content" class="span9">
 
+<!--                <h3 id="yourHeaderID">aaaa</h3>-->
+<!--                <p class="your-paragraph-class">vvvvvvvf</p>-->
+<!--                <a id="yourAnchorID" href="#url">fffffffffff</a>-->
+
                     <?php  echo $this->Session->flash('bad'); ?>
                     <?php  echo $this->Session->flash('good'); ?>
                     <?php  echo $this->Session->flash(); ?>
 
                 <?php echo $this->fetch('content'); ?>
 
+<!--                <h3 id="numero3">Get the Most Out of Your App!</h3>-->
 
 
+<!--                <ol id="joyRideTipContent">-->
+<!--                    <li data-id="yourHeaderID" data-text="Next" class="">-->
+<!--                        <h2>Stop #1</h2>-->
+<!--                        <p>You can control all the details for you tour stop. Any valid HTML will work inside of Joyride.</p>-->
+<!--                    </li>-->
+<!--                    <li data-class="your-paragraph-class" data-button="Next" data-options="">-->
+<!--                        <h2>Stop #2</h2>-->
+<!--                        <p>Get the details right by styling Joyride with a custom stylesheet!</p>-->
+<!--                    </li>-->
+<!--                    <li data-id="yourAnchorID" data-button="Next" data-options="">-->
+<!--                        <h2>Stop #3</h2>-->
+<!--                        <p>It works right aligned.</p>-->
+<!--                    </li>-->
+<!--                    <li data-button="Next">-->
+<!--                        <h2>Stop #4</h2>-->
+<!--                        <p>It works as a modal too!</p>-->
+<!--                    </li>-->
+<!--                    <li data-id="numero3" data-button="Close">-->
+<!--                        <h2>Stop #5</h2>-->
+<!--                        <p>Now what are you waiting for? Add this to your projects and get the most out of your apps!</p>-->
+<!--                    </li>-->
+<!--                </ol>-->
 
     </section><!-- /content -->
 
