@@ -16,7 +16,7 @@ CKEDITOR.plugins.add( 'proaukcje_insertimage',
                 {
                     label: 'Insert Image',
                     command: 'insertImage',
-                    icon: this.path + 'proaukcje_insertimage.jpg'
+                    icon: this.path + 'proaukcje_insertimage.png'
                 } );
         }
     } );
