@@ -1,10 +1,21 @@
 <div class="blogPosts index">
 	<h2><?php echo __('Blog Posts');?></h2>
+    <div class="row-fluid actions">
+<!--        <h3>--><?php //echo __('Actions'); ?><!--</h3>-->
+<!--        <ul>-->
+            <?php echo $this->Html->link(__('New Blog Post'), array('action' => 'add'),array('class' => 'm-btn mini blue')); ?>
+            <?php echo $this->Html->link(__('List Blog Post Categories'), array('controller' => 'blog_post_categories', 'action' => 'index'),array('class' => 'm-btn mini blue')); ?>
+            <?php echo $this->Html->link(__('New Blog Post Category'), array('controller' => 'blog_post_categories', 'action' => 'add'), array('class' => 'm-btn mini blue')); ?>
+            <?php echo $this->Html->link(__('List Blog Post Tags'), array('controller' => 'blog_post_tags', 'action' => 'index'),array('class' => 'm-btn mini blue')); ?>
+            <?php echo $this->Html->link(__('New Blog Post Tag'), array('controller' => 'blog_post_tags', 'action' => 'add'),array('class' => 'm-btn mini blue')); ?>
+<!--        </ul>-->
+    </div>
 	<table class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('title');?></th>
 			<th><?php echo $this->Paginator->sort('slug');?></th>
+			<th><?php echo $this->Paginator->sort('summary');?></th>
 			<th><?php echo $this->Paginator->sort('published');?></th>
 			<th><?php echo $this->Paginator->sort('sticky');?></th>
 			<th><?php echo $this->Paginator->sort('in_rss');?></th>
@@ -24,6 +35,7 @@
 		<td><?php echo h($blogPost['BlogPost']['id']); ?>&nbsp;</td>
 		<td><?php echo h($blogPost['BlogPost']['title']); ?>&nbsp;</td>
 		<td><?php echo h($blogPost['BlogPost']['slug']); ?>&nbsp;</td>
+		<td><?php echo h($blogPost['BlogPost']['summary']); ?>&nbsp;</td>
 		<td><?php echo h($blogPost['BlogPost']['published']); ?>&nbsp;</td>
 		<td><?php echo h($blogPost['BlogPost']['sticky']); ?>&nbsp;</td>
 		<td><?php echo h($blogPost['BlogPost']['in_rss']); ?>&nbsp;</td>
@@ -51,13 +63,4 @@
 		<?php echo $this->Paginator->next(__('next') . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Blog Post'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Blog Post Categories'), array('controller' => 'blog_post_categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Blog Post Category'), array('controller' => 'blog_post_categories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Blog Post Tags'), array('controller' => 'blog_post_tags', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Blog Post Tag'), array('controller' => 'blog_post_tags', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+

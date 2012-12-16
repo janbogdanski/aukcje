@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php __('Add Blog Post'); ?></legend>
 	<?php
-		echo $this->Form->input('title');
-		echo $this->Form->input('slug');
+        echo $this->Form->input('title', array('id' => 'title'));
+        echo $this->Form->input('slug', array('id' => 'slug'));
 		echo $this->Form->input('summary');
 		echo $this->Form->input('body');
 		echo $this->Form->input('published');

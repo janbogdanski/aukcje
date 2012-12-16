@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php __('Add Blog Post Tag'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('slug');
+        echo $this->Form->input('name', array('id' => 'title'));
+        echo $this->Form->input('slug', array('id' => 'slug'));
                 echo $this->Form->input('meta_title');
                 echo $this->Form->input('meta_description');
                 echo $this->Form->input('meta_keywords');

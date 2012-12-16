@@ -47,7 +47,7 @@
 <div class="related">
 	<h3><?php echo __('Related Blog Posts');?></h3>
 	<?php if (!empty($blogPostTag['BlogPost'])):?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-striped">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Title'); ?></th>

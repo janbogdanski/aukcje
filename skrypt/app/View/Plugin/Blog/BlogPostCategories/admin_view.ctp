@@ -69,7 +69,7 @@
 <div class="related">
 	<h3><?php echo __('Related Blog Post Categories');?></h3>
 	<?php if (!empty($blogPostCategory['ChildBlogPostCategory'])):?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-striped">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Parent Id'); ?></th>
@@ -121,7 +121,7 @@
 <div class="related">
 	<h3><?php echo __('Related Blog Posts');?></h3>
 	<?php if (!empty($blogPostCategory['BlogPost'])):?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-striped">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Title'); ?></th>

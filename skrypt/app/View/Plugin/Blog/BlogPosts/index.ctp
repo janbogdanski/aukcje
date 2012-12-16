@@ -1,3 +1,4 @@
+
 <div id="content">
 
   <?php if ($this->Blog->filtered()) : ?>
@@ -11,9 +12,9 @@
       <article<?php if ($blogPost['BlogPost']['sticky']) {echo ' class="sticky"';} ?>>
 
         <header class="clearfix">
-          <h2><?php echo $this->Html->link($blogPost['BlogPost']['title'], array('action' => 'view', 'slug' => $blogPost['BlogPost']['slug']), array('title' => $blogPost['BlogPost']['title'], 'rel' => 'bookmark')); ?></h2>
+          <h2>|| <?php echo $this->Html->link($blogPost['BlogPost']['title'], array('action' => 'view', 'slug' => $blogPost['BlogPost']['slug']), array('title' => $blogPost['BlogPost']['title'], 'rel' => 'bookmark')); ?></h2>
           <time pubdate datetime="<?php echo date('c', $createdTimestamp = strtotime($blogPost['BlogPost']['created'])); ?>">
-              <?php echo date($blogSettings['published_format_on_post_index'], $createdTimestamp); ?>
+              <i class="icon-calendar"></i>&nbsp;<?php echo date($blogSettings['published_format_on_post_index'], $createdTimestamp); ?>
           </time>
           <?php if (strtolower($blogSettings['use_disqus']) == 'yes') : ?>
             <?php echo $this->Html->link(__('View comments'), $this->Blog->permalink($blogPost) . '#disqus_thread', array('data-disqus-identifier' => 'blog-post-' . $blogPost['BlogPost']['id'])); ?>
@@ -28,7 +29,7 @@
             <?php echo $blogPost['BlogPost']['body']; ?>
           </div>
         <?php endif; ?>
-
+          <hr>
       </article>
 
     <?php endforeach; ?>
@@ -104,5 +105,12 @@ switch ($this->Blog->filtered()) {
     $this->set('title_for_layout', $blogSettings['meta_title']);
     $this->set('metaDescription', $blogSettings['meta_description']);
     $this->set('metaKeywords', $blogSettings['meta_keywords']);
+
+    $this->set('metaOgTitle', $blogSettings['meta_title']);
+    $this->set('metaOgType', 'blog');
+    $this->set('metaOgUrl', $this->Blog->permalink($blogPost));
+//$this->set('metaOgImage');
+      $this->set('metaOgSiteName', $blogSettings['og:site_name']);
+      $this->set('metaFbAdmins', $blogSettings['fb_admins']);
     break;
 }

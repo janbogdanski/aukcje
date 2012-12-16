@@ -1,6 +1,6 @@
 <div class="blogPostCategories index">
 	<h2><?php echo __('Blog Post Categories');?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('parent_id');?></th>

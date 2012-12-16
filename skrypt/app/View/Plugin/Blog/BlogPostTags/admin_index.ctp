@@ -1,6 +1,6 @@
 <div class="blogPostTags index">
 	<h2><?php echo __('Blog Post Tags');?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>

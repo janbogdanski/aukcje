@@ -4,13 +4,13 @@
 		<legend><?php __('Add Blog Post Category'); ?></legend>
 	<?php
 		echo $this->Form->input('parent_id', array('empty' => true));
-		echo $this->Form->input('name');
-		echo $this->Form->input('slug');
-		echo $this->Form->input('meta_title');
-		echo $this->Form->input('meta_description');
-		echo $this->Form->input('meta_keywords');
-		echo $this->Form->input('rss_channel_title');
-		echo $this->Form->input('rss_channel_description');
+		echo $this->Form->input('name',array('class' => 'span3'));
+		echo $this->Form->input('slug',array('class' => 'span3'));
+		echo $this->Form->input('meta_title',array('class' => 'span3'));
+		echo $this->Form->input('meta_description',array('class' => 'span3'));
+		echo $this->Form->input('meta_keywords',array('class' => 'span3'));
+		echo $this->Form->input('rss_channel_title',array('class' => 'span3'));
+		echo $this->Form->input('rss_channel_description',array('class' => 'span3'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

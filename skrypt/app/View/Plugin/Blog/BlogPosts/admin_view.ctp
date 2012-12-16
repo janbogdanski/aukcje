@@ -74,7 +74,7 @@
 <div class="related">
 	<h3><?php echo __('Related Blog Post Categories');?></h3>
 	<?php if (!empty($blogPost['BlogPostCategory'])):?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-striped">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Parent Id'); ?></th>
@@ -126,7 +126,7 @@
 <div class="related">
 	<h3><?php echo __('Related Blog Post Tags');?></h3>
 	<?php if (!empty($blogPost['BlogPostTag'])):?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-striped">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
