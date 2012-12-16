@@ -134,7 +134,7 @@ p{
 
 
 hr {
-    margin: 2em 0 2em 0;
+    margin: 1em 0;
 }
 /*
 ==========================================
@@ -2485,7 +2485,7 @@ Global Styles
 */
 .cool_divider {
 
-    margin: 2em 0;
+    margin: 1em 0;
 }
 .i_medium {
     font-size: 150%;

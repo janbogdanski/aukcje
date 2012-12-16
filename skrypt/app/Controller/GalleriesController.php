@@ -178,7 +178,10 @@ class GalleriesController extends AppController {
         if(isset($this->passedArgs['albumid']) && !empty($this->passedArgs['albumid'])){
 
             $photos = $this->picasa->getAlbumPhotos($this->passedArgs['albumid']);
+             $album_title = $this->picasa->album_title;
+
             $this->set('photos', $photos);
+            $this->set('album_title', $album_title);
 
         } else{
 

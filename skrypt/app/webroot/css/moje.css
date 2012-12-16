@@ -21,7 +21,7 @@ a{
 }
 
 a:hover {
-    color: #30beda;
+    color: #008fd5;
 }
 
 
@@ -38,7 +38,7 @@ a:hover {
 
 h1, h2, h3, h1 a, h2 a, h3 a, .blogpost h2 a, .widget h4 {
 
-    color: #737373;
+    color: #008fd5;
 
 }
 
@@ -377,6 +377,7 @@ p{
     /*height: 14px;*/
     line-height: 21px;
     height: 21px;
+    text-decoration: none;
     /*margin-top: 1px;*/
     /*vertical-align: text-top;*/
     /*width: 14px;*/
@@ -426,4 +427,11 @@ section{
 .logo_holder a, .logo_holder  img{
     outline: none;
     border: none;
+}
+
+#code textarea{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    line-height: 85%;
 }
