@@ -20,6 +20,7 @@ array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'S
 $config['width'] = 660;
 $config['height'] = 200;
 $config['extraPlugins'] = 'ajax,gmap,autogrow,qrcodes,gallery,proaukcje_insertimage,proaukcje_insertgallery';
+$config['autoGrow_maxHeight'] = '650';
 $config['filebrowserImageBrowseUrl'] = '/galleries/imageBrowser';
 $config['filebrowserBrowseUrl'] = '/galleries/imageBrowser33';
 $events['instanceReady'] = 'function (ev) {
@@ -47,18 +48,16 @@ $events['instanceReady'] = 'function (ev) {
 <h2><?php echo $this->fetch('title'); ?></h2>
 
 <!--    --><?php //echo $this->Html->link(__('List Auctions'), array( 'action' => 'index' ), array('escape' => false,'class' => 'm-btn mini blue inline') ); ?>
-<?php
-//this is our edit form, name the fields same as database column names
-echo $this->Form->create('Auction');
 
-echo $this->Form->input('title_list', array('class' => 'span3','label' => __('Title on aukctions list')));
-echo $this->Form->input('title', array('class' => 'span3','label' => __('Title')));
-//echo $this->Form->textarea('content');
+    <?php echo $this->Form->create('Auction'); ?>
 
-    echo '<label>Content</label>';
-    echo $this->cksource->ckeditor('Auction.contents', array('config'=>$config, 'events'=>$events, 'escape' => false));
+    <?php echo $this->Form->input('title_list', array('class' => 'span3','label' => __('Title on aukctions list'))); ?>
+    <?php echo $this->Form->input('title', array('class' => 'span3','label' => __('Title (visible in auction header'))); ?>
 
-echo $this->Form->input('field_1_header', array('class' => 'span3','label' => __('1st section header')));
+    <label><?php echo __('Content'); ?></label>
+    <?php echo $this->cksource->ckeditor('Auction.contents', array('config'=>$config, 'events'=>$events, 'escape' => false));?>
+
+    <?php echo $this->Form->input('field_1_header', array('class' => 'span3','label' => __('1st section header')));
 
 $config['toolbar'] = array(
     array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'gmap' ),
@@ -72,22 +71,21 @@ $config['width'] = 400;
 $config['height'] = 200;
 $config['extraPlugins'] = 'gmap';
 
+    ?>
+    <label><?php echo __('Field 1 content'); ?></label>
+    <?php echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
 
-//echo $this->Form->textarea('field_1_content');
-    echo '<label>Field 1 content</label>';
-echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
-
-echo $this->Form->input('field_2_header', array('class' => 'span3','label' => __('2nd section header')));
+    <?php echo $this->Form->input('field_2_header', array('class' => 'span3','label' => __('2nd section header'))); ?>
 
 
-    echo '<label>Field 2 content</label>';
+    <label><?php echo __('Field 2 content'); ?></label>
 
-    echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
-echo $this->Form->input('field_3_header', array('class' => 'span3','label' => __('3rd section header')));
+    <?php echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
+    <?php echo $this->Form->input('field_3_header', array('class' => 'span3','label' => __('3rd section header'))); ?>
 
-    echo '<label>Field 3 content</label>';
+    <label><?php echo __('Field 3 content'); ?></label>
 
-    echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
+    <?php echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
 
 //echo $this->Form->select('template_id');
 

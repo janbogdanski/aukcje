@@ -7,4 +7,4 @@
  */
 
 $this->extend('form');
-$this->assign('title', __('Add'));
+$this->assign('title', __('Add Auction'));

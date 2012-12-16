@@ -53,6 +53,9 @@
     echo $this->Html->script('jquery-1.8.3.min');
     echo $this->Html->script('global');
 
+    if(isset($this->request->params['prefix']) && 'admin' == $this->request->params['prefix'] ){
+      echo   $this->Html->script('admin');
+    }
     echo $this->Html->meta('icon');
 
 //    echo $this->Html->css('cake.generic');
@@ -64,7 +67,7 @@
 </head>
 
 
-<body class="page page-id-279 page-child parent-pageid-254 page-template-default layout-2cr">
+<body class="">
 <div id="wrap" class="navPositionright">
 
     <div id="container" class="container">
@@ -91,10 +94,16 @@
                             <nav id="jqueryslidemenu" class="jqueryslidemenu">
                                 <ul class="nav">
                                     <li>
-                                        <?php echo $this->Html->link('aukcje', '/auctions'); ?>
+                                        <?php echo $this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false)); ?>
                                     </li>
                                     <li>
-                                        <?php echo $this->Html->link('galerie', '/galleries'); ?>
+                                        <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
+                                    </li>
+                                    <li>
+                                        <?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
+                                    </li>
+                                    <li>
+                                        <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
                                     </li>
                                 </ul>
 
@@ -110,7 +119,7 @@
                                 <li class="n_twitter"><a href="https://twitter.com/#!/proaukcje" target="_blank"><i class="icon-twitter"></i></a></li>
                                 <li class="n_google"><a href="https://plus.google.com/u/0/b/118223521662447066750/118223521662447066750/posts" target="_blank">
                                     <i class="icon-google-plus"></i></a></li>
-                                <li class="n_rss"><a href="#?feed=rss2" target="_blank"><i class="icon-rss"></i></a></li>
+                                <li class="n_rss"><?php echo $this->Html->link('<i class="icon-rss"></i>', '/blog.rss', array('escape' => false, 'target' => '_blank')); //array('plugin' => 'blog',  'admin' => false), array('escape' => false, 'target' => '_blank')); ?></li>
                             </ul>
                         </div>
 
@@ -125,7 +134,7 @@
 
         <?php $user = $this->UserAuth->getUser(); ?>
         <div style="position: relative;">
-        <div class="pull-right" style="position: absolute; top: -30px; right:0;">
+        <div class="pull-right" style="position: absolute; top: -15px; right:0;">
 
             <?php if($this->UserAuth->isLogged()): ?>
             <div class="m-btn-group">
@@ -159,16 +168,30 @@
             <aside id="sidebar" class="span2" >
 
 
-                <div id="pages-5" class="widget widget_pages"><h4>Navigate<i class="icon-sort-down"></i></h4>
+                <div class="widget widget_pages"><h4><?php echo __('Navigate'); ?></h4>
                     <ul>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301">
-                            <?php echo $this->Html->link('aukcje', '/auctions'); ?>
+                        <li>
+                            <?php echo $this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false)); ?>
                         </li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301">
-                            <?php echo $this->Html->link('galerie', '/galleries'); ?>
+                        <li>
+                            <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
+                        </li>
+                        <li>
+                            <?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
+                        </li>
+                        <li>
+                            <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
+                        </li>
+                        <li>
+                            <?php echo $this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'tag' => 'pomoc', 'admin' => false)); ?>
                         </li>
             </ul>
             </div>
+                <div>
+<!--                    dziala tylko w podgladzie postu, trzeba dorobic-->
+<!--                    --><?php //echo $this->Blog->tagCloud(array('a')); ?>
+<!--                    --><?php //echo ($this->element('Blog.tag_cloud')); ?>
+                </div>
 
 
                 <div class="clearfix bt"></div>
@@ -220,7 +243,7 @@
                         </div>									</div>
 
                     <div class="span3">
-                        <div id="pages-3" class="widget widget_pages"><h4>Navigate</h4>		<ul>
+                        <div id="pages-3" class="widget widget_pages"><h4><?php echo __('Navigate'); ?></h4>		<ul>
                             <li class="page_item page-item-466"><a href="#?page_id=466">Backgrounds</a></li>
                             <li class="page_item page-item-300"><a href="#">Home</a></li>
                             <li class="page_item page-item-165"><a href="#?page_id=165">Portfolio</a>
