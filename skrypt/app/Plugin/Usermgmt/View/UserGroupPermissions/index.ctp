@@ -36,7 +36,7 @@ echo $this->Html->script('/usermgmt/js/umupdate');
 		<?php   if (!empty($controllers)) { ?>
 					<input type="hidden" id="BASE_URL" value="<?php echo SITE_URL?>">
 					<input type="hidden" id="groups" value="<?php echo $groups?>">
-					<table cellspacing="0" cellpadding="0" width="100%" border="0">
+					<table class="table table-striped">
 						<thead>
 							<tr>
 								<th> <?php echo __("Controller");?> </th>

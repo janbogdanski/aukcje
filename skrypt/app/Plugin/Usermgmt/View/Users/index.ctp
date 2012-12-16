@@ -29,7 +29,7 @@
             </div>
 			<div class="umhr"></div>
 			<div class="um_box_mid_content_mid" id="index">
-				<table cellspacing="0" cellpadding="0" width="100%" border="0" >
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th><?php echo __('SL');?></th>
