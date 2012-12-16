@@ -1,5 +1,1 @@
-common/images/tmp/
-templates/.idea/
-skrypt/app/webroot/common/*
-skrypt/app/webroot/tmp/*
-_files/*
+app/tmp/*
