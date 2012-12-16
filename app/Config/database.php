@@ -59,6 +59,29 @@
  */
 class DATABASE_CONFIG {
 
+	public $development = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => 'kaloryfer',
+		'database' => 'aukcje',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+    var $jbogdanski = array(
+        'datasource'  => 'Database/Mysql',
+        'persistent'  => false,
+        'host' => '10.0.5.201',
+        'login'       => 'sqluser',
+        'password'    => 'KuraDomowa1',
+        'database'    => 'cake',
+        'prefix'      => '',
+        'port' => 5164,
+
+        'encoding' => 'utf8'
+    );
+
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
@@ -80,4 +103,11 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
+    function __construct() {
+        if ($environment = Configure::read('Environment.name')) {
+            if (isset($this->{$environment})) {
+                $this->default = $this->$environment;
+            }
+        }
+    }
 }

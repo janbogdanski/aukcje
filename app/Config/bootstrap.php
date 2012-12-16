@@ -22,7 +22,6 @@
  * @since         CakePHP(tm) v 0.10.8.2117
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 /**
  * Cache Engine Configuration
  * Default settings provided below
@@ -179,6 +178,7 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+CakePlugin::load('Environments',array('bootstrap' => true));
 
 // load Usermgmt plugin and apply plugin routes. Keep all the other plugins you are using here
 CakePlugin::loadAll(array(
