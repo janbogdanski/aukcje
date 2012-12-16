@@ -5,6 +5,9 @@
  * Creation date    17.10.12 20:14
  * @var $this View
  */
+
+//print_r($this->request->action);
+//die();
 ?>
 <?php $this->Html->script('spectrum.colorpicker', array('inline' => false)); ?>
 <?php $this->Html->css('spectrum.colorpicker', null, array('inline' => false)); ?>
@@ -12,9 +15,9 @@
     label{
         display: inline;
     }
-    #addGallery #images > div{
-        height: 250px;
-        border: 1px solid red;
+     #images  div{
+        height: 150px;
+        border: 1px solid #c0c0c0;
     }
 
 </style>
@@ -27,8 +30,8 @@
             var full = ($(this).attr('data-full'));
             var thumb = ($(this).attr('data-thumb'));
 
-            var el = $('<div class="span2"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'+ full +'" checked="checked" /></div>');
-            $("#addGallery #images").append(el);
+            var el = $('<div class="span1"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'+ full +'" checked="checked" /></div>');
+            $("#images").append(el);
             $("#preview").click();
 
             checkCanSubmit();
@@ -36,7 +39,7 @@
         });
 
         //kasowanie obrazkow na uncheck boxa
-        $("#addGallery #images").delegate("input", "click", function() {
+        $("#images").delegate("input", "click", function() {
             var $this = $(this);
             if(!$(this).is(":checked")){
                 $(this).parent('div').remove();
@@ -93,7 +96,8 @@
         });
 
 
-        if($("#addGallery #images input").length > 0){
+        if($("#images input").length > 0){
+            $("#preview").click();
             $("#save").show();
         }
         checkCanSubmit();
@@ -103,7 +107,7 @@
         });
 
         function checkCanSubmit(){
-            if($("#addGallery #images input").length > 0){
+            if($("#images input").length > 0){
                 $("#save").show();
             } else{
 //                $("#save").hide();
@@ -113,10 +117,8 @@
 
 </script>
 <div class="row">
-    <?php echo $this->element('picasa_set_user'); ?>
 
     <?php   echo $this->Form->create('Gallery', array('id' => 'addGallery')); ?>
-
     <div class="row">
         <div class="span3 gallery-options">
         <?php echo $this->Form->input('Gallery.title'); ?>
@@ -140,43 +142,72 @@
             <?php echo $this->Form->submit('Preview', array('id' => 'preview', 'name' => 'previewGallery', 'div' => false, 'class' => 'm-btn  green')); ?>
         <?php echo $this->Form->submit('Submit', array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
                 </div>
+                <div class="row-fluid">&nbsp;</div>
+                <div class="row-fluid">
+                    <div id="code"><textarea id="" cols="30" rows="10" readonly="readonly"></textarea></div>
+
+                </div>
     </div>
-    </div>
-    
+
+        </div>
+
     <div class="span5">
-        <div id="liveGallery">Wybierz album/zdjęcia poniżej</div>
-        <div id="code"><textarea name="textarea" id="" cols="30" rows="10" readonly="readonly"></textarea></div>
+        <div id="liveGallery"><?php echo __('First elect an album, then photos (bottom of page)'); //to jest nadpisane gdy sa dodane zdjecia do galerii ?></div>
     </div>
     </div>
+
     <div id="images" class="row">
-        <?php if(isset($gallery['GalleriesDetails']) &&is_array($gallery['GalleriesDetails'])): ?>
+    <fieldset>
+        <legend><?php echo __('Selected images'); ?></legend>
+        <?php if(isset($gallery['GalleriesDetails']) && is_array($gallery['GalleriesDetails']) && !empty($gallery['GalleriesDetails'])): ?>
 
         <?php foreach ($gallery['GalleriesDetails'] as  $detail) : ?>
 
-            <?php echo '<div class="span2"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
+            <?php echo '<div class="span1"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
             <?php endforeach;?>
 
+        <?php else: ?>
+<!--        --><?php //echo __('No selected images'); ?>
+
+    </fieldset>
         <?php endif; ?>
 
     </div>
+    <?php echo $this->Form->end(); ?>
+
 
 
     <div class="row">
+        <fieldset>
+            <legend><?php echo __('Put your Picasa username eg. <i>%s</i>', 'proaukcje@gmail.com'); ?></legend>
+
+            <?php echo $this->element('picasa_set_user'); ?>
+        </fieldset>
+
+    </div>
+        <div class="row">
 
     <?php    if(isset($albums)) :?>
-    <?php foreach($albums as $album): ?>
+                <fieldset>
+            <legend><?php echo __('Your web albums, click to select'); ?></legend>
+
+        <?php foreach($albums as $album): ?>
 
         <?php  $url = 'edit' == $this->request->params['action'] ? '/galleries/edit/'.$this->request->params['pass'][0].'/albumid:'.$album['id'] : '/galleries/add/albumid:'.$album['id']; ?>
         <?php  echo $this->Html->link(
             $this->Html->image($album['thumbnail'], array("alt" => "Brownies")),
             $url,
             array('escape' => false)
-        );?>
-        <?php endforeach;?>
-    <?php endif;?>
+        );
+                    ?>
+                    <?php endforeach;?>
+                </fieldset>
+        <?php endif;?>
 
 
-    <?php if(isset($photos)) : ?>
+        <?php if(isset($photos)) : ?>
+                        <fieldset>
+            <legend><?php echo __('Available images in <i>%s</i> album, click to add to gallery', $album_title); ?></legend>
     <?php foreach($photos as $photo): ?>
 
         <?php $url = 'edit' == $this->request->params['action'] ? '/galleries/edit/'.$this->request->params['pass'][0].'/albumid:'.$photo['image'] : '/galleries/add/albumid:'.$album['id'];?>
@@ -190,8 +221,8 @@
             array('escape' => false)
         );?>
         <?php endforeach;?>
-    <?php endif;?>
+                        </fieldset>
+        <?php endif;?>
 
         </div>
-    <?php $this->Form->end(); ?>
 </div>
