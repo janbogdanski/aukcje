@@ -45,6 +45,11 @@ class PagesController extends AppController {
  */
 	public $uses = array();
 
+    public function contact(){
+        echo  'wysylka maila';
+//        die();
+
+    }
 /**
  * Displays a view
  *
