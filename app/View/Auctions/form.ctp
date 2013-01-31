@@ -72,18 +72,18 @@ $config['height'] = 200;
 $config['extraPlugins'] = 'gmap';
 
     ?>
-    <label><?php echo __('Field 1 content'); ?></label>
+    <label><?php echo __('Field %s content', __('first')); ?></label>
     <?php echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
 
     <?php echo $this->Form->input('field_2_header', array('class' => 'span3','label' => __('2nd section header'))); ?>
 
 
-    <label><?php echo __('Field 2 content'); ?></label>
+    <label><?php echo __('Field %s content', __('second')); ?></label>
 
     <?php echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
     <?php echo $this->Form->input('field_3_header', array('class' => 'span3','label' => __('3rd section header'))); ?>
 
-    <label><?php echo __('Field 3 content'); ?></label>
+    <label><?php echo __('Field %s content', __('third')); ?></label>
 
     <?php echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
 

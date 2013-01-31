@@ -57,12 +57,12 @@ class User extends UserMgmtAppModel {
 				'email'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter email or username')
+						'message'=> __('Please enter email or username'))
 					),
 				'password'=>array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter password')
+						'message'=> __('Please enter password'))
 					)
 			);
 		$this->validate=$validate1;
@@ -74,72 +74,74 @@ class User extends UserMgmtAppModel {
 	 * @var array
 	 */
 	function RegisterValidate() {
+
+
 		$validate1 = array(
 				"user_group_id" => array(
 					'rule' => array('comparison', '!=', 0),
-					'message'=> 'Please select group'),
+					'message'=> __('Please select group')),
 				'username'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter username',
+						'message'=> __('Please enter username'),
 						'last'=>true),
 					'mustUnique'=>array(
 						'rule' =>'isUnique',
-						'message' =>'This username already taken',
+						'message' => __('This username already taken'),
 					'last'=>true),
 					'mustBeLonger'=>array(
 						'rule' => array('minLength', 4),
-						'message'=> 'Username must be greater than 3 characters',
+						'message'=> __('Username must be greater than %s characters', 3),
 						'last'=>true),
 					),
 //				'first_name'=> array(
 //					'mustNotEmpty'=>array(
 //						'rule' => 'notEmpty',
-//						'message'=> 'Please enter first name')
+//						'message'=> __('Please enter first name')
 //					),
 //				'last_name'=> array(
 //					'mustNotEmpty'=>array(
 //						'rule' => 'notEmpty',
 //						'on' => 'create',
-//						'message'=> 'Please enter last name')
+//						'message'=> __('Please enter last name')
 //					),
 				'email'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter email',
+						'message'=> __('Please enter email'),
 						'last'=>true),
 					'mustBeEmail'=> array(
 						'rule' => array('email'),
-						'message' => 'Please enter valid email',
+						'message' => __('Please enter valid email'),
 						'last'=>true),
 					'mustUnique'=>array(
 						'rule' =>'isUnique',
-						'message' =>'This email is already registered',
+						'message' => __('This email is already registered'),
 						)
 					),
 				'oldpassword'=>array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter old password',
+						'message'=> __('Please enter old password'),
 						'last'=>true),
 					'mustMatch'=>array(
 						'rule' => array('verifyOldPass'),
-						'message' => 'Please enter correct old password'),
+						'message' => __('Please enter correct old password')),
 					),
 				'password'=>array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter password',
+						'message'=> __('Please enter password'),
 						'on' => 'create',
 						'last'=>true),
 					'mustBeLonger'=>array(
 						'rule' => array('minLength', 6),
-						'message'=> 'Password must be greater than 5 characters',
+						'message'=> __('Password must be greater than %s characters',5),
 						'on' => 'create',
 						'last'=>true),
 					'mustMatch'=>array(
 						'rule' => array('verifies'),
-						'message' => 'Both passwords must match'),
+						'message' => __('Both passwords must match')),
 						//'on' => 'create'
 					),
 				'captcha'=>array(
@@ -148,7 +150,8 @@ class User extends UserMgmtAppModel {
 						'message' => ''),
 					)
 			);
-		$this->validate=$validate1;
+
+        $this->validate=$validate1;
 		return $this->validates();
 	}
 	/**

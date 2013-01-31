@@ -152,7 +152,7 @@
         </div>
 
     <div class="span5">
-        <div id="liveGallery"><?php echo __('First elect an album, then photos (bottom of page)'); //to jest nadpisane gdy sa dodane zdjecia do galerii ?></div>
+        <div id="liveGallery"><?php echo __('First select an album, then photos (bottom of page)'); //to jest nadpisane gdy sa dodane zdjecia do galerii ?></div>
     </div>
     </div>
 

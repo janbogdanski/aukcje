@@ -8,6 +8,7 @@
 <script type="text/javascript">
 
 </script>
+    <?php if(isset($auctions)): ?>
 <h2><?php echo __('Auctions'); ?></h2>
 
     <?php echo $this->Html->link( '<i class="m-icon-swapright m-icon-white"></i> '.__('New Auction'), array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
@@ -54,4 +55,7 @@
 <?php echo $this->Html->link( '<i class="m-icon-swapright m-icon-white"></i> '.__('New Auction'), array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
     <?php endif; ?>
 
-<?php //echo __('ID'); ?>
+<?php else: ?>
+
+    asdf
+<?php endif; ?>
