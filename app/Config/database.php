@@ -59,16 +59,28 @@
  */
 class DATABASE_CONFIG {
 
-	public $development = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'kaloryfer',
-		'database' => 'aukcje',
-		'prefix' => '',
-		'encoding' => 'utf8',
-	);
+    public $development = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => 'localhost',
+        'login' => 'root',
+        'password' => 'kaloryfer',
+        'database' => 'aukcje',
+        'prefix' => '',
+        'encoding' => 'utf8',
+    );
+
+    public $production = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => 'localhost',
+        'login' => 'dynasoft26',
+        'password' => 'ZwKmM3r8*#O',
+        'database' => 'dynasoft26',
+        'prefix' => '',
+        'encoding' => 'utf8',
+    );
+
     var $jbogdanski = array(
         'datasource'  => 'Database/Mysql',
         'persistent'  => false,

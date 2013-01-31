@@ -279,3 +279,4 @@ Cache::config('_cake_model_', array(
 ));
 
 Configure::write('Config.language', 'pol');
+Configure::write('Config.cookie.nonreg', 'un_reg');
