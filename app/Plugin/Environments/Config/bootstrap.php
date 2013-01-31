@@ -8,10 +8,13 @@ App::uses('Environment', 'Environments.Lib');
 
 Environment::configure('production',
     array(
-        'server' => array('www.production.local')
+        'server' => array(
+            'www.proaukcje.eu',
+            'proaukcje.eu',
+        )
     ),
     array(
-        'Settings.FULL_BASE_URL'  => 'http://example.com',
+//        'Settings.FULL_BASE_URL'  => 'http://example.com',
 
         'debug'                   => 0,
     )
