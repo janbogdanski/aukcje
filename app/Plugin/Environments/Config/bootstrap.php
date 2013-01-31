@@ -11,6 +11,8 @@ Environment::configure('production',
         'server' => array(
             'www.proaukcje.eu',
             'proaukcje.eu',
+            'www.production.proaukcje.eu',
+            'production.proaukcje.eu',
         )
     ),
     array(

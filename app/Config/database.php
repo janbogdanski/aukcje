@@ -80,6 +80,17 @@ class DATABASE_CONFIG {
         'prefix' => '',
         'encoding' => 'utf8',
     );
+    public $stage = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => 'localhost',
+        'login' => 'dynasoft26',
+        'password' => 'ZwKmM3r8*#O',
+        'database' => 'dynasoft26',
+        'prefix' => '',
+        'encoding' => 'utf8',
+    );
+
 
     var $jbogdanski = array(
         'datasource'  => 'Database/Mysql',
