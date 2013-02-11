@@ -9,7 +9,6 @@
 
 ?>
 
-<head>
     <style type="text/css">
         <!--
 
@@ -191,10 +190,6 @@
         -->
     </style>
 
-</head>
-
-<body>
-
 <table align="center">
     <tr>
         <td>
@@ -267,8 +262,7 @@
                 <div id="foter">
                     <div>
                         <p>
-                            <?php //todo footer ?>
-                            {{ footer }}
+                            <?php echo $this->fetch('footer'); ?>
                         </p>
                     </div>
                 </div>

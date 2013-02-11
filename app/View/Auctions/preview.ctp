@@ -15,6 +15,7 @@ foreach($this->get('auction') as $k => $v){
     $this->assign($k, (string)$v);
 
 }
+$this->assign('footer', (string)$this->get('footer'));
 
 $this->extend("templates/{$templateName}");
 

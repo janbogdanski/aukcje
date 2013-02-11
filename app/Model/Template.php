@@ -10,6 +10,10 @@ App::uses('AuthComponent', 'Controller/Component');
  */
 class Template extends AppModel {
     public $name = 'Template';
+    public $footers = array(
+        'Wykreowano w kreatorze aukcji <a href="http://proaukcje.eu" target="_blank">proaukcje.eu</a>',
+        'Stworzono w kreatorze aukcji <a href="http://proaukcje.eu" target="_blank">proaukcje.eu</a>',
+    );
 
 
     public function prepareTemplates($templates = array()){

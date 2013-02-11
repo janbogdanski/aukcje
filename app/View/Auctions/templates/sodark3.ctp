@@ -8,7 +8,6 @@
  */
 ?>
 
-<head>
     <style type="text/css">*{margin:0;padding:0}
     body{padding:0;color:#333;font:15px arial,tahoma,verdana,sans-serif}
     a,a:link,a:link,a:link,a:hover{background:transparent;text-decoration:underline;cursor:pointer}
@@ -52,8 +51,6 @@
     #foter p{margin:0;font-size:13px}
     #foter a:link,#foter a:visited{text-decoration:none;border-bottom:1px solid #069;color:#069}
     #foter a:hover,#foter a:active{color:#600;border-bottom:2px dashed #600}</style>
-</head>
-<body>
 <div id="wrap">
     <div id="header">
         <div id="site-name"><?php echo $this->fetch('title'); ?>
@@ -100,10 +97,8 @@
         <div id="foter">
             <?php //todo footer ?>
 
-            <p>{{ footer }}</p>
+            <p><?php echo $this->fetch('footer'); ?></p>
         </div>
     </div>
 </div>
 </div>
-</body>
-</html>

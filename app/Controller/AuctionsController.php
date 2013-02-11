@@ -76,6 +76,7 @@ class AuctionsController extends AppController {
         ));
         $this->set('auction', $auction['Auction']);
         $this->set('templateName', $auction['Template']['name']);
+        $this->set('footer', $this->Template->footers[array_rand(($this->Template->footers))]);
 //        $dbo = $this->Auction->getDatasource()->getLog();
 //        $lastLog = end($dbo['log']);
 //        print_r($lastLog);

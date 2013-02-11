@@ -9,7 +9,6 @@
 
 
 ?>
-    <head>
 <style type="text/css">body {
     text-align:center;
     padding: 20px 0;
@@ -211,10 +210,6 @@ h6 {font-size: 96%}
 }
 </style>
 
-</head>
-
-<body>
-
 <table align="center"><tr><td>
     <div id="wrap">
         <div id="header">
@@ -274,11 +269,8 @@ h6 {font-size: 96%}
 
 <!-- /Dodatkowe info -->
 <div id="foter">
-    <?php //todo footer ?>
-
-    {{ footer }}
+   <?php echo $this->fetch('footer'); ?>
 </div>
 </div>
 
 </td></tr></table>
-</body>

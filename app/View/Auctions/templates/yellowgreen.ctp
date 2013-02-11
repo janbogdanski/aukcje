@@ -203,10 +203,6 @@
     -->
 </style>
 
-</head>
-
-<body>
-
 <table align="center">
     <tr>
         <td>
@@ -273,12 +269,7 @@
                 </div>
                 <div id="foter">
                     <div>
-                        <p>
-                            <?php //todo footer ?>
-
-                            {{ footer }}
-
-                        </p>
+                        <p><?php echo $this->fetch('footer'); ?></p>
                     </div>
                 </div>
             </div>
