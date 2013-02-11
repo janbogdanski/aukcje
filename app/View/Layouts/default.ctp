@@ -9,6 +9,7 @@
 <!--[if IE 8 ]>    <html class="ie8" dir="ltr" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 <head>
+    <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
     <?php echo $this->Html->charset(); ?>
     <title>
         <?php echo $title_for_layout; ?>
