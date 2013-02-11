@@ -55,10 +55,10 @@ class BlogSettingsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->BlogSetting->save($this->request->data)) {
-				$this->Session->setFlash(__('The blog setting has been saved'));
+				$this->Session->setFlash(__('The blog setting has been saved'),'good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog setting could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The blog setting could not be saved. Please, try again.'),'good');
 				$blogSetting = $this->BlogSetting->read(null, $id);
 			}
 		} else {

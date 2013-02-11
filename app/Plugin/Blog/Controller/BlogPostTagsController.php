@@ -45,10 +45,10 @@ class BlogPostTagsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->BlogPostTag->create();
 			if ($this->BlogPostTag->save($this->request->data)) {
-				$this->Session->setFlash(__('The blog post tag has been saved'));
+				$this->Session->setFlash(__('The blog post tag has been saved'),'good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog post tag could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The blog post tag could not be saved. Please, try again.'),'error');
 			}
 		}
 	}
@@ -66,10 +66,10 @@ class BlogPostTagsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->BlogPostTag->save($this->request->data)) {
-				$this->Session->setFlash(__('The blog post tag has been saved'));
+				$this->Session->setFlash(__('The blog post tag has been saved'),'good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog post tag could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The blog post tag could not be saved. Please, try again.'),'error');
 			}
 		} else {
 			$this->request->data = $this->BlogPostTag->read(null, $id);
@@ -91,10 +91,10 @@ class BlogPostTagsController extends AppController {
 			throw new NotFoundException(__('Invalid blog post tag'));
 		}
 		if ($this->BlogPostTag->delete()) {
-			$this->Session->setFlash(__('Blog post tag deleted'));
+			$this->Session->setFlash(__('Blog post tag deleted'),'good');
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Blog post tag was not deleted'));
+		$this->Session->setFlash(__('Blog post tag was not deleted'),'error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -42,7 +42,7 @@ class UserGroupsController extends UserMgmtAppController {
 			$this->UserGroup->set($this->data);
 			if ($this->UserGroup->addValidate()) {
 				$this->UserGroup->save($this->request->data,false);
-				$this->Session->setFlash(__('The group is successfully added'));
+				$this->Session->setFlash(__('The group is successfully added'),'good');
 				$this->redirect('/addGroup');
 			}
 		}
@@ -60,7 +60,7 @@ class UserGroupsController extends UserMgmtAppController {
 				$this->UserGroup->set($this->data);
 				if ($this->UserGroup->addValidate()) {
 					$this->UserGroup->save($this->request->data,false);
-					$this->Session->setFlash(__('The group is successfully updated'));
+					$this->Session->setFlash(__('The group is successfully updated'),'good');
 					$this->redirect('/allGroups');
 				}
 			} else {
@@ -82,11 +82,11 @@ class UserGroupsController extends UserMgmtAppController {
 			if ($this->request -> isPost()) {
 				$users=$this->User->isUserAssociatedWithGroup($groupId);
 				if($users) {
-					$this->Session->setFlash(__('Sorry some users are associated with this group, You cannot delete'));
+					$this->Session->setFlash(__('Sorry some users are associated with this group, You cannot delete'),'notice');
 					$this->redirect('/allGroups');
 				}
 				if ($this->UserGroup->delete($groupId, false)) {
-					$this->Session->setFlash(__('Group is successfully deleted'));
+					$this->Session->setFlash(__('Group is successfully deleted'),'good');
 				}
 			}
 			$this->redirect('/allGroups');

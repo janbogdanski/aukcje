@@ -33,13 +33,13 @@ class AuctionsController extends AppController {
             if ($this->Auction->save($this->request->data)){
 
                 //set flash to user screen
-                $this->Session->setFlash('Auction was added.', 'good');
+                $this->Session->setFlash(__('Auction successfully saved.'), 'good');
                 //redirect to user list
                 $this->redirect(array('action' => 'index'));
 
             }else{
                 //if save failed
-                $this->Session->setFlash('Unable to add user. Please, try again.');
+                $this->Session->setFlash(__('Unable to add auction. Please, try again.'), 'error');
 
             }
         }
@@ -51,7 +51,7 @@ class AuctionsController extends AppController {
         $id = $this->request->params['pass'][0];
 
         if( !$id ) {
-            $this->Session->setFlash('Invalid id for auction');
+            $this->Session->setFlash(__('Invalid id for auction'),'notice');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -96,7 +96,7 @@ class AuctionsController extends AppController {
         $id = $this->request->params['pass'][0];
 
         if( !$id ) {
-            $this->Session->setFlash('Invalid id for auction');
+            $this->Session->setFlash(__('Invalid id for auction'), 'notice');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -116,13 +116,13 @@ class AuctionsController extends AppController {
                 if( $this->Auction->save( $this->request->data ) ){
 
                     //set to user's screen
-                    $this->Session->setFlash('Auction was edited.', 'default', array(), 'good');
+                    $this->Session->setFlash(__('Auction was edited.'), 'default', array(), 'good');
 
                     //redirect to user's list
                     $this->redirect(array('action' => 'index'));
 
                 }else{
-                    $this->Session->setFlash('Unable to edit user. Please, try again.');
+                    $this->Session->setFlash(__('Unable to edit auction. Please, try again.'),'error');
                 }
 
             }else{
@@ -134,7 +134,7 @@ class AuctionsController extends AppController {
 
         }else{
             //if not found, we will tell the user that user does not exist
-            $this->Session->setFlash('The user you are trying to edit does not exist.');
+            $this->Session->setFlash(__('Auction does not exist.'), 'notice');
             $this->redirect(array('action' => 'index'));
 
             //or, since it we are using php5, we can throw an exception
@@ -150,7 +150,7 @@ class AuctionsController extends AppController {
         //that's why we use postLink method on our view for deleting user
         if( $this->request->is('get') ){
 
-            $this->Session->setFlash('Delete method is not allowed.');
+            $this->Session->setFlash(__('Delete method is not allowed.'), 'error');
             $this->redirect(array('action' => 'index'));
 
             //since we are using php5, we can also throw an exception like:
@@ -158,7 +158,7 @@ class AuctionsController extends AppController {
         }else{
 
             if( !$id ) {
-                $this->Session->setFlash('Invalid id for user');
+                $this->Session->setFlash(__('Invalid id for auction'), 'notice');
                 $this->redirect(array('action'=>'index'));
 
             }else{
@@ -170,13 +170,13 @@ class AuctionsController extends AppController {
 
                     if( $this->Auction->delete($id) ){
                         //set to screen
-                        $this->Session->setFlash('Auction was deleted.');
+                        $this->Session->setFlash(__('Auction was deleted.'), 'good');
                         //redirect to users's list
                         $this->redirect(array('action'=>'index'));
 
                     }else{
                         //if unable to delete
-                        $this->Session->setFlash('Unable to delete user.');
+                        $this->Session->setFlash(__('Unable to delete auction.'),'notice');
                         $this->redirect(array('action' => 'index'));
                     }
                 }

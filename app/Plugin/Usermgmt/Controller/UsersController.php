@@ -91,18 +91,18 @@ class UsersController extends UserMgmtAppController {
 				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
-						$this->Session->setFlash(__('Incorrect Email/Username or Password'));
+						$this->Session->setFlash(__('Incorrect Email/Username or Password'),'error');
 						return;
 					}
 				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['active']==0) {
-					$this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'));
+					$this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'),'notice');
 					return;
 				}
 				// check for verified account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
-					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'));
+					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'),'notice');
 					return;
 				}
 				if(empty($user['User']['salt'])) {
@@ -127,7 +127,7 @@ class UsersController extends UserMgmtAppController {
 					$redirect = (!empty($OriginAfterLogin)) ? $OriginAfterLogin : LOGIN_REDIRECT_URL;
 					$this->redirect($redirect);
 				} else {
-					$this->Session->setFlash(__('Incorrect Email/Username or Password'));
+					$this->Session->setFlash(__('Incorrect Email/Username or Password'),'error');
 					return;
 				}
 			}
@@ -141,7 +141,7 @@ class UsersController extends UserMgmtAppController {
 	 */
 	public function logout() {
 		$this->UserAuth->logout();
-		$this->Session->setFlash(__('You are successfully signed out'));
+		$this->Session->setFlash(__('You are successfully signed out'),'good');
 		$this->redirect(LOGOUT_REDIRECT_URL);
 	}
 	/**
@@ -167,7 +167,7 @@ class UsersController extends UserMgmtAppController {
 					if (!isset($this->data['User']['user_group_id'])) {
 						$this->request->data['User']['user_group_id']=DEFAULT_GROUP_ID;
 					} elseif (!$this->UserGroup->isAllowedForRegistration($this->data['User']['user_group_id'])) {
-						$this->Session->setFlash(__('Please select correct register as'));
+						$this->Session->setFlash(__('Please select correct register as'),'error');
 						return;
 					}
 					$this->request->data['User']['active']=1;
@@ -195,13 +195,13 @@ class UsersController extends UserMgmtAppController {
 						$this->UserAuth->login($user);
 						$this->redirect('/');
 					} else {
-						$this->Session->setFlash(__('Please check your mail and confirm your registration'));
+						$this->Session->setFlash(__('Please check your mail and confirm your registration'),'good');
 						$this->redirect('/register');
 					}
 				}
 			}
 		} else {
-			$this->Session->setFlash(__('Sorry new registration is currently disabled, please try again later'));
+			$this->Session->setFlash(__('Sorry new registration is currently disabled, please try again later'),'notice');
 			$this->redirect('/login');
 		}
 	}
@@ -223,7 +223,7 @@ class UsersController extends UserMgmtAppController {
 				$user['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
 				$this->User->save($user,false);
 				$this->LoginToken->deleteAll(array('LoginToken.user_id'=>$userId), false);
-				$this->Session->setFlash(__('Password changed successfully'));
+				$this->Session->setFlash(__('Password changed successfully'),'good');
 				$this->redirect('/dashboard');
 			}
 		}
@@ -249,7 +249,7 @@ class UsersController extends UserMgmtAppController {
 					$user['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
 					$this->User->save($user,false);
 					$this->LoginToken->deleteAll(array('LoginToken.user_id'=>$userId), false);
-					$this->Session->setFlash(__('Password for %s changed successfully', $name));
+					$this->Session->setFlash(__('Password for %s changed successfully', $name),'good');
 					$this->redirect('/allUsers');
 				}
 			}
@@ -275,7 +275,7 @@ class UsersController extends UserMgmtAppController {
 				$this->request->data['User']['salt'] = $salt;
 				$this->request->data['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password'], $salt);
 				$this->User->save($this->request->data,false);
-				$this->Session->setFlash(__('The user is successfully added'));
+				$this->Session->setFlash(__('The user is successfully added'),'good');
 				$this->redirect('/addUser');
 			}
 		}
@@ -295,7 +295,7 @@ class UsersController extends UserMgmtAppController {
 				$this->User->set($this->data);
 				if ($this->User->RegisterValidate()) {
 					$this->User->save($this->request->data,false);
-					$this->Session->setFlash(__('The user is successfully updated'));
+					$this->Session->setFlash(__('The user is successfully updated'),'good');
 					$this->redirect('/allUsers');
 				}
 			} else {
@@ -322,7 +322,7 @@ class UsersController extends UserMgmtAppController {
 			if ($this->request -> isPost()) {
 				if ($this->User->delete($userId, false)) {
 					$this->LoginToken->deleteAll(array('LoginToken.user_id'=>$userId), false);
-					$this->Session->setFlash(__('User is successfully deleted'));
+					$this->Session->setFlash(__('User is successfully deleted'),'good');
 				}
 			}
 			$this->redirect('/allUsers');
@@ -356,9 +356,9 @@ class UsersController extends UserMgmtAppController {
 			$user['User']['active']=($active) ? 1 : 0;
 			$this->User->save($user,false);
 			if($active) {
-				$this->Session->setFlash(__('User is successfully activated'));
+				$this->Session->setFlash(__('User is successfully activated'),'good');
 			} else {
-				$this->Session->setFlash(__('User is successfully deactivated'));
+				$this->Session->setFlash(__('User is successfully deactivated'),'good');
 			}
 		}
 		$this->redirect('/allUsers');
@@ -376,7 +376,7 @@ class UsersController extends UserMgmtAppController {
 			$user['User']['id']=$userId;
 			$user['User']['email_verified']=1;
 			$this->User->save($user,false);
-			$this->Session->setFlash(__('User email is successfully verified'));
+			$this->Session->setFlash(__('User email is successfully verified'),'good');
 		}
 		$this->redirect('/allUsers');
 	}
@@ -410,16 +410,16 @@ class UsersController extends UserMgmtAppController {
 						if (SEND_REGISTRATION_MAIL && EMAIL_VERIFICATION) {
 							$this->User->sendRegistrationMail($user);
 						}
-						$this->Session->setFlash(__('Thank you, your account is activated now'));
+						$this->Session->setFlash(__('Thank you, your account is activated now'),'good');
 					}
 				} else {
-					$this->Session->setFlash(__('Thank you, your account is already activated'));
+					$this->Session->setFlash(__('Thank you, your account is already activated'),'good');
 				}
 			} else {
-				$this->Session->setFlash(__('Sorry something went wrong, please click on the link again'));
+				$this->Session->setFlash(__('Sorry something went wrong, please click on the link again'),'error');
 			}
 		} else {
-			$this->Session->setFlash(__('Sorry something went wrong, please click on the link again'));
+			$this->Session->setFlash(__('Sorry something went wrong, please click on the link again'),'error');
 		}
 		$this->redirect('/login');
 	}
@@ -438,17 +438,17 @@ class UsersController extends UserMgmtAppController {
 				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
-						$this->Session->setFlash(__('Incorrect Email/Username'));
+						$this->Session->setFlash(__('Incorrect Email/Username'),'error');
 						return;
 					}
 				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
-					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'));
+					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'),'notice');
 					return;
 				}
 				$this->User->forgotPassword($user);
-				$this->Session->setFlash(__('Please check your mail for reset your password'));
+				$this->Session->setFlash(__('Please check your mail for reset your password'),'error');
 				$this->redirect('/login');
 			}
 		}
@@ -478,17 +478,17 @@ class UsersController extends UserMgmtAppController {
 							$user['User']['salt'] = $salt;
 							$user['User']['password'] = $this->UserAuth->makePassword($user['User']['password'], $salt);
 							$this->User->save($user,false);
-							$this->Session->setFlash(__('Your password has been reset successfully'));
+							$this->Session->setFlash(__('Your password has been reset successfully'),'good');
 							$this->redirect('/login');
 						} else {
-							$this->Session->setFlash(__('Something went wrong, please send password reset link again'));
+							$this->Session->setFlash(__('Something went wrong, please send password reset link again'),'error');
 						}
 					} else {
-						$this->Session->setFlash(__('Something went wrong, please click again on the link in email'));
+						$this->Session->setFlash(__('Something went wrong, please click again on the link in email'),'error');
 					}
 				}
 			} else {
-				$this->Session->setFlash(__('Something went wrong, please click again on the link in email'));
+				$this->Session->setFlash(__('Something went wrong, please click again on the link in email'),'error');
 			}
 		} else {
 			if (isset($_GET['ident']) && isset($_GET['activate'])) {
@@ -512,15 +512,15 @@ class UsersController extends UserMgmtAppController {
 				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
-						$this->Session->setFlash(__('Incorrect Email/Username'));
+						$this->Session->setFlash(__('Incorrect Email/Username'),'error');
 						return;
 					}
 				}
 				if($user['User']['email_verified']==0) {
 					$this->User->sendVerificationMail($user);
-					$this->Session->setFlash(__('Please check your mail to verify your email'));
+					$this->Session->setFlash(__('Please check your mail to verify your email'),'good');
 				} else {
-					$this->Session->setFlash(__('Your email is already verified'));
+					$this->Session->setFlash(__('Your email is already verified'),'notice');
 				}
 				$this->redirect('/login');
 			}

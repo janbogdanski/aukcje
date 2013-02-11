@@ -63,7 +63,7 @@ class GalleriesController extends AppController {
         $this->layout = 'ajax';
         $id = $this->request->params['pass'][0];
         if( !$id ) {
-            $this->Session->setFlash('Invalid id for gallery');
+            $this->Session->setFlash(__('Invalid id for gallery'), 'notice');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -103,7 +103,7 @@ class GalleriesController extends AppController {
 
         $id = $this->request->params['pass'][0];
         if( !$id ) {
-            $this->Session->setFlash('Invalid id for gallery');
+            $this->Session->setFlash(__('Invalid id for gallery'),'notice');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -116,7 +116,7 @@ class GalleriesController extends AppController {
             if ($this->request->is('post') || ($this->request->is('put'))){
                 //save new user
                 if(count($this->request->data['GalleriesDetails']['image']) < 1){
-                    $this->Session->setFlash('Select images, gallery not saved', 'error');
+                    $this->Session->setFlash(__('Select images, gallery not saved'), 'error');
                     $this->redirect(array('action'=>'add', $id));
                 }
 
@@ -157,14 +157,14 @@ class GalleriesController extends AppController {
 
 
                     //set flash to user screen
-                    $this->Session->setFlash('Auction was added.');
+                    $this->Session->setFlash(__('Gallery successfully saved'),'good');
                     //redirect to user list
                     $this->redirect(array('action' => 'index'));
 
                 }else{
 
                     //if save failed
-                    $this->Session->setFlash('Unable to add user. Please, try again.');
+                    $this->Session->setFlash(__('Unable to add gallery. Please, try again.'),'error');
 
                 }
             } else{
@@ -200,7 +200,7 @@ class GalleriesController extends AppController {
         //that's why we use postLink method on our view for deleting user
         if( $this->request->is('get') ){
 
-            $this->Session->setFlash('Delete method is not allowed.');
+            $this->Session->setFlash(__('Delete method is not allowed.'),'notice');
             $this->redirect(array('action' => 'index'));
 
             //since we are using php5, we can also throw an exception like:
@@ -208,7 +208,7 @@ class GalleriesController extends AppController {
         }else{
 
             if( !$id ) {
-                $this->Session->setFlash('Invalid id for user');
+                $this->Session->setFlash(__('Invalid id for gallery'),'notice');
                 $this->redirect(array('action'=>'index'));
 
             }else{
@@ -220,13 +220,13 @@ class GalleriesController extends AppController {
 
                     if( $this->Gallery->delete($id) ){
                         //set to screen
-                        $this->Session->setFlash('Auction was deleted.');
+                        $this->Session->setFlash(__('Gallery was deleted.'),'good');
                         //redirect to users's list
                         $this->redirect(array('action'=>'index'));
 
                     }else{
                         //if unable to delete
-                        $this->Session->setFlash('Unable to delete user.');
+                        $this->Session->setFlash(__('Unable to delete gallert.'),'notice');
                         $this->redirect(array('action' => 'index'));
                     }
                 }

@@ -339,10 +339,10 @@ class BlogPostsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->BlogPost->create();
 			if ($this->BlogPost->save($this->request->data)) {
-				$this->Session->setFlash(__('The blog post has been saved'));
+				$this->Session->setFlash(__('The blog post has been saved'),'good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog post could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The blog post could not be saved. Please, try again.'),'error');
 			}
 		}
 		$blogPostCategories = $this->BlogPost->BlogPostCategory->generateTreeList();
@@ -363,10 +363,10 @@ class BlogPostsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->BlogPost->save($this->request->data)) {
-				$this->Session->setFlash(__('The blog post has been saved'));
+				$this->Session->setFlash(__('The blog post has been saved'),'good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog post could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The blog post could not be saved. Please, try again.'),'error');
 			}
 		} else {
 			$this->request->data = $this->BlogPost->read(null, $id);
@@ -391,10 +391,10 @@ class BlogPostsController extends AppController {
 			throw new NotFoundException(__('Invalid blog post'));
 		}
 		if ($this->BlogPost->delete()) {
-			$this->Session->setFlash(__('Blog post deleted'));
+			$this->Session->setFlash(__('Blog post deleted'),'good');
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Blog post was not deleted'));
+		$this->Session->setFlash(__('Blog post was not deleted'),'error');
 		$this->redirect(array('action' => 'index'));
 	}
 }
