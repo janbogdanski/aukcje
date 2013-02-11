@@ -46,9 +46,54 @@ class PagesController extends AppController {
 	public $uses = array();
 
     public function contact(){
-        echo  'wysylka maila';
-//        die();
+//        print_r($this->Contact->validationErrors);
+//        var_dump($this->Contact->validates());
+        if(!empty($this->data)) {
+            $this->Contact->set($this->data);
+            if($this->Contact->validates()) {
 
+
+                $email = new CakeEmail();
+                try {
+                    $email->config('contact');
+                } catch(Exception $e) {
+                    echo 'Config in email.php not found';
+                    exit;
+                }
+                $this->Contact->set($this->request->data['Contact']);
+                $data = $this->request->data['Contact'];
+
+                $email->from($data['Mail'])
+                    ->subject(__d('contact', 'contact form request'))
+                    ->send(
+                    __d('contact', 'name').': '.Sanitize::clean($data['Name'])."\n".
+                        __d('contact', 'email').': '.Sanitize::clean($data['Mail'])."\n\n".
+                        __d('contact', 'message').":\n".
+                        Sanitize::html($data['Message'])."\n\n".
+                        "----------------------------\n".
+                        __d('contact', 'sent from').' '.Router::url('/', true)
+                );
+
+                //kopia do nadawcy
+                $email->to($data['Mail'])
+                    ->subject(__d('contact', 'Copy - contact form request'))
+                    ->send(
+                    __d('contact', 'name').': '.Sanitize::clean($data['Name'])."\n".
+                        __d('contact', 'email').': '.Sanitize::clean($data['Mail'])."\n\n".
+                        __d('contact', 'message').":\n".
+                        Sanitize::html($data['Message'])."\n\n".
+                        "----------------------------\n".
+                        __d('contact', 'this is copy of your message sent to proaukcje admin')."\n".
+                        __d('contact', 'sent from').' '.Router::url('/', true)
+                );
+
+                $this->Session->setFlash(__d('contact', 'Message sent!'), 'good');
+                $this->redirect(array('controller' => 'pages', 'action' => 'contact'));
+            } else {
+                $this->Session->setFlash(__d('contact', 'Message not sent!'), 'error');
+                $this->render('contact');
+            }
+        }
     }
 /**
  * Displays a view
