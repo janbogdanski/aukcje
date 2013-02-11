@@ -10,6 +10,7 @@ App::uses('AuthComponent', 'Controller/Component');
  */
 class Gallery extends AppModel {
     public $name = 'Gallery';
+    public $cleanData = true;
 
     const STATUS_NEW = 1;
     const STATUS_ACTIVE = 2;
