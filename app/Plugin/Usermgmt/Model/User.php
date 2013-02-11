@@ -202,13 +202,13 @@ class User extends UserMgmtAppModel {
 	public function sendRegistrationMail($user) {
 		// send email to newly created user
 		$userId=$user['User']['id'];
-		$email = new CakeEmail();
+		$email = new CakeEmail('register');
 		$fromConfig = EMAIL_FROM_ADDRESS;
 		$fromNameConfig = EMAIL_FROM_NAME;
-		$email->from(array( $fromConfig => $fromNameConfig));
-		$email->sender(array( $fromConfig => $fromNameConfig));
+//		$email->from(array( $fromConfig => $fromNameConfig));
+//		$email->sender(array( $fromConfig => $fromNameConfig));
 		$email->to($user['User']['email']);
-		$email->subject('Your registration is complete');
+		$email->subject(__('Your registration is complete'));
 		//$email->transport('Debug');
 		$body="Welcome ".$user['User']['first_name'].", Thank you for your registration on ".SITE_URL." \n\n Thanks,\n".EMAIL_FROM_NAME;
 		try{
