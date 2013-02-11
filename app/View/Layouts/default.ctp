@@ -117,7 +117,7 @@
                                         <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
                                     </li>
                                     <li>
-                                        <?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
+                                        <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
                                     </li>
                                     <li>
                                         <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
@@ -131,13 +131,13 @@
 
                         <div class="pull-right">
 
-                            <ul class="nav_social">
-                                <li class="n_facebook"><a href="http://facebook.com/proaukcje" target="_blank"><i class="icon-facebook"></i></a></li>
-                                <li class="n_twitter"><a href="https://twitter.com/#!/proaukcje" target="_blank"><i class="icon-twitter"></i></a></li>
-                                <li class="n_google"><a href="https://plus.google.com/u/0/b/118223521662447066750/118223521662447066750/posts" target="_blank">
-                                    <i class="icon-google-plus"></i></a></li>
-                                <li class="n_rss"><?php echo $this->Html->link('<i class="icon-rss"></i>', '/blog.rss', array('escape' => false, 'target' => '_blank')); //array('plugin' => 'blog',  'admin' => false), array('escape' => false, 'target' => '_blank')); ?></li>
-                            </ul>
+<!--                            <ul class="nav_social">-->
+<!--                                <li class="n_facebook"><a href="http://facebook.com/proaukcje" target="_blank"><i class="icon-facebook"></i></a></li>-->
+<!--                                <li class="n_twitter"><a href="https://twitter.com/#!/proaukcje" target="_blank"><i class="icon-twitter"></i></a></li>-->
+<!--                                <li class="n_google"><a href="https://plus.google.com/u/0/b/118223521662447066750/118223521662447066750/posts" target="_blank">-->
+<!--                                    <i class="icon-google-plus"></i></a></li>-->
+<!--                                <li class="n_rss">--><?php //echo $this->Html->link('<i class="icon-rss"></i>', '/blog.rss', array('escape' => false, 'target' => '_blank')); //array('plugin' => 'blog',  'admin' => false), array('escape' => false, 'target' => '_blank')); ?><!--</li>-->
+<!--                            </ul>-->
                         </div>
 
                     </div><!-- /container -->
@@ -194,7 +194,7 @@
                             <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
                         </li>
                         <li>
-                            <?php echo $this->Html->link(__('Contact'), array('controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
+                            <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
                         </li>
                         <li>
                             <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
@@ -272,55 +272,22 @@
 
 <div class="footer_wrap">
     <footer id="footer" class="container">
-        <div class="clear"></div>
-        <div class="sub_footer_wrap">
-
-
-            <div id="sidebar" class="sub_footer container">
-                <div class="footerTop row">
-                    <div class="span3">
-                        <div id="text-10" class="widget widget_text">			<div class="textwidget"><h3 style="font-weight:  300;">Built for touch </h3>
-                            <font class="fp_sc_div fp_wf_Source_Sans_Pro" style=" font-size: 14px !important; color: #444444 !important;">
-                                Flipit hasn't just been built to be 'fully' responsive, not only will the UI adapt to multiple devices,
-                                but the user experience adapts as well. We're calling it <strong>Responsive User Experience (RUX)</strong>;
-                                it's the future of the web. </font></div>
-                        </div>									</div>
-
-                    <div class="span3">
-                        <div id="pages-3" class="widget widget_pages"><h4><?php echo __('Navigate'); ?></h4>		<ul>
-                            <li class="page_item page-item-466"><a href="#?page_id=466">Backgrounds</a></li>
-                            <li class="page_item page-item-300"><a href="#">Home</a></li>
-                            <li class="page_item page-item-165"><a href="#?page_id=165">Portfolio</a>
-                                <ul class='children'>
-                                    <li class="page_item page-item-186"><a href="#?page_id=186">Folio 2 Column</a></li>
-                                    <li class="page_item page-item-184"><a href="#?page_id=184">Folio 3 Column</a></li>
-                                </ul>
-                            </li>
-                            <li class="page_item page-item-180"><a href="#?page_id=180">About</a></li>
-                            <li class="page_item page-item-254 current_page_ancestor current_page_parent"><a href="#?page_id=254">Shortcodes</a>
-                                <ul class='children'>
-                                    <li class="page_item page-item-269"><a href="#?page_id=269">Blockquotes</a></li>
-                                    <li class="page_item page-item-276"><a href="#?page_id=276">Buttons</a></li>
-                                    <li class="page_item page-item-277"><a href="#?page_id=277">Columns</a></li>
-                                    <li class="page_item page-item-281"><a href="#?page_id=281">Dividers</a></li>
-                                    <li class="page_item page-item-274"><a href="#?page_id=274">Dropcaps</a></li>
-                                    <li class="page_item page-item-704"><a href="#?page_id=704">Flip</a></li>
-                                    <li class="page_item page-item-303"><a href="#?page_id=303">Google Maps</a></li>
-                                    <li class="page_item page-item-267"><a href="#?page_id=267">Icons</a></li>
-                                    <li class="page_item page-item-283"><a href="#?page_id=283">Lightboxes</a></li>
-                                    <li class="page_item page-item-408"><a href="#?page_id=408">Sliders</a></li>
-                                    <li class="page_item page-item-279 current_page_item"><a href="#?page_id=279">Stats</a></li>
-                                    <li class="page_item page-item-272"><a href="#?page_id=272">Tabs &#038; Toggles</a></li>
-                                    <li class="page_item page-item-282"><a href="#?page_id=282">Video</a></li>
-                                </ul>
-                            </li>
-                            <li class="page_item page-item-169"><a href="#?page_id=169">Blog</a></li>
-                            <li class="page_item page-item-263"><a href="#?page_id=263">Contact</a></li>
-                        </ul>
-                        </div>									</div>
-                </div>
-            </div><!-- /sub_footer -->
-        </div><!-- /sub_footer_wrap -->
+<!--        <div class="clear"></div>-->
+<!--        <div class="sub_footer_wrap">-->
+<!---->
+<!---->
+<!--            <div id="sidebar" class="sub_footer container">-->
+<!--                <div class="footerTop row">-->
+<!--                    <div class="span3">-->
+<!--                        <div id="text-10" class="widget widget_text">-->
+<!--                            <div class="textwidget">-->
+<!--                                <h3 style="font-weight:  300;">Built for touch </h3>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div><!-- /sub_footer -->
+<!--        </div><!-- /sub_footer_wrap -->
     </footer>
 
 
@@ -330,24 +297,28 @@
     <div class="row">
         <div class="span9">
             <div class="footer_left">
-                <div class="logo">
-                    <img src="http://flipit.fdthemes.com/corpit/wp-content/uploads/2012/08/logo1.png" alt="Flipit" />
-
-                </div>
-                <p>Copyright © 2012 <a href='http://flipit.fdthemes.com/corpit' title='Flipt'>AppEsque</a>. Crafted by <a href="http://fdthemes.com">FD Themes</a>.</p>
+<!--                <div class="logo">-->
+                    <?php
+//                    echo $this->Html->link(
+//                        $this->Html->image('logo.png', array("alt" => "Brownies", 'id' => 'logo')),
+//                        '/',
+//                        array('escape' => false)
+//                    );?>
+<!--                </div>-->
+                <p>Copyright © <?php echo date('Y'); ?> proaukcje.eu</p>
             </div>
         </div>
-        <div class="span3">
-            <div class="pull-right">
-                <ul class="nav_social">
-                    <li class="n_facebook"><a href="http://facebook.com/proaukcje" target="_blank"><i class="icon-facebook"></i></a></li>
-                    <li class="n_twitter"><a href="https://twitter.com/#!/proaukcje" target="_blank"><i class="icon-twitter"></i></a></li>
-                    <li class="n_google"><a href="https://plus.google.com/u/0/b/118223521662447066750/118223521662447066750/posts" target="_blank">
-                        <i class="icon-google-plus"></i></a></li>
-                    <li class="n_rss"><a href="#?feed=rss2" target="_blank"><i class="icon-rss"></i></a></li>
-                </ul>
-            </div>
-        </div>
+<!--        <div class="span3">-->
+<!--            <div class="pull-right">-->
+<!--                <ul class="nav_social">-->
+<!--                    <li class="n_facebook"><a href="http://facebook.com/proaukcje" target="_blank"><i class="icon-facebook"></i></a></li>-->
+<!--                    <li class="n_twitter"><a href="https://twitter.com/#!/proaukcje" target="_blank"><i class="icon-twitter"></i></a></li>-->
+<!--                    <li class="n_google"><a href="https://plus.google.com/u/0/b/118223521662447066750/118223521662447066750/posts" target="_blank">-->
+<!--                        <i class="icon-google-plus"></i></a></li>-->
+<!--                    <li class="n_rss"><a href="#?feed=rss2" target="_blank"><i class="icon-rss"></i></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
     </div><!-- /row -->
