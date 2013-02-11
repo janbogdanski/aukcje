@@ -139,8 +139,8 @@
 
                         <div class="m-btn-strip">
                 <div class="m-btn-group">
-            <?php echo $this->Form->submit('Preview', array('id' => 'preview', 'name' => 'previewGallery', 'div' => false, 'class' => 'm-btn  green')); ?>
-        <?php echo $this->Form->submit('Submit', array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
+            <?php echo $this->Form->submit(__d('gallery','Preview'), array('id' => 'preview', 'name' => 'previewGallery', 'div' => false, 'class' => 'm-btn  green')); ?>
+        <?php echo $this->Form->submit(__d('gallery','Save'), array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
                 </div>
                 <div class="row-fluid">&nbsp;</div>
                 <div class="row-fluid">

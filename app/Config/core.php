@@ -34,6 +34,7 @@
  */
 	Configure::write('debug', 2);
 Configure::write('Routing.prefixes', array('admin'));
+Configure::write('site.name', 'Proaukcje');
 
 /**
  * Configure the Error handler used to handle errors for your application.  By default
@@ -51,7 +52,7 @@ Configure::write('Routing.prefixes', array('admin'));
  */
 	Configure::write('Error', array(
 		'handler' => 'ErrorHandler::handleError',
-		'level' => E_ALL & ~E_DEPRECATED,
+		'level' => E_ALL & ~E_DEPRECATED & ~E_STRICT,
 		'trace' => true
 	));
 

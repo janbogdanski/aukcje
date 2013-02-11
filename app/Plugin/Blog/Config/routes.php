@@ -63,7 +63,13 @@ Router::connect(
 );
 
 Router::connect('/blog/*', array(
-  'plugin' => 'blog',
-  'controller' => 'blog_posts',
-  'action' => 'index',
+    'plugin' => 'blog',
+    'controller' => 'blog_posts',
+    'action' => 'index',
+));
+
+Router::connect('/blog', array(
+    'plugin' => 'blog',
+    'controller' => 'blog_posts',
+    'action' => 'index',
 ));

@@ -27,7 +27,7 @@
  */
 //Router::connect('/admin/:plugin/:controller/:action/*', array('admin' => true));
 
-Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 //Router::connect('/contact', array('controller' => 'pages', 'action' => 'contact'));
 Router::connect('/kontakt', array('controller' => 'pages', 'action' => 'contact'));
 

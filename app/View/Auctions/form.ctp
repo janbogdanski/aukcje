@@ -52,7 +52,7 @@ $events['instanceReady'] = 'function (ev) {
     <?php echo $this->Form->create('Auction'); ?>
 
     <?php echo $this->Form->input('title_list', array('class' => 'span3','label' => __('Title on aukctions list'))); ?>
-    <?php echo $this->Form->input('title', array('class' => 'span3','label' => __('Title (visible in auction header'))); ?>
+    <?php echo $this->Form->input('title', array('class' => 'span3','label' => __('Title (visible in auction header)'))); ?>
 
     <label><?php echo __('Content'); ?></label>
     <?php echo $this->cksource->ckeditor('Auction.contents', array('config'=>$config, 'events'=>$events, 'escape' => false));?>
@@ -105,7 +105,7 @@ $config['extraPlugins'] = 'gmap';
 
     ?>
     <div class="clearfix"></div>
-    <?php echo $this->Form->submit('Submit', array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
+    <?php echo $this->Form->submit(__d('auction', 'Save auction'), array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
     <?php echo $this->Form->end(); ?>
 
 </div>

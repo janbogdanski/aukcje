@@ -17,7 +17,7 @@ $(document).ready(function(){
             $(url).modal('open');
         } else {
             $.get(url, function(data) {
-                $('<div class="modal hide fade"><textarea name="name" id="" style="width: 90%; height: 300px;">' + data + '</textarea></div>').modal();
+                $('<div class="modal hide fade"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h3>Skopiuj zawartość pola na Allegro!</h3><textarea name="name" id="" style="width: 90%; height: 290px;" readonly="readonly" onclick="this.focus();this.select();return false;">' + data + '</textarea></div>').modal();
             }).success(function() { $('input:text:visible:first').focus(); });
         }
         return false;

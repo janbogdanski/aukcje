@@ -39,6 +39,8 @@ App::uses('Controller', 'Controller');
  * @property Gallery $Gallery
  * @property GalleriesDetails $GalleriesDetails
  * @property UserAuthComponent $UserAuth
+ * @property Contact $Contact
+ * @property Metum $Metum
  */
 class AppController extends Controller {
 

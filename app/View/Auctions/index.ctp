@@ -3,6 +3,7 @@
  * @author          Jan Bogdanski <janek.bogdanski@gmail.com>
  *
  * Creation date    17.10.12 20:14
+ * @var $this View
  */
 ?>
 <script type="text/javascript">
@@ -34,7 +35,7 @@
             <div class="m-btn-strip">
                 <div class="m-btn-group">
             <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $auction['Auction']['id']), array('class' => 'm-btn mini blue') );?>
-            <?php echo $this->Html->link(__('Preview'), array('action' => 'preview', $auction['Auction']['id']), array('class' => 'm-btn mini green') );?>
+            <?php echo $this->Html->link(__('Preview'), array('action' => 'preview', $auction['Auction']['id']), array('class' => 'm-btn mini green', 'target' => '_blank') );?>
             <?php echo $this->Html->link(__('Code'), array('action' => 'preview', $auction['Auction']['id']), array('data-toggle' => 'modal','class' => 'm-btn mini purple') );?>
 
             <?php echo $this->Form->postLink(__('Delete'), array(

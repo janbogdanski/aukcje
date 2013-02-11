@@ -5,6 +5,7 @@
  *
  * Creation date    17.10.12 20:23
  */
+App::uses('Sanitize', 'Utility');
 class AuctionsController extends AppController {
 
     public $uses = array('Auction','Template');
@@ -47,7 +48,12 @@ class AuctionsController extends AppController {
     }
 
     public function preview(){
-        $this->layout = 'ajax';
+        if($this->request->is('ajax')){
+            CakeResponse::disableCache();
+            $this->layout = 'ajax';
+        } else{
+            $this->layout = 'auctionPreview';
+        }
         $id = $this->request->params['pass'][0];
 
         if( !$id ) {
