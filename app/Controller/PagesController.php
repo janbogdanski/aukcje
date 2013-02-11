@@ -20,6 +20,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
 
 /**
  * Static content controller
@@ -43,7 +44,10 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Contact', 'Blog.BlogPost');
+    public $helpers = array('Text');
+
+
 
     public function contact(){
 //        print_r($this->Contact->validationErrors);
@@ -122,4 +126,19 @@ class PagesController extends AppController {
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
+    public  function  index(){
+
+        $options = array(
+            'conditions' => array('BlogPost.published' => 1),
+            'limit' => 2,
+            'order' => 'BlogPost.id DESC'
+        );
+
+        $blogPosts = $this->BlogPost->find('all', $options);
+        $this->set('blogSettings', ClassRegistry::init('Blog.BlogSetting')->getSettings());
+        $this->set(compact('blogPosts'));
+
+
+    }
+
 }
