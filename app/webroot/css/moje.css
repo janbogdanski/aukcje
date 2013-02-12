@@ -435,3 +435,12 @@ section{
     padding: 0;
     line-height: 85%;
 }
+
+.create-account {
+    display: block;
+    background-color: #EBF5FD;
+    clear: both;
+    margin: 60px -20px 0;
+    padding: 5px !important;
+    text-align: center;
+}
