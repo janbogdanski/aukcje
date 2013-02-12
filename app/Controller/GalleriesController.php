@@ -226,7 +226,7 @@ class GalleriesController extends AppController {
 
                     }else{
                         //if unable to delete
-                        $this->Session->setFlash(__('Unable to delete gallert.'),'notice');
+                        $this->Session->setFlash(__('Unable to delete gallery.'),'notice');
                         $this->redirect(array('action' => 'index'));
                     }
                 }

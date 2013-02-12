@@ -41,6 +41,7 @@ App::uses('Controller', 'Controller');
  * @property UserAuthComponent $UserAuth
  * @property Contact $Contact
  * @property Metum $Metum
+ * @property BlogPost $BlogPost
  */
 class AppController extends Controller {
 
