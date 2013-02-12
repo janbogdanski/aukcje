@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: proaukcje\n"
-"POT-Creation-Date: 2012-12-31 23:41+0100\n"
-"PO-Revision-Date: 2013-01-01 00:38+0100\n"
-"Last-Translator: Jan <jan.b@aol.pl>\n"
+"POT-Creation-Date: 2013-02-12 10:58+0100\n"
+"PO-Revision-Date: 2013-02-12 11:35+0100\n"
+"Last-Translator: Jan Bo <janek.bogdanski@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,6 +14,67 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
+
+#: Controller\AuctionsController.php:37
+msgid "Auction successfully saved."
+msgstr "Aukcja zapisana pomyślnie"
+
+#: Controller\AuctionsController.php:43
+msgid "Unable to add auction. Please, try again."
+msgstr "Nie można dodać aukcji, spróbuj ponownie."
+
+#: Controller\AuctionsController.php:60;106;168
+msgid "Invalid id for auction"
+msgstr "Niewłaściwy ID aukcji"
+
+#: Controller\AuctionsController.php:126
+msgid "Auction was edited."
+msgstr "Aukcja została zapisana"
+
+#: Controller\AuctionsController.php:132
+msgid "Unable to edit auction. Please, try again."
+msgstr "Nie można edytować aukcji... Spróbuj ponownie"
+
+#: Controller\AuctionsController.php:144
+msgid "Auction does not exist."
+msgstr "Taka aukcja nie istnieje"
+
+#: Controller\AuctionsController.php:160
+#: Controller\GalleriesController.php:203
+msgid "Delete method is not allowed."
+msgstr "Metoda 'deletel' jest niedozwolona"
+
+#: Controller\AuctionsController.php:180
+msgid "Auction was deleted."
+msgstr "Aukcja została usunięta"
+
+#: Controller\AuctionsController.php:186
+msgid "Unable to delete auction."
+msgstr "Nie można usunąć aukcji.."
+
+#: Controller\GalleriesController.php:66;106;211
+msgid "Invalid id for gallery"
+msgstr "Nieprawidłowy ID galerii"
+
+#: Controller\GalleriesController.php:119
+msgid "Select images, gallery not saved"
+msgstr "Wybierz obrazy do galerii, nie zapisano."
+
+#: Controller\GalleriesController.php:160
+msgid "Gallery successfully saved"
+msgstr "Zapisano galerię"
+
+#: Controller\GalleriesController.php:167
+msgid "Unable to add gallery. Please, try again."
+msgstr "Nie można dodać galerii... Spróbuj ponownie"
+
+#: Controller\GalleriesController.php:223
+msgid "Gallery was deleted."
+msgstr "Galeria została usunięta"
+
+#: Controller\GalleriesController.php:229
+msgid "Unable to delete gallery."
+msgstr "Nie można usunąć galeriii.."
 
 #: Plugin\Blog\Controller\BlogPostCategoriesController.php:35;68;96
 msgid "Invalid blog post category"
@@ -89,20 +150,20 @@ msgstr "Nie usunięto wpisu"
 
 #: Plugin\Blog\Controller\BlogSettingsController.php:40;54
 msgid "Invalid blog setting"
-msgstr ""
+msgstr "Niewłaśniwe ustawienia bloga.."
 
 #: Plugin\Blog\Controller\BlogSettingsController.php:58
 msgid "The blog setting has been saved"
-msgstr ""
+msgstr "Zapisano"
 
 #: Plugin\Blog\Controller\BlogSettingsController.php:61
 msgid "The blog setting could not be saved. Please, try again."
-msgstr ""
+msgstr "Nie można zapisać"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_add.ctp:4
 #: View\Plugin\Blog\BlogPostCategories\admin_add.ctp:4
 msgid "Add Blog Post Category"
-msgstr ""
+msgstr "Dodaj kategorię postów"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_add.ctp:16
 #: Plugin\Blog\View\BlogPostCategories\admin_edit.ctp:17
@@ -173,7 +234,7 @@ msgstr "Aukcje"
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:7
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:68
 msgid "List Blog Post Categories"
-msgstr ""
+msgstr "Lista kategorii"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_add.ctp:23
 #: Plugin\Blog\View\BlogPostCategories\admin_edit.ctp:25
@@ -198,7 +259,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_edit.ctp:28
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:66
 msgid "List Blog Posts"
-msgstr ""
+msgstr "Lista wpisów"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_add.ctp:24
 #: Plugin\Blog\View\BlogPostCategories\admin_edit.ctp:26
@@ -221,14 +282,14 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:6
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:67
 msgid "New Blog Post"
-msgstr ""
+msgstr "Nowy wpis"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_edit.ctp:4
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:59
 #: View\Plugin\Blog\BlogPostCategories\admin_edit.ctp:4
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:59
 msgid "Edit Blog Post Category"
-msgstr ""
+msgstr "Edytuj kategorię"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_edit.ctp:23
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:39
@@ -241,7 +302,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:113;157
 #: Plugin\Usermgmt\View\UserGroups\index.ctp:61
 #: Plugin\Usermgmt\View\Users\index.ctp:85
-#: View\Auctions\index.ctp:40
+#: View\Auctions\index.ctp:41
 #: View\Galleries\index.ctp:44
 #: View\Plugin\Blog\BlogPostCategories\admin_edit.ctp:23
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:39
@@ -273,14 +334,13 @@ msgstr "Usuń"
 #: View\Plugin\Blog\BlogPosts\admin_edit.ctp:27
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:47
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:65;113;157
-#, fuzzy
 msgid "Are you sure you want to delete # %s?"
-msgstr "Jesteś pewien, że chcesz usunąć tę aukcję??"
+msgstr "Jesteś pewien, że chcesz usunąć  # %s??"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:2
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:2
 msgid "Blog Post Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:37
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:106;160
@@ -297,7 +357,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:111;155
 #: View\Plugin\Blog\BlogSettings\admin_index.ctp:25
 msgid "View"
-msgstr ""
+msgstr "Widok?"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:38
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:107;161
@@ -306,7 +366,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:34
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:112;156
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:26
-#: View\Auctions\index.ctp:36
+#: View\Auctions\index.ctp:37
 #: View\Galleries\index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:107;161
@@ -338,7 +398,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:60
 #: View\Plugin\Blog\BlogSettings\admin_index.ctp:39
 msgid "previous"
-msgstr ""
+msgstr "poprzednie"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:55
 #: Plugin\Blog\View\BlogPostTags\admin_index.ctp:47
@@ -349,7 +409,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:63
 #: View\Plugin\Blog\BlogSettings\admin_index.ctp:42
 msgid "next"
-msgstr ""
+msgstr "następne"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:61
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:62
@@ -364,19 +424,19 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:8
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:69;122
 msgid "New Blog Post Category"
-msgstr ""
+msgstr "Nowa kategoria"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_index.ctp:63
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:64
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:63
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:64
 msgid "New Parent Blog Post Category"
-msgstr ""
+msgstr "Nowa kategoria nadrzędna"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:2
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:2
 msgid "Blog Post Category"
-msgstr ""
+msgstr "Kateogia"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:4;74;126
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:4;52
@@ -387,12 +447,12 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:4;79;131
 #: View\Plugin\Blog\BlogSettings\admin_view.ctp:4
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:9
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:9
 msgid "Parent Blog Post Category"
-msgstr ""
+msgstr "Kategoria nadrzędna"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:14;76
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:81
@@ -435,7 +495,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:19
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:85;134
 msgid "Blog Post Count"
-msgstr ""
+msgstr "Liczba postów"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:39;81
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:86
@@ -455,7 +515,7 @@ msgstr ""
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:24;61
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:49;87;135
 msgid "Created"
-msgstr ""
+msgstr "Utworzono"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:49;83;136
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:29;62
@@ -466,19 +526,19 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:54;88;136
 #: View\Plugin\Blog\BlogSettings\admin_view.ctp:19
 msgid "Modified"
-msgstr ""
+msgstr "Zmodyfikowano"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:60
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:60
 msgid "Delete Blog Post Category"
-msgstr ""
+msgstr "Usuń kategorię"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:70
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:75
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:70
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:75
 msgid "Related Blog Post Categories"
-msgstr ""
+msgstr "Podobne wpisy"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:75
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:80
@@ -490,7 +550,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:117
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:117
 msgid "New Child Blog Post Category"
-msgstr ""
+msgstr "Nowa kategoria podrzędna"
 
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:122
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:48
@@ -502,7 +562,7 @@ msgstr "Podobne wpisy"
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:127
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:53
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:9
-#: View\Auctions\index.ctp:20
+#: View\Auctions\index.ctp:21
 #: View\Galleries\index.ctp:21
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:127
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:53
@@ -568,7 +628,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostTags\admin_add.ctp:4
 #: View\Plugin\Blog\BlogPostTags\admin_add.ctp:4
 msgid "Add Blog Post Tag"
-msgstr ""
+msgstr "Dodaj tag"
 
 #: Plugin\Blog\View\BlogPostTags\admin_add.ctp:21
 #: Plugin\Blog\View\BlogPostTags\admin_edit.ctp:23
@@ -585,19 +645,19 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:9
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:70
 msgid "List Blog Post Tags"
-msgstr ""
+msgstr "Lista tagów"
 
 #: Plugin\Blog\View\BlogPostTags\admin_edit.ctp:4
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:39
 #: View\Plugin\Blog\BlogPostTags\admin_edit.ctp:4
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:39
 msgid "Edit Blog Post Tag"
-msgstr ""
+msgstr "Edytuj tag"
 
 #: Plugin\Blog\View\BlogPostTags\admin_index.ctp:2
 #: View\Plugin\Blog\BlogPostTags\admin_index.ctp:2
 msgid "Blog Post Tags"
-msgstr ""
+msgstr "Tagi"
 
 #: Plugin\Blog\View\BlogPostTags\admin_index.ctp:53
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:42
@@ -612,76 +672,76 @@ msgstr ""
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:10
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:71;166
 msgid "New Blog Post Tag"
-msgstr ""
+msgstr "Nowy tag"
 
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:2
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:2
 msgid "Blog Post Tag"
-msgstr ""
+msgstr "tag"
 
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:40
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:40
 msgid "Delete Blog Post Tag"
-msgstr ""
+msgstr "Usuń tag"
 
 #: Plugin\Blog\View\BlogPosts\admin_add.ctp:4
 #: View\Plugin\Blog\BlogPosts\admin_add.ctp:4
 msgid "Add Blog Post"
-msgstr ""
+msgstr "Dodaj wpis"
 
 #: Plugin\Blog\View\BlogPosts\admin_edit.ctp:4
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:64
 #: View\Plugin\Blog\BlogPosts\admin_edit.ctp:4
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:64
 msgid "Edit Blog Post"
-msgstr ""
+msgstr "Edytuj wpis"
 
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:2
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:2
 msgid "Blog Posts"
-msgstr ""
+msgstr "Wszystkie wpisy"
 
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:2
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:2
 msgid "Blog Post"
-msgstr ""
+msgstr "Wpis"
 
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:65
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:65
 msgid "Delete Blog Post"
-msgstr ""
+msgstr "Usuń"
 
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:127
 #: View\Plugin\Blog\BlogPosts\admin_view.ctp:127
 msgid "Related Blog Post Tags"
-msgstr ""
+msgstr "Podobne tago"
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:4
-#: View\Plugin\Blog\BlogPosts\index.ctp:5
+#: Plugin\Blog\View\BlogPosts\index.ctp:4
+#: View\Plugin\Blog\BlogPosts\index.ctp:9
 msgid "Show all"
-msgstr ""
+msgstr "Pokaż wszystkie"
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:19
-#: View\Pages\index.ctp:142
-#: View\Plugin\Blog\BlogPosts\index.ctp:20
+#: Plugin\Blog\View\BlogPosts\index.ctp:19
+#: View\Pages\index.ctp:145
+#: View\Plugin\Blog\BlogPosts\index.ctp:24
 msgid "View comments"
 msgstr "Zobacz komentarze"
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:51
-#: View\Pages\index.ctp:181
-#: View\Plugin\Blog\BlogPosts\index.ctp:52
+#: Plugin\Blog\View\BlogPosts\index.ctp:51
+#: View\Pages\index.ctp:184
+#: View\Plugin\Blog\BlogPosts\index.ctp:56
 msgid "Sorry, there are no blog posts."
 msgstr "Brak wspisów do wyświetlenia.."
 
 #: Plugin\Blog\View\BlogPosts\view.ctp:26
 #: View\Plugin\Blog\BlogPosts\view.ctp:26
 msgid "Posted in "
-msgstr ""
+msgstr "Opublikowano w"
 
 #: Plugin\Blog\View\BlogPosts\view.ctp:33
 #: View\Plugin\Blog\BlogPosts\view.ctp:33
 msgid "Tagged with "
-msgstr ""
+msgstr "Oznaczone"
 
 #: Plugin\Blog\View\BlogSettings\admin_edit.ctp:4
 #: View\Plugin\Blog\BlogSettings\admin_edit.ctp:4
@@ -722,23 +782,22 @@ msgstr ""
 #: Plugin\Blog\View\BlogSettings\admin_view.ctp:29
 #: View\Plugin\Blog\BlogSettings\admin_view.ctp:29
 msgid "Edit Blog Setting"
-msgstr ""
+msgstr "Edytuj ustawienia"
 
 #: Plugin\Blog\View\Elements\archives.ctp:8
 #: View\Plugin\Blog\Elements\archives.ctp:8
 msgid "Archives"
-msgstr ""
+msgstr "Archiwum"
 
 #: Plugin\Blog\View\Elements\categories.ctp:8
 #: View\Plugin\Blog\Elements\categories.ctp:8
-#, fuzzy
 msgid "Categories"
-msgstr "Galerie"
+msgstr "Kategorie"
 
 #: Plugin\Blog\View\Elements\rss.ctp:7
 #: View\Plugin\Blog\Elements\rss.ctp:7
 msgid "RSS for all posts"
-msgstr ""
+msgstr "Kanał RSS dla wszystkich postów"
 
 #: Plugin\Blog\View\Elements\rss.ctp:11
 #: View\Plugin\Blog\Elements\rss.ctp:11
@@ -748,7 +807,19 @@ msgstr ""
 #: Plugin\Blog\View\Elements\tag_cloud.ctp:8
 #: View\Plugin\Blog\Elements\tag_cloud.ctp:8
 msgid "Tags"
+msgstr "Tagi"
+
+#: Plugin\Blog\View\Helper\BlogHelper.php:218
+msgid " in category: "
 msgstr ""
+
+#: Plugin\Blog\View\Helper\BlogHelper.php:220
+msgid " tagged with: "
+msgstr " oznaczone tagami: "
+
+#: Plugin\Blog\View\Helper\BlogHelper.php:222
+msgid " created in "
+msgstr " w "
 
 #: Plugin\Usermgmt\Controller\UserGroupsController.php:45
 msgid "The group is successfully added"
@@ -782,93 +853,97 @@ msgstr "Nie potwierdziłeś swojej rejestracji - sprawdź mail lub skontaktuj si
 msgid "You are successfully signed out"
 msgstr "Wylogowano"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:173
+#: Plugin\Usermgmt\Controller\UsersController.php:170
 msgid "Please select correct register as"
 msgstr "Wybierz rejestrację jako"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:201
+#: Plugin\Usermgmt\Controller\UsersController.php:198
 msgid "Please check your mail and confirm your registration"
 msgstr "Sprawdź swoją skrzynkę pocztową i potwierdź rejestrację"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:207
+#: Plugin\Usermgmt\Controller\UsersController.php:204
 msgid "Sorry new registration is currently disabled, please try again later"
 msgstr "Wybacz, rejestracja jest tymczasowo wyłączona"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:229
+#: Plugin\Usermgmt\Controller\UsersController.php:226
 msgid "Password changed successfully"
 msgstr "Hasło zostało zmienione"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:255
+#: Plugin\Usermgmt\Controller\UsersController.php:252
 msgid "Password for %s changed successfully"
 msgstr "Hasło dla %s zostało zmienione"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:281
+#: Plugin\Usermgmt\Controller\UsersController.php:278
 msgid "The user is successfully added"
 msgstr "Dodano usera"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:301
+#: Plugin\Usermgmt\Controller\UsersController.php:298
 msgid "The user is successfully updated"
 msgstr "Zaktualizowano usera"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:328
+#: Plugin\Usermgmt\Controller\UsersController.php:325
 msgid "User is successfully deleted"
 msgstr "Usunięto usera"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:362
+#: Plugin\Usermgmt\Controller\UsersController.php:359
 msgid "User is successfully activated"
 msgstr "Aktywacja przebiegła pomyślnie"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:364
+#: Plugin\Usermgmt\Controller\UsersController.php:361
 msgid "User is successfully deactivated"
 msgstr "User został zdeaktywowany"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:382
+#: Plugin\Usermgmt\Controller\UsersController.php:379
 msgid "User email is successfully verified"
 msgstr "Poprawnie zweryfikowano email"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:416
+#: Plugin\Usermgmt\Controller\UsersController.php:413
 msgid "Thank you, your account is activated now"
 msgstr "Dziękujemy, Twoje konto jest już aktywne"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:419
+#: Plugin\Usermgmt\Controller\UsersController.php:416
 msgid "Thank you, your account is already activated"
 msgstr "Dziękujemy, Twoje konto było już aktywne"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:422;425
+#: Plugin\Usermgmt\Controller\UsersController.php:419;422
 msgid "Sorry something went wrong, please click on the link again"
 msgstr "Coś poszło 'nie tak', kliknij link aktywacyjny ponownie"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:444;518
+#: Plugin\Usermgmt\Controller\UsersController.php:441;515
 msgid "Incorrect Email/Username"
 msgstr "Email lub nazwa niepoprawne"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:450
+#: Plugin\Usermgmt\Controller\UsersController.php:447
 msgid "Your registration has not been confirmed yet please verify your email before reset password"
 msgstr "Potwierdź rejestrację przed zmianą hasła"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:454
+#: Plugin\Usermgmt\Controller\UsersController.php:451
 msgid "Please check your mail for reset your password"
 msgstr "Sprawdź swój email i postępuj w/g wskazówek"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:484
+#: Plugin\Usermgmt\Controller\UsersController.php:481
 msgid "Your password has been reset successfully"
 msgstr "Twoje hasło zostało poprawnie zmienione"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:487
+#: Plugin\Usermgmt\Controller\UsersController.php:484
 msgid "Something went wrong, please send password reset link again"
 msgstr "Coś poszło 'nie tak', kliknij link ponownie"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:490;494
+#: Plugin\Usermgmt\Controller\UsersController.php:487;491
 msgid "Something went wrong, please click again on the link in email"
 msgstr "Coś poszło 'nie tak', kliknij link w emailu  ponownie"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:524
+#: Plugin\Usermgmt\Controller\UsersController.php:521
 msgid "Please check your mail to verify your email"
 msgstr "Sprawdź swoją skrzynkę email, aby potwierdzić rejestrację"
 
-#: Plugin\Usermgmt\Controller\UsersController.php:526
+#: Plugin\Usermgmt\Controller\UsersController.php:523
 msgid "Your email is already verified"
 msgstr "Twój email został już zweryfikowany"
+
+#: Plugin\Usermgmt\Controller\Component\UserAuthComponent.php:75
+msgid "You need to be signed in to view this page."
+msgstr "Musisz się zalogować, aby wejść na tę stronę!"
 
 #: Plugin\Usermgmt\Model\User.php:60
 msgid "Please enter email or username"
@@ -883,9 +958,8 @@ msgid "Please select group"
 msgstr "Wybierz grupę"
 
 #: Plugin\Usermgmt\Model\User.php:86
-#, fuzzy
 msgid "Please enter username"
-msgstr "Wpisz nazwę użytkownika i hasło"
+msgstr "Wpisz nazwę użytkownika"
 
 #: Plugin\Usermgmt\Model\User.php:90
 msgid "This username already taken"
@@ -914,9 +988,8 @@ msgid "Please enter old password"
 msgstr "Wpisz nazwę użytkownika i hasło"
 
 #: Plugin\Usermgmt\Model\User.php:129
-#, fuzzy
 msgid "Please enter correct old password"
-msgstr "Wpisz nazwę użytkownika i hasło"
+msgstr "Wpisz poprzednie hasło"
 
 #: Plugin\Usermgmt\Model\User.php:139
 msgid "Password must be greater than %s characters"
@@ -925,6 +998,10 @@ msgstr "Hasło musi być dłuższe niż %s znaków"
 #: Plugin\Usermgmt\Model\User.php:144
 msgid "Both passwords must match"
 msgstr "Hasła nie są takie same!"
+
+#: Plugin\Usermgmt\Model\User.php:211
+msgid "Your registration is complete"
+msgstr "Rejestracja zakończona pomyślnie"
 
 #: Plugin\Usermgmt\View\Elements\dashboard.ctp:22
 #: Plugin\Usermgmt\View\Users\access_denied.ctp:32
@@ -1026,7 +1103,7 @@ msgstr "Edytuj grupę"
 
 #: Plugin\Usermgmt\View\UserGroups\edit_group.ctp:53
 msgid "Update Group"
-msgstr ""
+msgstr "Aktualizuj grupę"
 
 #: Plugin\Usermgmt\View\UserGroups\index.ctp:35
 msgid "Group Id"
@@ -1169,7 +1246,7 @@ msgstr "Status"
 
 #: Plugin\Usermgmt\View\Users\index.ctp:85
 msgid "Are you sure you want to delete this user?"
-msgstr ""
+msgstr "Usunąć usera?"
 
 #: Plugin\Usermgmt\View\Users\login.ctp:26
 msgid "Sign In or"
@@ -1186,7 +1263,7 @@ msgstr "Email / nazwa użytkownika"
 
 #: Plugin\Usermgmt\View\Users\login.ctp:48
 msgid "Remember me"
-msgstr "Zaloguj mnie przy następnej wizycie"
+msgstr "Pamiętaj mnie"
 
 #: Plugin\Usermgmt\View\Users\login.ctp:55
 #: Plugin\Usermgmt\View\Users\register.ctp:27
@@ -1224,23 +1301,20 @@ msgid "Ip Address"
 msgstr "Adres IP"
 
 #: View\Auctions\add.ctp:10
-#, fuzzy
 msgid "Add Auction"
-msgstr "Aukcje"
+msgstr "Dodaj aukcję"
 
 #: View\Auctions\edit.ctp:9
-#, fuzzy
 msgid "Edit Auction"
-msgstr "Lista Aukcji"
+msgstr "Edytuj aukcję"
 
 #: View\Auctions\form.ctp:54
 msgid "Title on aukctions list"
 msgstr "Tytuł na liście aukcji"
 
 #: View\Auctions\form.ctp:55
-#, fuzzy
-msgid "Title (visible in auction header"
-msgstr "Nagłówek pierwszej sekcji"
+msgid "Title (visible in auction header)"
+msgstr "Tytuł (widoczny w nagłówku tworzonej aukcji)"
 
 #: View\Auctions\form.ctp:57
 msgid "Content"
@@ -1278,43 +1352,42 @@ msgstr "trzeciego"
 msgid "Select Template"
 msgstr "Wybierz szablon"
 
-#: View\Auctions\index.ctp:12
-#: View\Layouts\default.ctp:115;192
+#: View\Auctions\index.ctp:13
+#: View\Layouts\default.ctp:113;190
 msgid "Auctions"
 msgstr "Aukcje"
 
-#: View\Auctions\index.ctp:14;55
+#: View\Auctions\index.ctp:15;56
 msgid "New Auction"
 msgstr "Nowa aukcja"
 
-#: View\Auctions\index.ctp:19
+#: View\Auctions\index.ctp:20
 #: View\Galleries\index.ctp:19
 msgid "ID"
 msgstr "Id"
 
-#: View\Auctions\index.ctp:21
+#: View\Auctions\index.ctp:22
 #: View\Galleries\index.ctp:22
 msgid "Options"
 msgstr "Opcje"
 
-#: View\Auctions\index.ctp:37
+#: View\Auctions\index.ctp:38
 #: View\Galleries\index.ctp:39
 msgid "Preview"
 msgstr "Podgląd"
 
-#: View\Auctions\index.ctp:38
+#: View\Auctions\index.ctp:39
 #: View\Galleries\index.ctp:40
 msgid "Code"
 msgstr "Kod html"
 
-#: View\Auctions\index.ctp:43
+#: View\Auctions\index.ctp:44
 msgid "Are you sure you want to delete that auction?"
 msgstr "Jesteś pewien, że chcesz usunąć tę aukcję??"
 
 #: View\Elements\picasa_set_user.ctp:28
-#, fuzzy
 msgid "Picasa username"
-msgstr "Nazwa użytkownika"
+msgstr "Nazwa użytkownika Picasa"
 
 #: View\Elements\picasa_set_user.ctp:30
 msgid "Save Picasa User"
@@ -1325,9 +1398,8 @@ msgid "First select an album, then photos (bottom of page)"
 msgstr "Najpierw wybierz album, następnie zdjęcia (na dole strony)"
 
 #: View\Galleries\add.ctp:161
-#, fuzzy
 msgid "Selected images"
-msgstr "Wybierz szablon"
+msgstr "Wybrane obrazy"
 
 #: View\Galleries\add.ctp:182
 msgid "Put your Picasa username eg. <i>%s</i>"
@@ -1342,7 +1414,7 @@ msgid "Available images in <i>%s</i> album, click to add to gallery"
 msgstr "Dostępne obrazy w albumie <i>%</i>, dodaj zdjęcie do galerii kliknięciem"
 
 #: View\Galleries\index.ctp:10
-#: View\Layouts\default.ctp:118;195
+#: View\Layouts\default.ctp:116;193
 msgid "Galleries"
 msgstr "Galerie"
 
@@ -1355,46 +1427,60 @@ msgid "Thumbnail"
 msgstr "Miniatura"
 
 #: View\Galleries\index.ctp:47
-#, fuzzy
 msgid "Are you sure you want to delete that gallery??"
-msgstr "Jesteś pewien, że chcesz usunąć tę aukcję??"
+msgstr "Jesteś pewien, że chcesz usunąć tę galerię??"
 
-#: View\Layouts\default.ctp:121;198
+#: View\Layouts\default.ctp:119;196
 msgid "Contact"
 msgstr "Kontakt"
 
-#: View\Layouts\default.ctp:124;201
+#: View\Layouts\default.ctp:122;199
 msgid "Blog"
 msgstr "Blog"
 
-#: View\Layouts\default.ctp:164
+#: View\Layouts\default.ctp:162
 msgid "Settings"
 msgstr "Ustaiwenia"
 
-#: View\Layouts\default.ctp:168
+#: View\Layouts\default.ctp:166
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: View\Layouts\default.ctp:173
+#: View\Layouts\default.ctp:171
 #: View\Users\login.ctp:18
 msgid "Login"
 msgstr "Zaloguj się"
 
-#: View\Layouts\default.ctp:189;292
+#: View\Layouts\default.ctp:187
 msgid "Navigate"
 msgstr "Nawigacja"
 
-#: View\Layouts\default.ctp:204
+#: View\Layouts\default.ctp:202
 msgid "Help"
 msgstr "Pomoc"
 
-#: View\Pages\index.ctp:131
+#: View\Pages\index.ctp:134
 msgid "Latest Blog posts"
 msgstr "Ostatnie wpisy na blogu"
+
+#: View\Plugin\Blog\BlogPosts\index.ctp:9
+msgid "Showing posts"
+msgstr "Pokazuję posty"
 
 #: View\Users\login.ctp:12
 msgid "Please enter your username and password"
 msgstr "Wpisz nazwę użytkownika i hasło"
+
+#: Model\Contact.php:validation
+#: for field Name;validation Message
+msgid "notempty"
+msgstr ""
+
+#: Model\Contact.php:validation
+#: for field Mail
+#, fuzzy
+msgid "email"
+msgstr "Email"
 
 #: Model\User.php:validation
 #: for field username

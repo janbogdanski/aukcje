@@ -1,0 +1,23 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-02-11 19:31+0100\n"
+"PO-Revision-Date: 2013-02-11 20:04+0100\n"
+"Last-Translator: Jan Bo <janek.bogdanski@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Plugin\Meta\Controller\MetaController.php:107
+msgid "%s new paths found and saved."
+msgstr "Znaleziono %s nowych ścieżek"
+
+#: Plugin\Meta\Controller\MetaController.php:109
+msgid "No new paths found."
+msgstr "Nie znaleziono nowych sciezek"
+

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2012-12-31 23:41+0100\n"
+"POT-Creation-Date: 2013-02-12 10:58+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -13,6 +13,67 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller\AuctionsController.php:37
+msgid "Auction successfully saved."
+msgstr ""
+
+#: Controller\AuctionsController.php:43
+msgid "Unable to add auction. Please, try again."
+msgstr ""
+
+#: Controller\AuctionsController.php:60;106;168
+msgid "Invalid id for auction"
+msgstr ""
+
+#: Controller\AuctionsController.php:126
+msgid "Auction was edited."
+msgstr ""
+
+#: Controller\AuctionsController.php:132
+msgid "Unable to edit auction. Please, try again."
+msgstr ""
+
+#: Controller\AuctionsController.php:144
+msgid "Auction does not exist."
+msgstr ""
+
+#: Controller\AuctionsController.php:160
+#: Controller\GalleriesController.php:203
+msgid "Delete method is not allowed."
+msgstr ""
+
+#: Controller\AuctionsController.php:180
+msgid "Auction was deleted."
+msgstr ""
+
+#: Controller\AuctionsController.php:186
+msgid "Unable to delete auction."
+msgstr ""
+
+#: Controller\GalleriesController.php:66;106;211
+msgid "Invalid id for gallery"
+msgstr ""
+
+#: Controller\GalleriesController.php:119
+msgid "Select images, gallery not saved"
+msgstr ""
+
+#: Controller\GalleriesController.php:160
+msgid "Gallery successfully saved"
+msgstr ""
+
+#: Controller\GalleriesController.php:167
+msgid "Unable to add gallery. Please, try again."
+msgstr ""
+
+#: Controller\GalleriesController.php:223
+msgid "Gallery was deleted."
+msgstr ""
+
+#: Controller\GalleriesController.php:229
+msgid "Unable to delete gallery."
+msgstr ""
 
 #: Plugin\Blog\Controller\BlogPostCategoriesController.php:35;68;96
 msgid "Invalid blog post category"
@@ -239,7 +300,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:113;157
 #: Plugin\Usermgmt\View\UserGroups\index.ctp:61
 #: Plugin\Usermgmt\View\Users\index.ctp:85
-#: View\Auctions\index.ctp:40
+#: View\Auctions\index.ctp:41
 #: View\Galleries\index.ctp:44
 #: View\Plugin\Blog\BlogPostCategories\admin_edit.ctp:23
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:39
@@ -303,7 +364,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:34
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:112;156
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:26
-#: View\Auctions\index.ctp:36
+#: View\Auctions\index.ctp:37
 #: View\Galleries\index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:107;161
@@ -499,7 +560,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:127
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:53
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:9
-#: View\Auctions\index.ctp:20
+#: View\Auctions\index.ctp:21
 #: View\Galleries\index.ctp:21
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:127
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:53
@@ -652,20 +713,20 @@ msgstr ""
 msgid "Related Blog Post Tags"
 msgstr ""
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:4
-#: View\Plugin\Blog\BlogPosts\index.ctp:5
+#: Plugin\Blog\View\BlogPosts\index.ctp:4
+#: View\Plugin\Blog\BlogPosts\index.ctp:9
 msgid "Show all"
 msgstr ""
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:19
-#: View\Pages\index.ctp:142
-#: View\Plugin\Blog\BlogPosts\index.ctp:20
+#: Plugin\Blog\View\BlogPosts\index.ctp:19
+#: View\Pages\index.ctp:145
+#: View\Plugin\Blog\BlogPosts\index.ctp:24
 msgid "View comments"
 msgstr ""
 
-#: Plugin\Blog\View\BlogPosts\indexoo.ctp:51
-#: View\Pages\index.ctp:181
-#: View\Plugin\Blog\BlogPosts\index.ctp:52
+#: Plugin\Blog\View\BlogPosts\index.ctp:51
+#: View\Pages\index.ctp:184
+#: View\Plugin\Blog\BlogPosts\index.ctp:56
 msgid "Sorry, there are no blog posts."
 msgstr ""
 
@@ -741,6 +802,18 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
+#: Plugin\Blog\View\Helper\BlogHelper.php:218
+msgid " in category: "
+msgstr ""
+
+#: Plugin\Blog\View\Helper\BlogHelper.php:220
+msgid " tagged with: "
+msgstr ""
+
+#: Plugin\Blog\View\Helper\BlogHelper.php:222
+msgid " created in "
+msgstr ""
+
 #: Plugin\Usermgmt\Controller\UserGroupsController.php:45
 msgid "The group is successfully added"
 msgstr ""
@@ -773,92 +846,96 @@ msgstr ""
 msgid "You are successfully signed out"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:173
+#: Plugin\Usermgmt\Controller\UsersController.php:170
 msgid "Please select correct register as"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:201
+#: Plugin\Usermgmt\Controller\UsersController.php:198
 msgid "Please check your mail and confirm your registration"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:207
+#: Plugin\Usermgmt\Controller\UsersController.php:204
 msgid "Sorry new registration is currently disabled, please try again later"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:229
+#: Plugin\Usermgmt\Controller\UsersController.php:226
 msgid "Password changed successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:255
+#: Plugin\Usermgmt\Controller\UsersController.php:252
 msgid "Password for %s changed successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:281
+#: Plugin\Usermgmt\Controller\UsersController.php:278
 msgid "The user is successfully added"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:301
+#: Plugin\Usermgmt\Controller\UsersController.php:298
 msgid "The user is successfully updated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:328
+#: Plugin\Usermgmt\Controller\UsersController.php:325
 msgid "User is successfully deleted"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:362
+#: Plugin\Usermgmt\Controller\UsersController.php:359
 msgid "User is successfully activated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:364
+#: Plugin\Usermgmt\Controller\UsersController.php:361
 msgid "User is successfully deactivated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:382
+#: Plugin\Usermgmt\Controller\UsersController.php:379
 msgid "User email is successfully verified"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:416
+#: Plugin\Usermgmt\Controller\UsersController.php:413
 msgid "Thank you, your account is activated now"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:419
+#: Plugin\Usermgmt\Controller\UsersController.php:416
 msgid "Thank you, your account is already activated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:422;425
+#: Plugin\Usermgmt\Controller\UsersController.php:419;422
 msgid "Sorry something went wrong, please click on the link again"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:444;518
+#: Plugin\Usermgmt\Controller\UsersController.php:441;515
 msgid "Incorrect Email/Username"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:450
+#: Plugin\Usermgmt\Controller\UsersController.php:447
 msgid "Your registration has not been confirmed yet please verify your email before reset password"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:454
+#: Plugin\Usermgmt\Controller\UsersController.php:451
 msgid "Please check your mail for reset your password"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:484
+#: Plugin\Usermgmt\Controller\UsersController.php:481
 msgid "Your password has been reset successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:487
+#: Plugin\Usermgmt\Controller\UsersController.php:484
 msgid "Something went wrong, please send password reset link again"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:490;494
+#: Plugin\Usermgmt\Controller\UsersController.php:487;491
 msgid "Something went wrong, please click again on the link in email"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:524
+#: Plugin\Usermgmt\Controller\UsersController.php:521
 msgid "Please check your mail to verify your email"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:526
+#: Plugin\Usermgmt\Controller\UsersController.php:523
 msgid "Your email is already verified"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\Component\UserAuthComponent.php:75
+msgid "You need to be signed in to view this page."
 msgstr ""
 
 #: Plugin\Usermgmt\Model\User.php:60
@@ -911,6 +988,10 @@ msgstr ""
 
 #: Plugin\Usermgmt\Model\User.php:144
 msgid "Both passwords must match"
+msgstr ""
+
+#: Plugin\Usermgmt\Model\User.php:211
+msgid "Your registration is complete"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\dashboard.ctp:22
@@ -1223,7 +1304,7 @@ msgid "Title on aukctions list"
 msgstr ""
 
 #: View\Auctions\form.ctp:55
-msgid "Title (visible in auction header"
+msgid "Title (visible in auction header)"
 msgstr ""
 
 #: View\Auctions\form.ctp:57
@@ -1262,36 +1343,36 @@ msgstr ""
 msgid "Select Template"
 msgstr ""
 
-#: View\Auctions\index.ctp:12
-#: View\Layouts\default.ctp:115;192
+#: View\Auctions\index.ctp:13
+#: View\Layouts\default.ctp:113;190
 msgid "Auctions"
 msgstr ""
 
-#: View\Auctions\index.ctp:14;55
+#: View\Auctions\index.ctp:15;56
 msgid "New Auction"
 msgstr ""
 
-#: View\Auctions\index.ctp:19
+#: View\Auctions\index.ctp:20
 #: View\Galleries\index.ctp:19
 msgid "ID"
 msgstr ""
 
-#: View\Auctions\index.ctp:21
+#: View\Auctions\index.ctp:22
 #: View\Galleries\index.ctp:22
 msgid "Options"
 msgstr ""
 
-#: View\Auctions\index.ctp:37
+#: View\Auctions\index.ctp:38
 #: View\Galleries\index.ctp:39
 msgid "Preview"
 msgstr ""
 
-#: View\Auctions\index.ctp:38
+#: View\Auctions\index.ctp:39
 #: View\Galleries\index.ctp:40
 msgid "Code"
 msgstr ""
 
-#: View\Auctions\index.ctp:43
+#: View\Auctions\index.ctp:44
 msgid "Are you sure you want to delete that auction?"
 msgstr ""
 
@@ -1324,7 +1405,7 @@ msgid "Available images in <i>%s</i> album, click to add to gallery"
 msgstr ""
 
 #: View\Galleries\index.ctp:10
-#: View\Layouts\default.ctp:118;195
+#: View\Layouts\default.ctp:116;193
 msgid "Galleries"
 msgstr ""
 
@@ -1340,41 +1421,53 @@ msgstr ""
 msgid "Are you sure you want to delete that gallery??"
 msgstr ""
 
-#: View\Layouts\default.ctp:121;198
+#: View\Layouts\default.ctp:119;196
 msgid "Contact"
 msgstr ""
 
-#: View\Layouts\default.ctp:124;201
+#: View\Layouts\default.ctp:122;199
 msgid "Blog"
 msgstr ""
 
-#: View\Layouts\default.ctp:164
+#: View\Layouts\default.ctp:162
 msgid "Settings"
 msgstr ""
 
-#: View\Layouts\default.ctp:168
+#: View\Layouts\default.ctp:166
 msgid "Logout"
 msgstr ""
 
-#: View\Layouts\default.ctp:173
+#: View\Layouts\default.ctp:171
 #: View\Users\login.ctp:18
 msgid "Login"
 msgstr ""
 
-#: View\Layouts\default.ctp:189;292
+#: View\Layouts\default.ctp:187
 msgid "Navigate"
 msgstr ""
 
-#: View\Layouts\default.ctp:204
+#: View\Layouts\default.ctp:202
 msgid "Help"
 msgstr ""
 
-#: View\Pages\index.ctp:131
+#: View\Pages\index.ctp:134
 msgid "Latest Blog posts"
+msgstr ""
+
+#: View\Plugin\Blog\BlogPosts\index.ctp:9
+msgid "Showing posts"
 msgstr ""
 
 #: View\Users\login.ctp:12
 msgid "Please enter your username and password"
+msgstr ""
+
+#: Model\Contact.php:validation for field Name;validation for field Message
+msgid "notempty"
+msgstr ""
+
+#: Model\Contact.php:validation for field Mail
+msgid "email"
 msgstr ""
 
 #: Model\User.php:validation for field username

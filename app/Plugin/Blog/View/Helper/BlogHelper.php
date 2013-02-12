@@ -215,11 +215,11 @@ class BlogHelper extends AppHelper {
   public function filterDescription() {
     switch ($this->filtered()) {
       case 'category':
-        return ' in category: ' . $this->_View->viewVars['category']['BlogPostCategory']['name'];
+        return __(' in category: ') . $this->_View->viewVars['category']['BlogPostCategory']['name'];
       case 'tag':
-        return ' tagged with: ' . $this->_View->viewVars['tag']['BlogPostTag']['name'];
+        return __(' tagged with: ') . $this->_View->viewVars['tag']['BlogPostTag']['name'];
       case 'archive':
-        return ' created in ' . __(date('F', mktime(0, 0, 0, (int)$this->params['month'])), true) . ' ' . $this->params['year'];
+        return __(' created in ' ) . __(date('F', mktime(0, 0, 0, (int)$this->params['month'])), true) . ' ' . $this->params['year'];
       default:
         return false;
     }

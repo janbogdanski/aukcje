@@ -1,8 +1,12 @@
-
+<?php
+/**
+ * @var $this View
+ */
+?>
 <div id="content">
 
   <?php if ($this->Blog->filtered()) : ?>
-    <p>Showing posts <?php echo $this->Blog->filterDescription(); ?>, <?php echo $this->Html->link(__('Show all', true), array('action' => 'index')); ?></p>
+    <p><?php echo __('Showing posts'); ?> <?php echo $this->Blog->filterDescription(); ?>, <?php echo $this->Html->link(__('Show all', true), array('action' => 'index')); ?></p>
   <?php endif; ?>
 
   <?php if (!empty($blogPosts)) : ?>
