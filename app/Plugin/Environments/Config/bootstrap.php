@@ -21,6 +21,17 @@ Environment::configure('production',
         'debug'                   => 0,
     )
 );
+Environment::configure('stage',
+    array(
+        'server' => array(
+            'www.stage.proaukcje.eu',
+            'stage.proaukcje.eu',
+        )
+    ),
+    array(
+        'debug'                   => 2,
+    )
+);
 
 Environment::configure('jbogdanski',
     array(
