@@ -1,9 +1,12 @@
-<?php 
+<?php
+/**
+ * @var $this View
+ */
 $action = in_array($this->action, array('add', 'admin_add'))?'Add':'Edit'; 
 $action = Inflector::humanize($action);
 
 echo $this->Form->create();?>
-<fieldset><legend><?php echo $action . ' ' . $modelClass;?></legend>
+<fieldset><legend><?php echo $action . ' ' /*. $modelClass*/;?></legend>
 <?php
 echo $this->Form->input('id');
 echo $this->Form->input('path', array('style' => 'width:500px;'));

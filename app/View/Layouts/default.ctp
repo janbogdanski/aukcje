@@ -9,20 +9,20 @@
 <!--[if IE 8 ]>    <html class="ie8" dir="ltr" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 <head>
-    <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
     <?php echo $this->Html->charset(); ?>
+    <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
     <title>
-        <?php echo $title_for_layout; ?>
-    </title>
-    <?php echo $this->Html->meta('description', @$metaDescription); ?>
-    <?php echo $this->Html->meta('keywords', @$metaKeywords); ?>
 
-    <meta property="og:title" content="<?php echo @$metaOgTitle; ?>" />
-    <meta property="og:url" content="<?php echo @$metaOgUrl; ?>" />
-    <meta property="og:description" content="<?php echo @$metaOgTitle; ?>" />
-    <meta property="og:site_name" content="<?php echo @$metaOgSiteName; ?>" />
+        <?php echo $this->get('title_for_layout');?>
+    </title>
+
+
+<!--    <meta property="og:title" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
+<!--    <meta property="og:url" content="--><?php //echo @$metaOgUrl; ?><!--" />-->
+<!--    <meta property="og:description" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
+<!--    <meta property="og:site_name" content="--><?php //echo @$metaOgSiteName; ?><!--" />-->
 <!--    <meta property="og:image" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <meta property="og:type" content="<?php echo @$metaOgType; ?>" />
+<!--    <meta property="og:type" content="--><?php //echo @$metaOgType; ?><!--" />-->
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -373,7 +373,7 @@
 <!--    /* ]]> */-->
 <!--//</script>-->
 <!--<script type='text/javascript' src='http://flipit.fdthemes.com/corpit/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.2'></script>-->
-<!--<script type='text/javascript' src='http://flipit.fdthemes.com/corpit/wp-content/themes/flipit/js/jquery.flexslider-min.js?ver=1.0'></script>-->
+<script type='text/javascript' src='http://flipit.fdthemes.com/corpit/wp-content/themes/flipit/js/jquery.flexslider-min.js?ver=1.0'></script>
 <script type='text/javascript' src='http://flipit.fdthemes.com/corpit/wp-content/themes/flipit/js/bootstrap.min.js?ver=1.0'></script>
 <!--<script type='text/javascript' src='http://flipit.fdthemes.com/corpit/wp-content/themes/flipit/js/script.js?ver=1.0'></script>-->
 <!--<script type='text/javascript'>-->

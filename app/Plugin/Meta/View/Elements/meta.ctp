@@ -1,7 +1,17 @@
 <?php
-$meta = $this->requestAction('/meta/meta/index/'.$this->request->controller .'/'. $this->request->action .'/'. implode('#', $this->request->pass));
+/**
+ * @var $this View
+ */
+if($this->request->plugin == 'blog'){
+//    print_r($this->request->slug);
 
+    $meta = $this->requestAction('/meta/meta/index/'.$this->request->controller .'/'. $this->request->action .'/'. '#'.$this->request->slug);
+//echo '/meta/meta/index/'.$this->request->controller .'/'. $this->request->action .'/'. implode('#', $this->request->params->slug);
+} else{
 
+    $meta = $this->requestAction('/meta/meta/index/'.$this->request->controller .'/'. $this->request->action .'/'. implode('#', $this->request->pass));
+//   echo '/meta/meta/index/'.$this->request->controller .'/'. $this->request->action .'/'. implode('#', $this->request->pass);
+}
 if (isset($meta) && is_array($meta)) {
 	extract($meta);
 }
@@ -74,6 +84,8 @@ if (isset($Metum) && !empty($Metum['keywords'])) {
 //print_r($metaKeywords);
 ?>
 
-<?php echo $this->Html->tag('title', stripslashes($metaTitle));?>
+<?php  $this->Html->tag('title', stripslashes($metaTitle));
+$this->set('title_for_layout', stripslashes($metaTitle));
+?>
 <?php echo $this->Html->meta('description', htmlspecialchars($metaDescription));?>
 <?php echo $this->Html->meta('keywords', htmlspecialchars($metaKeywords));?>

@@ -1,9 +1,15 @@
 <?php
 class MetaController extends MetaAppController {
 	var $name = 'Meta';
-	var $uses = array('Meta.Metum');
+	var $uses = array('Meta.Metum', 'Blog.BlogPost');
 	var $allowedActions = array('index');
 
+    public $paginate = array(
+        'limit' => 25,
+//        'order' => array(
+//            'Post.title' => 'asc'
+//        )
+    );
 	function beforeFilter() {
 		parent::beforeFilter();
 		if (isset($this->Auth)) {
@@ -43,6 +49,89 @@ class MetaController extends MetaAppController {
         }
 	}
 
+    public function admin_index(){
+
+        $data = $this->paginate('Metum');
+        $this->set('data', $data);
+    }
+    public function admin_add(){
+
+        $this->Metum->create();
+        $meta = $this->Metum->save( );
+       $this->redirect(array('action'=>'edit', $meta['Metum']['id']));
+    }
+
+    public function admin_edit($id = null){
+
+        if(is_null($id) || !$id ) {
+            $this->Session->setFlash(__('Invalid id'),'notice');
+            $this->redirect(array('action'=>'index'));
+
+        }else{
+            $meta = $this->Metum->find('first', array(
+                'conditions' => array('Metum.id' => $id)
+            ));
+
+
+            //check if a user with this id really exists
+            if(($meta)){
+
+                if( $this->request->is( 'post' ) || $this->request->is( 'put' ) ){
+
+                    //save user
+                    $this->Metum->id = $id;
+                    if( $this->Metum->save( $this->request->data ) ){
+
+                        //set to user's screen
+                        $this->Session->setFlash(__('Metum was edited.'), 'default', array(), 'good');
+
+                        //redirect to user's list
+                        $this->redirect(array('action' => 'index'));
+
+                    }else{
+                        $this->Session->setFlash(__('Unable to edit Metum. Please, try again.'),'error');
+                    }
+
+                }else{
+
+                    //we will read the user data
+                    //so it will fill up our html form automatically
+                    $this->request->data = $meta;
+                }
+
+            }else{
+                //if not found, we will tell the user that user does not exist
+                $this->Session->setFlash(__('Auction does not exist.'), 'notice');
+                $this->redirect(array('action' => 'index'));
+
+                //or, since it we are using php5, we can throw an exception
+                //it looks like this
+                //throw new NotFoundException('The user you are trying to edit does not exist.');
+            }
+        }
+    }
+
+    public function admin_delete($id = null){
+
+        if( $this->request->is('get') ){
+
+            $this->Session->setFlash(__('Delete method is not allowed.'),'notice');
+            $this->redirect(array('action' => 'index'));
+        }else{
+
+            if(is_null($id) || !$id ) {
+                $this->Session->setFlash(__('Invalid id'),'notice');
+                $this->redirect(array('action'=>'index'));
+
+            }else{
+                $this->Metum->delete($id);
+                $this->Session->setFlash(__('Deleted'),'good');
+
+                $this->redirect(array('action'=>'index'));
+
+            }
+        }
+    }
 	public function admin_initialize() {
 		$count = 0;
 		if ($this->loadModel('Blog')) {
