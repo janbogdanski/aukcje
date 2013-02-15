@@ -21,7 +21,8 @@ $width = $gallery['Gallery']['size'];
 
 ?>
 <style type="text/css">
-    .footborder {
+    .foot {
+        color:<?php echo $gallery['Gallery']['headerColor']; ?>;
     }
 
     .allborder {
@@ -41,7 +42,7 @@ $width = $gallery['Gallery']['size'];
 
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> img {
+    #table<?php echo $gallery['Gallery']['id']; ?> img {
         <?php if($gallery['Gallery']['showBorder']): ?>
         border:1px solid <?php echo $gallery['Gallery']['borderColor']; ?>;
         <?php endif; ?>
@@ -49,38 +50,38 @@ $width = $gallery['Gallery']['size'];
         padding:1px;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> img.noborder {
+    #table<?php echo $gallery['Gallery']['id']; ?> img.noborder {
         border:none;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> a.noborder:hover img {
+    #table<?php echo $gallery['Gallery']['id']; ?> a.noborder:hover img {
         border:none;
         padding:1px;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> {
+    #table<?php echo $gallery['Gallery']['id']; ?> {
         width:730px;
         padding:0;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> td {
+    #table<?php echo $gallery['Gallery']['id']; ?> td {
         border:0;
         border-spacing:0;
         vertical-align:middle;
         padding:0;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> a {
+    #table<?php echo $gallery['Gallery']['id']; ?> a {
         text-decoration:none;
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> a:hover img {
+    #table<?php echo $gallery['Gallery']['id']; ?> a:hover img {
         text-decoration:none;
         border:2px solid #000;
         padding:0;
     }
 
-    #linkfoto {
+    #fotolink {
     <?php if($gallery['Gallery']['showBorder']): ?>
         border-bottom:1px solid <?php echo $gallery['Gallery']['borderColor']; ?>;
         <?php endif; ?>
@@ -88,7 +89,7 @@ $width = $gallery['Gallery']['size'];
         padding:2px 8px 5px;
     }
 
-    #linkfoto a {
+    #fotolink a {
         font-size:12px;
         border:0;
         color:<?php echo $gallery['Gallery']['headerColor']; ?>;
@@ -97,14 +98,14 @@ $width = $gallery['Gallery']['size'];
         margin:0;
     }
 
-    #linkfoto a:hover {
+    #fotolink a:hover {
         border:0;
         text-decoration:underline;
         margin:0;
     }
 
 
-    .ppreview {
+    .big {
         width:300px;
         height:225px;
         margin-bottom:10px;
@@ -114,7 +115,7 @@ $width = $gallery['Gallery']['size'];
 
 
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadow img,#tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle img {
+    #table<?php echo $gallery['Gallery']['id']; ?> a.widthshadow img,#table<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle img {
 
     <?php if($gallery['Gallery']['showShadow']): ?>
         -moz-box-shadow:2px 2px 7px #7D7D7D;
@@ -125,7 +126,7 @@ $width = $gallery['Gallery']['size'];
 
     }
 
-    #tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadow:hover img,#tabelka<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle:hover img {
+    #table<?php echo $gallery['Gallery']['id']; ?> a.widthshadow:hover img,#table<?php echo $gallery['Gallery']['id']; ?> a.widthshadowmiddle:hover img {
         background-position:0 -256px;
     }
 
@@ -134,10 +135,10 @@ $width = $gallery['Gallery']['size'];
     }
 
 </style>
-<div id='tabelka<?php echo $gallery['Gallery']['id']; ?>'>
+<div id='table<?php echo $gallery['Gallery']['id']; ?>'>
     <div class="allborder" style="width:<?php echo isset($width) ? $width : 600; ?>px;">
         <div class="insideborder" style="">
-            <div id='linkfoto' style="">
+            <div id='fotolink' style="">
                 <?php $galleryUrl =  $this->Html->link('Galeria zdjęć - kliknij, aby powiększyć',array(
                     'controller' => 'galleries',
                     'action' => 'view',
@@ -149,7 +150,7 @@ $width = $gallery['Gallery']['size'];
             <div>
                 <?php if(isset($gallery['GalleriesDetails']['image'][0])): ?>
 
-                <div class="ppreview">
+                <div class="big">
                     <?php
                     echo $this->Html->link(
                         $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($gallery['GalleriesDetails']['image'][0],PicasaImageSizeHelper::PHOTO_GALLERY_FIRST),
@@ -206,7 +207,7 @@ $width = $gallery['Gallery']['size'];
             </div>
             <div class="footborder" style="">
 
-                <a href="<?php echo $this->Html->url('/',true);?>" target="_blank" title="darmowa galeria allegro" class="noborder"><?php echo $this->Html->url('/',true);?></a><img src="http://www.galerieallegro.pl/views/<?php echo $gallery['Gallery']['id']; ?>/" alt="GalerieAllegro.pl" class="noborder" width="1" height="1"/>
+                <a href="<?php echo $this->Html->url('/',true);?>" target="_blank" title="darmowa galeria allegro" class="foot"><?php echo $this->Html->url('/',true);?></a><img src="http://www.galerieallegro.pl/views/<?php echo $gallery['Gallery']['id']; ?>/" alt="GalerieAllegro.pl" class="noborder" width="1" height="1"/>
             </div>
         </div>
     </div>

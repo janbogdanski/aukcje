@@ -61,7 +61,27 @@
 //            }
         });
 
+        $(".savestay").click(function(){
+//          $('form input[name="title"]').bind('change', function(tid) {
+            var form = this.form;
+            alert($(form).attr('method'));
+            alert($(form).attr('action'));
+            alert($(form).serialize());
+            $.ajax({
+                type: $(form).attr('method'),
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+//                dataType: 'json',
+                success: function(data) {
+                    // refresh this form with 'data'.
+                }
+            });
+            return false;
+        });
         $("#preview,#preview2").click( function() {
+
+            $("#liveGallery").hide();
+            $(".ajax-loader").show();
 
             $("#action").val($(this).attr("name"));
 //            alert((this.form.action = action));
@@ -73,14 +93,24 @@
                 cache: false,
                 success: function(html,status){
                     $("#liveGallery").html(html);
+                    $("#liveGallery a").each(function() {
+//                        $(this).replaceWith($(this).html());
+                        $(this).attr('href','#').attr('target', '');
+                    });
                     $("#code textarea").text(html);
                     $("#code").animate({ backgroundColor: "yellow" }, "slow")
                         .animate({ backgroundColor: "white" }, "slow");
+                },
+                complete: function(html,status){
+                    $(".ajax-loader").hide();
+                    $("#liveGallery").show();
+
                 }
             });
             return false;
 
         });
+
 
 
         $("#backgroundColor, #headerColor, #borderColor").spectrum({
@@ -141,6 +171,7 @@
                 <div class="m-btn-group">
             <?php echo $this->Form->submit(__d('gallery','Preview'), array('id' => 'preview', 'name' => 'previewGallery', 'div' => false, 'class' => 'm-btn  green')); ?>
         <?php echo $this->Form->submit(__d('gallery','Save'), array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
+        <?php echo $this->Form->button(__d('gallery','Save & Stay'), array('default' =>  false, 'div' => false, 'class' => 'm-btn purple savestay',)); ?>
                 </div>
                 <div class="row-fluid">&nbsp;</div>
                 <div class="row-fluid">
@@ -152,7 +183,10 @@
         </div>
 
     <div class="span5">
-        <div id="liveGallery"><?php echo __('First select an album, then photos (bottom of page)'); //to jest nadpisane gdy sa dodane zdjecia do galerii ?></div>
+        <div class="ajax-loader"></div>
+        <div id="liveGallery">
+            <?php echo __('First select an album, then photos (bottom of page)'); //to jest nadpisane gdy sa dodane zdjecia do galerii ?>
+        </div>
     </div>
     </div>
 
@@ -180,6 +214,8 @@
     <div class="row">
         <fieldset>
             <legend><?php echo __('Put your Picasa username eg. <i>%s</i>', 'proaukcje@gmail.com'); ?></legend>
+            <span><?php echo __d('gallery', 'First save your gallery - button Save & Stay'); ?>
+            </span>
 
             <?php echo $this->element('picasa_set_user'); ?>
         </fieldset>

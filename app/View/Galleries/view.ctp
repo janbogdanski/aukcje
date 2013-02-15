@@ -44,7 +44,10 @@ $nextPhotoNUm = $photo >= $count ? 1 : $photo + 1;
 
             <?php endforeach; ?>
 
-        <div>
+        </div>
+    <div class="row">&nbsp;</div>
+
+    <div class="row">
             <?php if(isset($gallery['GalleriesDetails'][$photoNum])): ?>
 
             <?php echo $this->Html->link(
@@ -64,4 +67,3 @@ $nextPhotoNUm = $photo >= $count ? 1 : $photo + 1;
 
     </div>
 
-</div>
