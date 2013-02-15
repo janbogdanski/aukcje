@@ -18,76 +18,51 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div class="umtop">
-	<div class="um_box_up"></div>
-	<div class="um_box_mid">
-		<div class="um_box_mid_content">
-			<div class="um_box_mid_content_top">
-				<h2 class="form-header"><?php echo __('Sign Up or'); ?></h2>
-				<span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign In",true),"/login") ?></span>
-                <div style="clear:both"></div>
-            </div>
-			<div class="umhr"></div>
-			<div class="um_box_mid_content_mid" id="register">
-				<div class="um_box_mid_content_mid_left">
-					<?php echo $this->Form->create('User', array('action' => 'register')); ?>
-			<?php   if (count($userGroups) >2) { ?>
-						<div>
-							<div class="umstyle3"><?php echo __('Group');?><font color='red'>*</font></div>
-							<div class="umstyle4" ><?php echo $this->Form->input("user_group_id" ,array('type' => 'select', 'label' => false,'div' => false,'class'=>"span3" ))?></div>
-							<div style="clear:both"></div>
-						</div>
-			<?php   }   ?>
-					<div>
-						<div class="umstyle3"><?php echo __('Username');?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("username" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
-						<div style="clear:both"></div>
-					</div>
-<!--					<div>-->
-<!--						<div class="umstyle3">--><?php //echo __('First Name');?><!--<font color='red'>*</font></div>-->
-<!--						<div class="umstyle4" >--><?php //echo $this->Form->input("first_name" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->
-<!--						<div style="clear:both"></div>-->
-<!--					</div>-->
-<!--					<div>-->
-<!--						<div class="umstyle3">--><?php //echo __('Last Name');?><!--<font color='red'>*</font></div>-->
-<!--						<div class="umstyle4" >--><?php //echo $this->Form->input("last_name" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->
-<!--						<div style="clear:both"></div>-->
-<!--					</div>-->
-					<div>
-						<div class="umstyle3"><?php echo __('Email');?><font color='red'>*</font></div>
-						<div class="umstyle4" ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
-						<div style="clear:both"></div>
-					</div>
-					<div>
-						<div class="umstyle3"><?php echo __('Password');?><font color='red'>*</font></div>
-						<div class="umstyle4"><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"span3" ))?></div>
-						<div style="clear:both"></div>
-					</div>
-					<div>
-						<div class="umstyle3"><?php echo __('Confirm Password');?><font color='red'>*</font></div>
-						<div class="umstyle4"><?php echo $this->Form->input("cpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"span3" ))?></div>
-						<div style="clear:both"></div>
-					</div>
-			<?php   if(USE_RECAPTCHA && PRIVATE_KEY_FROM_RECAPTCHA !="" && PUBLIC_KEY_FROM_RECAPTCHA !="") { ?>
-					<div>
-						<div class="umstyle4" style="margin-left:45px"><?php echo $this->UserAuth->showCaptcha(isset($this->validationErrors['User']['captcha'][0]) ? $this->validationErrors['User']['captcha'][0] : ""); ?></div>
-						<div style="clear:both"></div>
-					</div>
-			<?php   } ?>
-					<div>
-						<div class="umstyle3"></div>
-						<div class="umstyle4"><?php echo $this->Form->Submit(__('Sign Up'),array('class' => 'm-btn blue'));?></div>
-						<div style="clear:both"></div>
-					</div>
-					<?php echo $this->Form->end(); ?>
-				</div>
-				<div class="um_box_mid_content_mid_right" align="right"></div>
-				<div style="clear:both"></div>
-			</div>
-		</div>
-	</div>
-	<div class="um_box_down"></div>
+<h2 class="form-header"><?php echo __('Sign Up'); ?></h2>
+<span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign In",true),"/login") ?></span>
+<?php echo $this->Form->create('User', array('action' => 'register')); ?>
+<?php   if (count($userGroups) >2) { ?>
+<div>
+    <div><?php echo __('Group');?><font color='red'>*</font></div>
+    <div ><?php echo $this->Form->input("user_group_id" ,array('type' => 'select', 'label' => false,'div' => false,'class'=>"span3" ))?></div>
 </div>
-<script>
-document.getElementById("UserUsername").focus();
+<?php   }   ?>
+<div>
+    <div><?php echo __('Username');?><font color='red'>*</font></div>
+    <div ><?php echo $this->Form->input("username" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
+</div>
+<!--					<div>-->
+<!--						<div>--><?php //echo __('First Name');?><!--<font color='red'>*</font></div>-->
+<!--						<div >--><?php //echo $this->Form->input("first_name" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->
+<!--						<div style="clear:both"></div>-->
+<!--					</div>-->
+<!--					<div>-->
+<!--						<div>--><?php //echo __('Last Name');?><!--<font color='red'>*</font></div>-->
+<!--						<div >--><?php //echo $this->Form->input("last_name" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->
+<!--						<div style="clear:both"></div>-->
+<!--					</div>-->
+<div>
+    <div><?php echo __('Email');?><font color='red'>*</font></div>
+    <div ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
+</div>
+<div>
+    <div><?php echo __('Password');?><font color='red'>*</font></div>
+    <div><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"span3" ))?></div>
+</div>
+<div>
+    <div><?php echo __('Confirm Password');?><font color='red'>*</font></div>
+    <div><?php echo $this->Form->input("cpassword" ,array("type"=>"password",'label' => false,'div' => false,'class'=>"span3" ))?></div>
+</div>
+<?php   if(USE_RECAPTCHA && PRIVATE_KEY_FROM_RECAPTCHA !="" && PUBLIC_KEY_FROM_RECAPTCHA !="") { ?>
+<div>
+    <div style="margin-left:45px"><?php echo $this->UserAuth->showCaptcha(isset($this->validationErrors['User']['captcha'][0]) ? $this->validationErrors['User']['captcha'][0] : ""); ?></div>
+</div>
+<?php   } ?>
+<div>
+    <div></div>
+    <div><?php echo $this->Form->Submit(__('Sign Up'),array('class' => 'm-btn blue'));?></div>
+</div>
+<?php echo $this->Form->end(); ?>
+<script type="text/javascript">
+    document.getElementById("UserUsername").focus();
 </script>
