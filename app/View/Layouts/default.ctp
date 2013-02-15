@@ -97,6 +97,7 @@
 
 
 <body class="">
+<?php echo $this->element('analytics'); ?>
 <div id="wrap" class="navPositionright">
 
     <div id="container" class="container">

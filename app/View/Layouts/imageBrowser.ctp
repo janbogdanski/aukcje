@@ -41,6 +41,7 @@ function select_image(imagePath) {
 
 </head>
 <body>
+<?php echo $this->element('analytics'); ?>
 <?php
 $user = $this->UserAuth->getUser();
 ?>

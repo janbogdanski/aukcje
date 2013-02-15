@@ -32,6 +32,7 @@ A:HOVER { text-decoration: underline; color:#44E }
 --></style>
 </head>
 <body>
+<?php echo $this->element('analytics'); ?>
 <p><a href="<?php echo $url; ?>"><?php echo $message; ?></a></p>
 </body>
 </html>
