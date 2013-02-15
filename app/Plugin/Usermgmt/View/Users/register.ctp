@@ -18,7 +18,7 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<h2 class="form-header"><?php echo __('Sign Up'); ?></h2>
+<h2 class="form-header"><?php echo __('Sign Up or'); ?></h2>
 <span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign In",true),"/login") ?></span>
 <?php echo $this->Form->create('User', array('action' => 'register')); ?>
 <?php   if (count($userGroups) >2) { ?>

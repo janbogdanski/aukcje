@@ -448,7 +448,7 @@ class UsersController extends UserMgmtAppController {
 					return;
 				}
 				$this->User->forgotPassword($user);
-				$this->Session->setFlash(__('Please check your mail for reset your password'),'error');
+				$this->Session->setFlash(__('Please check your mail for reset your password'),'good');
 				$this->redirect('/login');
 			}
 		}
