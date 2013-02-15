@@ -65,7 +65,7 @@ class GalleriesController extends AppController {
         $this->layout = 'galleryPreview';
         $id = $this->request->params['pass'][0];
         if( !$id ) {
-            $this->Session->setFlash(__('Invalid id for gallery'), 'notice');
+            $this->Session->setFlash(__('Invalid id for gallery'), 'info');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -107,7 +107,7 @@ class GalleriesController extends AppController {
 
         $id = $this->request->params['pass'][0];
         if( !$id ) {
-            $this->Session->setFlash(__('Invalid id for gallery'),'notice');
+            $this->Session->setFlash(__('Invalid id for gallery'),'info');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -204,7 +204,7 @@ class GalleriesController extends AppController {
         //that's why we use postLink method on our view for deleting user
         if( $this->request->is('get') ){
 
-            $this->Session->setFlash(__('Delete method is not allowed.'),'notice');
+            $this->Session->setFlash(__('Delete method is not allowed.'),'info');
             $this->redirect(array('action' => 'index'));
 
             //since we are using php5, we can also throw an exception like:
@@ -212,7 +212,7 @@ class GalleriesController extends AppController {
         }else{
 
             if( !$id ) {
-                $this->Session->setFlash(__('Invalid id for gallery'),'notice');
+                $this->Session->setFlash(__('Invalid id for gallery'),'info');
                 $this->redirect(array('action'=>'index'));
 
             }else{
@@ -230,7 +230,7 @@ class GalleriesController extends AppController {
 
                     }else{
                         //if unable to delete
-                        $this->Session->setFlash(__('Unable to delete gallery.'),'notice');
+                        $this->Session->setFlash(__('Unable to delete gallery.'),'info');
                         $this->redirect(array('action' => 'index'));
                     }
                 }

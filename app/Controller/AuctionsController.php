@@ -57,7 +57,7 @@ class AuctionsController extends AppController {
         $id = $this->request->params['pass'][0];
 
         if( !$id ) {
-            $this->Session->setFlash(__('Invalid id for auction'),'notice');
+            $this->Session->setFlash(__('Invalid id for auction'),'info');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -103,7 +103,7 @@ class AuctionsController extends AppController {
         $id = $this->request->params['pass'][0];
 
         if( !$id ) {
-            $this->Session->setFlash(__('Invalid id for auction'), 'notice');
+            $this->Session->setFlash(__('Invalid id for auction'), 'info');
             $this->redirect(array('action'=>'index'));
         }
 
@@ -141,7 +141,7 @@ class AuctionsController extends AppController {
 
         }else{
             //if not found, we will tell the user that user does not exist
-            $this->Session->setFlash(__('Auction does not exist.'), 'notice');
+            $this->Session->setFlash(__('Auction does not exist.'), 'info');
             $this->redirect(array('action' => 'index'));
 
             //or, since it we are using php5, we can throw an exception
@@ -165,7 +165,7 @@ class AuctionsController extends AppController {
         }else{
 
             if( !$id ) {
-                $this->Session->setFlash(__('Invalid id for auction'), 'notice');
+                $this->Session->setFlash(__('Invalid id for auction'), 'info');
                 $this->redirect(array('action'=>'index'));
 
             }else{
@@ -183,7 +183,7 @@ class AuctionsController extends AppController {
 
                     }else{
                         //if unable to delete
-                        $this->Session->setFlash(__('Unable to delete auction.'),'notice');
+                        $this->Session->setFlash(__('Unable to delete auction.'),'info');
                         $this->redirect(array('action' => 'index'));
                     }
                 }

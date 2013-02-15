@@ -99,7 +99,7 @@ class BlogPostCategoriesController extends AppController {
 			$this->Session->setFlash(__('Blog post category deleted'),'good');
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Blog post category was not deleted'),'notice');
+		$this->Session->setFlash(__('Blog post category was not deleted'),'info');
 		$this->redirect(array('action' => 'index'));
 	}
 }

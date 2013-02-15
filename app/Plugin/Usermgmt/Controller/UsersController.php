@@ -97,12 +97,12 @@ class UsersController extends UserMgmtAppController {
 				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['active']==0) {
-					$this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'),'notice');
+					$this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'),'info');
 					return;
 				}
 				// check for verified account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
-					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'),'notice');
+					$this->Session->setFlash(__('Your registration has not been confirmed please verify your email or contact to Administrator'),'info');
 					return;
 				}
 				if(empty($user['User']['salt'])) {
@@ -201,7 +201,7 @@ class UsersController extends UserMgmtAppController {
 				}
 			}
 		} else {
-			$this->Session->setFlash(__('Sorry new registration is currently disabled, please try again later'),'notice');
+			$this->Session->setFlash(__('Sorry new registration is currently disabled, please try again later'),'info');
 			$this->redirect('/login');
 		}
 	}
@@ -444,7 +444,7 @@ class UsersController extends UserMgmtAppController {
 				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
-					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'),'notice');
+					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'),'info');
 					return;
 				}
 				$this->User->forgotPassword($user);
@@ -520,7 +520,7 @@ class UsersController extends UserMgmtAppController {
 					$this->User->sendVerificationMail($user);
 					$this->Session->setFlash(__('Please check your mail to verify your email'),'good');
 				} else {
-					$this->Session->setFlash(__('Your email is already verified'),'notice');
+					$this->Session->setFlash(__('Your email is already verified'),'info');
 				}
 				$this->redirect('/login');
 			}

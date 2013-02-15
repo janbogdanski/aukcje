@@ -64,7 +64,7 @@ class MetaController extends MetaAppController {
     public function admin_edit($id = null){
 
         if(is_null($id) || !$id ) {
-            $this->Session->setFlash(__('Invalid id'),'notice');
+            $this->Session->setFlash(__('Invalid id'),'info');
             $this->redirect(array('action'=>'index'));
 
         }else{
@@ -101,7 +101,7 @@ class MetaController extends MetaAppController {
 
             }else{
                 //if not found, we will tell the user that user does not exist
-                $this->Session->setFlash(__('Auction does not exist.'), 'notice');
+                $this->Session->setFlash(__('Auction does not exist.'), 'info');
                 $this->redirect(array('action' => 'index'));
 
                 //or, since it we are using php5, we can throw an exception
@@ -115,12 +115,12 @@ class MetaController extends MetaAppController {
 
         if( $this->request->is('get') ){
 
-            $this->Session->setFlash(__('Delete method is not allowed.'),'notice');
+            $this->Session->setFlash(__('Delete method is not allowed.'),'info');
             $this->redirect(array('action' => 'index'));
         }else{
 
             if(is_null($id) || !$id ) {
-                $this->Session->setFlash(__('Invalid id'),'notice');
+                $this->Session->setFlash(__('Invalid id'),'info');
                 $this->redirect(array('action'=>'index'));
 
             }else{
@@ -195,7 +195,7 @@ class MetaController extends MetaAppController {
 		if ($count) {
 			$this->Session->setFlash(__d('meta',"%s new paths found and saved.",$count),'good');
 		} else {
-			$this->Session->setFlash(__d('meta', "No new paths found."),'notice');
+			$this->Session->setFlash(__d('meta', "No new paths found."),'info');
 		}
 
 		$this->redirect(array('action' => 'index'));
