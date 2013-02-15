@@ -72,7 +72,7 @@ function UsermgmtInIt(&$controller) {
 		set site name for sending emails
 	*/
 	if(!defined("EMAIL_FROM_NAME")) {
-		define("EMAIL_FROM_NAME", 'User Management Plugin');
+		define("EMAIL_FROM_NAME", 'Proaukcje');
 	}
 
 	/*

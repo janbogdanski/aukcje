@@ -208,11 +208,13 @@ class User extends UserMgmtAppModel {
 //		$email->from(array( $fromConfig => $fromNameConfig));
 //		$email->sender(array( $fromConfig => $fromNameConfig));
 		$email->to($user['User']['email']);
-		$email->subject(__('Your registration is complete'));
+		$email->subject(EMAIL_FROM_NAME.': '.__('Your registration is complete'));
 		//$email->transport('Debug');
-		$body="Welcome ".$user['User']['first_name'].", Thank you for your registration on ".SITE_URL." \n\n Thanks,\n".EMAIL_FROM_NAME;
+        $email->viewVars(array('name' => $user['User']['first_name']));
+        $email->template('Usermgmt.registration');
+        $email->emailFormat('both');
 		try{
-			$result = $email->send($body);
+			$result = $email->send();
 		} catch (Exception $ex) {
 			// we could not send the email, ignore it
 			$result="Could not send registration email to userid-".$userId;
@@ -234,12 +236,16 @@ class User extends UserMgmtAppModel {
 		$email->from(array( $fromConfig => $fromNameConfig));
 		$email->sender(array( $fromConfig => $fromNameConfig));
 		$email->to($user['User']['email']);
-		$email->subject('Email Verification Mail');
+		$email->subject(EMAIL_FROM_NAME.': '.__('Email Verification Mail'));
 		$activate_key = $this->getActivationKey($user['User']['password']);
 		$link = Router::url("/userVerification?ident=$userId&activate=$activate_key",true);
-		$body="Hi ".$user['User']['first_name'].", Click the link below to complete your registration \n\n ".$link;
+
+        $email->viewVars(array('link' => $link));
+        $email->template('Usermgmt.verification');
+        $email->emailFormat('both');
 		try{
-			$result = $email->send($body);
+			$result = $email->send();
+            $a = 'j';
 		} catch (Exception $ex){
 			// we could not send the email, ignore it
 			$result="Could not send verification email to userid-".$userId;
@@ -272,25 +278,15 @@ class User extends UserMgmtAppModel {
 		$email->from(array( $fromConfig => $fromNameConfig));
 		$email->sender(array( $fromConfig => $fromNameConfig));
 		$email->to($user['User']['email']);
-		$email->subject(EMAIL_FROM_NAME.': Request to Reset Your Password');
+		$email->subject(EMAIL_FROM_NAME.': '.__('Request to Reset Your Password'));
 		$activate_key = $this->getActivationKey($user['User']['password']);
 		$link = Router::url("/activatePassword?ident=$userId&activate=$activate_key",true);
-		$body= "Welcome ".$user['User']['first_name'].", let's help you get signed in
+        $email->viewVars(array('link' => $link));
+        $email->template('Usermgmt.forgotten');
+        $email->emailFormat('both');
 
-You have requested to have your password reset on ".EMAIL_FROM_NAME.". Please click the link below to reset your password now :
-
-".$link."
-
-
-If above link does not work please copy and paste the URL link (above) into your browser address bar to get to the Page to reset password
-
-Choose a password you can remember and please keep it secure.
-
-Thanks,\n".
-
-EMAIL_FROM_NAME;
 		try{
-			$result = $email->send($body);
+			$result = $email->send();
 		} catch (Exception $ex){
 			// we could not send the email, ignore it
 			$result="Could not send forgot password email to userid-".$userId;
