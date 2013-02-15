@@ -9,10 +9,12 @@
 <script type="text/javascript">
 
 </script>
-    <?php if(isset($auctions)): ?>
 <h2><?php echo __('Auctions'); ?></h2>
 
+    <?php if($this->UserAuth->isLogged()): ?>
+
     <?php echo $this->Html->link( '<i class="m-icon-swapright m-icon-white"></i> '.__('New Auction'), array( 'action' => 'add' ),array('escape' => false,'class' => 'm-btn blue') ); ?>
+<?php if(isset($auctions) && count($auctions)): ?>
 
 <table class="table table-striped">
     <thead>
@@ -57,6 +59,10 @@
     <?php endif; ?>
 
 <?php else: ?>
-
-    asdf
+<p>
+    <?php echo __d('auction', 'No auctions to list'); ?>
+</p>
+<?php endif; ?>
+<?php else: ?>
+<?php echo $this->element('login', array(), array('plugin' => 'Usermgmt')); ?>
 <?php endif; ?>

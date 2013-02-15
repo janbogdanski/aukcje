@@ -158,7 +158,7 @@
                                         </a>
                                         <div class="m-dropdown-menu" style="padding: 15px; padding-bottom: 0;" id="login-dropdown">
 
-                                            <?php echo $this->Form->create('User', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login')); ?>
+                                            <?php echo $this->Form->create('User', array('url' => array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'))); ?>
                                             <div><?php echo __('Email / Username');?></div>
                                             <div><?php echo $this->Form->input("email" ,array('label' => false,'div' => false, 'error' => false,'class'=>"span2" ))?>
                                             </div>
