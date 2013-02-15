@@ -1,6 +1,6 @@
 <div class="row-fluid">
     <!-- Place somewhere in the <body> of your page -->
-    <div class="flexslider">
+    <!--<div class="flexslider">
         <ul class="slides">
             <li>
                 <img src="http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg" style="width: 400px;" />
@@ -12,7 +12,7 @@
                 <img src="http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg" style="width: 400px;" />
             </li>
         </ul>
-    </div>
+    </div>-->
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -33,7 +33,7 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Kreator aukcji</a>
+            Kreator aukcji
         </h3>
         <p style="text-align: center;">
             Łączy w sobie wszystkie moduły serwisu, pozwala stworzyć atrakcyjny opis aukcji, intuicyjnie, bez znajomości jakiejkolwiek 'technologii' (html etc.) <br>
@@ -47,7 +47,7 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Galeria zdjęć</a>
+            Galeria zdjęć
         </h3>
         <p style="text-align: center;">
             Integracja z Picasa Albums pozwala dodać publiczne zdjęcia do opisu aukcji jako<br>
@@ -63,10 +63,10 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Edytor treści aukcji</a>
+            Edytor treści aukcji
         </h3>
         <p style="text-align: center;">
-            Opis aukcji stworzysz w przejrzystym i intuicyjnym edytorze, z analogicznymi możliwościami jak popularne edytory tekstu.
+            Opis aukcji stworzysz w przejrzystym i intuicyjnym edytorze - kreatorze aukcji, z analogicznymi możliwościami jak popularne edytory tekstu.
             Nasz edytor został wzbogacony o moduły wstawiania galerii zdjęć i pojedyńczych zdjęć, map Google, kodów QR.
             Masz możliwość edycji zawartości głównej aukcji (np. opis przedmiotu) boksów (np. dane kontaktowe, do przelewu, warunki aukcji, cokolwiek wymyślisz)
         </p>
@@ -81,7 +81,7 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Szablony aukcji</a>
+            Szablony aukcji
         </h3>
         <p style="text-align: center;">
             Wyróżniająca się aukcja przyciąga kupujących, a estetyczny opis mówi im 'jestem rzetelnym sprzedającym, możesz mi zaufać'.
@@ -96,7 +96,7 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Plany na dziś wieczór</a>
+            Plany na dziś wieczór
         </h3>
         <p style="text-align: center;">
             Po przejęciu władzy nad światem udostępnimy:<br>
@@ -115,7 +115,7 @@
             </span>
         </h3>
         <h3 style="text-align: center;">
-            <a title="About" href="http://flipit.fdthemes.com/corpit/?page_id=180">Wypróbuj..</a>
+            Wypróbuj..
         </h3>
         <p style="text-align: center;">
             Nawet bez zakładania konta! <br>

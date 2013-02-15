@@ -23,7 +23,9 @@ class GalleriesController extends AppController {
         require_once(VENDORS.DS.'picasa.php');
         $start = isset($_GET['start']) ? (int)$_GET['start'] : 1;
         $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 0;
-        $this->user = $this->UserAuth->getUser();
+
+        //potrzebne do pobrania
+        $this->user = @$this->UserAuth->getUser();
         $this->picasa = new Picasa($this->user['User']['picasa'], $start,$limit);
 
 
@@ -60,7 +62,7 @@ class GalleriesController extends AppController {
         return $this->previewGallery();
     }
     public function view(){
-        $this->layout = 'ajax';
+        $this->layout = 'galleryPreview';
         $id = $this->request->params['pass'][0];
         if( !$id ) {
             $this->Session->setFlash(__('Invalid id for gallery'), 'notice');
@@ -68,17 +70,19 @@ class GalleriesController extends AppController {
         }
 
         $gallery = $this->Gallery->find('first', array(
-            'conditions' => array('Gallery.id' => $id, 'Gallery.user_id' => $this->UserAuth->getUserId())
+            'conditions' => array('Gallery.id' => $id)
         ));
+//        print_r($gallery);
 
         if($gallery){
 
             $this->set('gallery', $gallery);
-            if(isset($this->passedArgs['photo'])){
+            if(isset($this->passedArgs['photo']) && (int)$this->passedArgs['photo'] <= count($gallery['Gallery']) && (int)$this->passedArgs['photo'] > 0){
                 $photo = (int)$this->passedArgs['photo'];
             } else{
                 $photo = 1;
             }
+            $this->set('title_for_layout', $gallery['Gallery']['title']);
             $this->set('photo', (int)$photo);
         }
     }

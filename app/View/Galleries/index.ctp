@@ -36,7 +36,7 @@
             <div class="m-btn-strip">
                 <div class="m-btn-group">
         <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $gallery['Gallery']['id']), array('class' => 'm-btn mini blue') );?>
-        <?php echo $this->Html->link(__('Preview'), array('action' => 'view', $gallery['Gallery']['id']), array('class' => 'm-btn mini green') );?>
+        <?php echo $this->Html->link(__('Preview'), array('action' => 'view', $gallery['Gallery']['id']), array('class' => 'm-btn mini green', 'target' => '_blank') );?>
         <?php echo $this->Html->link(__('Code'), array('action' => 'code', $gallery['Gallery']['id']), array('data-toggle' => 'modal','class' => 'm-btn mini purple') );?>
 
 

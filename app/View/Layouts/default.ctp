@@ -134,8 +134,52 @@
                                     <li>
                                         <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
                                     </li>
-                                </ul>
+                                    <li>
 
+
+                                    <?php if($this->UserAuth->isLogged()): ?>
+                                    <div class="m-btn-group">
+                                        <a class="m-btn dropdown-toggle blue" data-toggle="dropdown" href="#">
+                                            <?php echo $user['User']['username']; ?> <span class="caret white"></span>
+                                        </a>
+                                        <div class="m-dropdown-menu">
+                                           <p><?php echo $this->Html->link(__('Settings'),"/dashboard") ?></p>
+                                            <p class="divider"></p>
+                                            <p><?php echo $this->Html->link('<i class="icon-off"></i> '.__('Logout'),"/logout",array('escape' => false)) ?></p>
+
+                                        </div>
+
+                                    </div>
+                                    <?php else: ?>
+                                    <!--            --><?php //echo $this->Html->link(__('Login'), '/login', array('class' => 'm-btn blue')); ?>
+                                    <div class="m-btn-group">
+                                        <a class="m-btn dropdown-toggle blue" data-toggle="dropdown" href="#">
+                                            <?php echo __('Sign in/up'); ?> <span class="caret white"></span>
+                                        </a>
+                                        <div class="m-dropdown-menu" style="padding: 15px; padding-bottom: 0;" id="login-dropdown">
+
+                                            <?php echo $this->Form->create('User', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login')); ?>
+                                            <div><?php echo __('Email / Username');?></div>
+                                            <div><?php echo $this->Form->input("email" ,array('label' => false,'div' => false, 'error' => false,'class'=>"span2" ))?>
+                                            </div>
+                                            <div><?php echo __('Password');?></div>
+                                            <div><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false, 'error' => false, 'div' => false,'class'=>"span2" ))?>
+                                            </div>
+                                            <?php   if(!isset($this->request->data['User']['remember']))
+                                            $this->request->data['User']['remember']=true;
+                                            ?>
+                                            <div class="pull-left"><?php echo __('Remember me');?>
+                                                <?php echo $this->Form->input("remember" ,array("type"=>"checkbox",'div' => false, 'label' => false))?> </div>
+                                            <div class="pull-right"><?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?>
+                                            </div>
+                                            <div class="clearfix">
+                                                <?php echo $this->Html->link(__("Sign Up",true),"/register", array('class' => 'create-account')) ?>
+                                            </div>
+                                            <?php echo $this->Form->end(); ?>
+                                        </div>
+                                    </div>
+                                    <?php endif;?>
+                                    </li></ul>
 
                                 <div class="clear"></div>
                             </nav>
@@ -161,56 +205,8 @@
         <hr class="cool_divider" />
 
 
-        <?php $user = $this->UserAuth->getUser(); ?>
         <div style="position: relative;">
-        <div class="pull-right" style="position: absolute; top: -15px; right:0;">
 
-            <?php if($this->UserAuth->isLogged()): ?>
-            <div class="m-btn-group">
-                <a class="m-btn dropdown-toggle blue" data-toggle="dropdown" href="#">
-                    <?php echo $user['User']['username']; ?> <span class="caret white"></span>
-                </a>
-                <ul class="m-dropdown-menu">
-                    <li>
-                        <?php echo $this->Html->link(__('Settings'),"/dashboard") ?>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <?php echo $this->Html->link('<i class="icon-off"></i> '.__('Logout'),"/logout",array('escape' => false)) ?>
-                    </li>
-                </ul>
-            </div>
-            <?php else: ?>
-<!--            --><?php //echo $this->Html->link(__('Login'), '/login', array('class' => 'm-btn blue')); ?>
-            <div class="m-btn-group">
-                <a class="m-btn dropdown-toggle blue" data-toggle="dropdown" href="#">
-                    <?php echo __('Sign in/up'); ?> <span class="caret white"></span>
-                </a>
-                <div class="m-dropdown-menu" style="padding: 15px; padding-bottom: 0;" id="login-dropdown">
-
-                    <?php echo $this->Form->create('User', array('action' => 'login')); ?>
-                    <div><?php echo __('Email / Username');?></div>
-                    <div><?php echo $this->Form->input("email" ,array('label' => false,'div' => false, 'error' => false,'class'=>"span2" ))?>
-                    </div>
-                    <div><?php echo __('Password');?></div>
-                    <div><?php echo $this->Form->input("password" ,array("type"=>"password",'label' => false, 'error' => false, 'div' => false,'class'=>"span2" ))?>
-                    </div>
-                    <?php   if(!isset($this->request->data['User']['remember']))
-                    $this->request->data['User']['remember']=true;
-                    ?>
-                    <div class="pull-left"><?php echo __('Remember me');?>
-                        <?php echo $this->Form->input("remember" ,array("type"=>"checkbox",'div' => false, 'label' => false))?> </div>
-                    <div class="pull-right"><?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?>
-                    </div>
-                    <div class="clearfix">
-                        <?php echo $this->Html->link(__("Sign Up",true),"/register", array('class' => 'create-account')) ?>
-                    </div>
-                    <?php echo $this->Form->end(); ?>
-                </div>
-
-            </div>
-            <?php endif;?>
-        </div>
         </div>
         <div class="page_title">
 

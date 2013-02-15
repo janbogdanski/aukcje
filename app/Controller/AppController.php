@@ -50,6 +50,12 @@ class AppController extends Controller {
     function beforeFilter(){
         $this->userAuth();
     }
+    public function beforeRender(){
+        parent::beforeRender();
+        $this->set('user', $this->UserAuth->getUser());
+        $this->set('isLogged', $this->UserAuth->isLogged());
+
+    }
     private function userAuth(){
         $this->UserAuth->beforeFilter($this);
     }
