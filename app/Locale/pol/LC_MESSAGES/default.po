@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: proaukcje\n"
 "POT-Creation-Date: 2013-02-12 10:58+0100\n"
-"PO-Revision-Date: 2013-02-12 11:35+0100\n"
+"PO-Revision-Date: 2013-02-14 19:11+0100\n"
 "Last-Translator: Jan Bo <janek.bogdanski@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1411,7 +1411,7 @@ msgstr "Twoje albumy, kliknij aby wybrać"
 
 #: View\Galleries\add.ctp:210
 msgid "Available images in <i>%s</i> album, click to add to gallery"
-msgstr "Dostępne obrazy w albumie <i>%</i>, dodaj zdjęcie do galerii kliknięciem"
+msgstr "Dostępne obrazy w albumie <i>%s</i>, dodaj zdjęcie do galerii kliknięciem"
 
 #: View\Galleries\index.ctp:10
 #: View\Layouts\default.ctp:116;193
