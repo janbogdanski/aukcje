@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-02-12 10:58+0100\n"
+"POT-Creation-Date: 2013-02-15 19:15+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -35,11 +35,13 @@ msgid "Unable to edit auction. Please, try again."
 msgstr ""
 
 #: Controller\AuctionsController.php:144
+#: Plugin\Meta\Controller\MetaController.php:104
 msgid "Auction does not exist."
 msgstr ""
 
 #: Controller\AuctionsController.php:160
-#: Controller\GalleriesController.php:203
+#: Controller\GalleriesController.php:207
+#: Plugin\Meta\Controller\MetaController.php:118
 msgid "Delete method is not allowed."
 msgstr ""
 
@@ -51,27 +53,27 @@ msgstr ""
 msgid "Unable to delete auction."
 msgstr ""
 
-#: Controller\GalleriesController.php:66;106;211
+#: Controller\GalleriesController.php:68;110;215
 msgid "Invalid id for gallery"
 msgstr ""
 
-#: Controller\GalleriesController.php:119
+#: Controller\GalleriesController.php:123
 msgid "Select images, gallery not saved"
 msgstr ""
 
-#: Controller\GalleriesController.php:160
+#: Controller\GalleriesController.php:164
 msgid "Gallery successfully saved"
 msgstr ""
 
-#: Controller\GalleriesController.php:167
+#: Controller\GalleriesController.php:171
 msgid "Unable to add gallery. Please, try again."
 msgstr ""
 
-#: Controller\GalleriesController.php:223
+#: Controller\GalleriesController.php:227
 msgid "Gallery was deleted."
 msgstr ""
 
-#: Controller\GalleriesController.php:229
+#: Controller\GalleriesController.php:233
 msgid "Unable to delete gallery."
 msgstr ""
 
@@ -300,7 +302,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:113;157
 #: Plugin\Usermgmt\View\UserGroups\index.ctp:61
 #: Plugin\Usermgmt\View\Users\index.ctp:85
-#: View\Auctions\index.ctp:41
+#: View\Auctions\index.ctp:43
 #: View\Galleries\index.ctp:44
 #: View\Plugin\Blog\BlogPostCategories\admin_edit.ctp:23
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:39
@@ -364,7 +366,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:34
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:112;156
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:26
-#: View\Auctions\index.ctp:37
+#: View\Auctions\index.ctp:39
 #: View\Galleries\index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:107;161
@@ -391,6 +393,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostTags\admin_index.ctp:44
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:48
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:39
+#: Plugin\Meta\View\Meta\admin_index.ctp:19
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:52
 #: View\Plugin\Blog\BlogPostTags\admin_index.ctp:44
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:60
@@ -402,6 +405,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostTags\admin_index.ctp:47
 #: Plugin\Blog\View\BlogPosts\admin_index.ctp:51
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:42
+#: Plugin\Meta\View\Meta\admin_index.ctp:20
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:55
 #: View\Plugin\Blog\BlogPostTags\admin_index.ctp:47
 #: View\Plugin\Blog\BlogPosts\admin_index.ctp:63
@@ -560,7 +564,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogPostCategories\admin_view.ctp:127
 #: Plugin\Blog\View\BlogPostTags\admin_view.ctp:53
 #: Plugin\Blog\View\BlogPosts\admin_view.ctp:9
-#: View\Auctions\index.ctp:21
+#: View\Auctions\index.ctp:23
 #: View\Galleries\index.ctp:21
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:127
 #: View\Plugin\Blog\BlogPostTags\admin_view.ctp:53
@@ -814,6 +818,26 @@ msgstr ""
 msgid " created in "
 msgstr ""
 
+#: Plugin\Meta\Controller\MetaController.php:67;123
+msgid "Invalid id"
+msgstr ""
+
+#: Plugin\Meta\Controller\MetaController.php:86
+msgid "Metum was edited."
+msgstr ""
+
+#: Plugin\Meta\Controller\MetaController.php:92
+msgid "Unable to edit Metum. Please, try again."
+msgstr ""
+
+#: Plugin\Meta\Controller\MetaController.php:128
+msgid "Deleted"
+msgstr ""
+
+#: Plugin\Meta\View\Meta\admin_index.ctp:44
+msgid "Are you sure you want to delete??"
+msgstr ""
+
 #: Plugin\Usermgmt\Controller\UserGroupsController.php:45
 msgid "The group is successfully added"
 msgstr ""
@@ -994,6 +1018,14 @@ msgstr ""
 msgid "Your registration is complete"
 msgstr ""
 
+#: Plugin\Usermgmt\Model\User.php:240
+msgid "Email Verification Mail"
+msgstr ""
+
+#: Plugin\Usermgmt\Model\User.php:285
+msgid "Request to Reset Your Password"
+msgstr ""
+
 #: Plugin\Usermgmt\View\Elements\dashboard.ctp:22
 #: Plugin\Usermgmt\View\Users\access_denied.ctp:32
 #: Plugin\Usermgmt\View\Users\dashboard.ctp:27
@@ -1044,6 +1076,46 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\change_password.ctp:27
 #: Plugin\Usermgmt\View\Users\dashboard.ctp:44
 msgid "Change Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:12
+#: Plugin\Usermgmt\View\Users\login.ctp:11
+#: View\Layouts\default.ctp:163
+msgid "Email / Username"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:16
+#: Plugin\Usermgmt\View\Users\activate_password.ctp:34
+#: Plugin\Usermgmt\View\Users\add_user.ctp:62
+#: Plugin\Usermgmt\View\Users\change_user_password.ctp:35
+#: Plugin\Usermgmt\View\Users\login.ctp:15
+#: Plugin\Usermgmt\View\Users\register.ctp:49
+#: View\Layouts\default.ctp:166
+msgid "Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:23
+#: Plugin\Usermgmt\View\Users\login.ctp:22
+#: View\Layouts\default.ctp:172
+msgid "Remember me"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:28
+#: Plugin\Usermgmt\View\Users\login.ctp:27
+#: Plugin\Usermgmt\View\Users\register.ctp:22
+#: View\Layouts\default.ctp:174
+msgid "Sign In"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:31
+#: Plugin\Usermgmt\View\Users\login.ctp:30
+msgid "Forgot Password?"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Elements\login.ctp:32
+#: Plugin\Usermgmt\View\Users\email_verification.ctp:26
+#: Plugin\Usermgmt\View\Users\login.ctp:31
+msgid "Email Verification"
 msgstr ""
 
 #: Plugin\Usermgmt\View\UserGroupPermissions\index.ctp:28
@@ -1116,19 +1188,11 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: Plugin\Usermgmt\View\Users\activate_password.ctp:34
-#: Plugin\Usermgmt\View\Users\add_user.ctp:62
-#: Plugin\Usermgmt\View\Users\change_user_password.ctp:35
-#: Plugin\Usermgmt\View\Users\login.ctp:40
-#: Plugin\Usermgmt\View\Users\register.ctp:62
-msgid "Password"
-msgstr ""
-
 #: Plugin\Usermgmt\View\Users\activate_password.ctp:39
 #: Plugin\Usermgmt\View\Users\add_user.ctp:67
 #: Plugin\Usermgmt\View\Users\change_password.ctp:45
 #: Plugin\Usermgmt\View\Users\change_user_password.ctp:40
-#: Plugin\Usermgmt\View\Users\register.ctp:67
+#: Plugin\Usermgmt\View\Users\register.ctp:53
 msgid "Confirm Password"
 msgstr ""
 
@@ -1139,7 +1203,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\add_user.ctp:36
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:37
 #: Plugin\Usermgmt\View\Users\index.ctp:39
-#: Plugin\Usermgmt\View\Users\register.ctp:36
+#: Plugin\Usermgmt\View\Users\register.ctp:26
 msgid "Group"
 msgstr ""
 
@@ -1147,7 +1211,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:43
 #: Plugin\Usermgmt\View\Users\index.ctp:37
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:44
-#: Plugin\Usermgmt\View\Users\register.ctp:42
+#: Plugin\Usermgmt\View\Users\register.ctp:31
 #: Plugin\Usermgmt\View\Users\view_user.ctp:44
 msgid "Username"
 msgstr ""
@@ -1170,7 +1234,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:58
 #: Plugin\Usermgmt\View\Users\index.ctp:38
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:56
-#: Plugin\Usermgmt\View\Users\register.ctp:57
+#: Plugin\Usermgmt\View\Users\register.ctp:45
 #: Plugin\Usermgmt\View\Users\view_user.ctp:56
 msgid "Email"
 msgstr ""
@@ -1198,11 +1262,6 @@ msgstr ""
 
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:64
 msgid "Update User"
-msgstr ""
-
-#: Plugin\Usermgmt\View\Users\email_verification.ctp:26
-#: Plugin\Usermgmt\View\Users\login.ctp:60
-msgid "Email Verification"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\email_verification.ctp:33
@@ -1239,30 +1298,19 @@ msgstr ""
 msgid "Are you sure you want to delete this user?"
 msgstr ""
 
-#: Plugin\Usermgmt\View\Users\login.ctp:26
+#: Plugin\Usermgmt\View\Users\login.ctp:6
 msgid "Sign In or"
 msgstr ""
 
-#: Plugin\Usermgmt\View\Users\login.ctp:27
-#: Plugin\Usermgmt\View\Users\register.ctp:79
+#: Plugin\Usermgmt\View\Users\login.ctp:7
+#: Plugin\Usermgmt\View\Users\register.ctp:22
+msgid "or"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:7
+#: Plugin\Usermgmt\View\Users\register.ctp:63
+#: View\Layouts\default.ctp:177
 msgid "Sign Up"
-msgstr ""
-
-#: Plugin\Usermgmt\View\Users\login.ctp:35
-msgid "Email / Username"
-msgstr ""
-
-#: Plugin\Usermgmt\View\Users\login.ctp:48
-msgid "Remember me"
-msgstr ""
-
-#: Plugin\Usermgmt\View\Users\login.ctp:55
-#: Plugin\Usermgmt\View\Users\register.ctp:27
-msgid "Sign In"
-msgstr ""
-
-#: Plugin\Usermgmt\View\Users\login.ctp:59
-msgid "Forgot Password?"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:27
@@ -1279,7 +1327,7 @@ msgstr ""
 msgid "User Group"
 msgstr ""
 
-#: Plugin\Usermgmt\View\Users\register.ctp:26
+#: Plugin\Usermgmt\View\Users\register.ctp:21
 msgid "Sign Up or"
 msgstr ""
 
@@ -1311,68 +1359,68 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: View\Auctions\form.ctp:60
+#: View\Auctions\form.ctp:79
 msgid "1st section header"
 msgstr ""
 
-#: View\Auctions\form.ctp:75;81;86
+#: View\Auctions\form.ctp:82;93;103
 msgid "Field %s content"
 msgstr ""
 
-#: View\Auctions\form.ctp:75
+#: View\Auctions\form.ctp:82
 msgid "first"
 msgstr ""
 
-#: View\Auctions\form.ctp:78
+#: View\Auctions\form.ctp:89
 msgid "2nd section header"
 msgstr ""
 
-#: View\Auctions\form.ctp:81
+#: View\Auctions\form.ctp:93
 msgid "second"
 msgstr ""
 
-#: View\Auctions\form.ctp:84
+#: View\Auctions\form.ctp:100
 msgid "3rd section header"
 msgstr ""
 
-#: View\Auctions\form.ctp:86
+#: View\Auctions\form.ctp:103
 msgid "third"
 msgstr ""
 
-#: View\Auctions\form.ctp:102
+#: View\Auctions\form.ctp:123
 msgid "Select Template"
 msgstr ""
 
-#: View\Auctions\index.ctp:13
-#: View\Layouts\default.ctp:113;190
+#: View\Auctions\index.ctp:12
+#: View\Layouts\default.ctp:127;226
 msgid "Auctions"
 msgstr ""
 
-#: View\Auctions\index.ctp:15;56
+#: View\Auctions\index.ctp:16;58
 msgid "New Auction"
 msgstr ""
 
-#: View\Auctions\index.ctp:20
+#: View\Auctions\index.ctp:22
 #: View\Galleries\index.ctp:19
 msgid "ID"
 msgstr ""
 
-#: View\Auctions\index.ctp:22
+#: View\Auctions\index.ctp:24
 #: View\Galleries\index.ctp:22
 msgid "Options"
 msgstr ""
 
-#: View\Auctions\index.ctp:38
+#: View\Auctions\index.ctp:40
 #: View\Galleries\index.ctp:39
 msgid "Preview"
 msgstr ""
 
-#: View\Auctions\index.ctp:39
+#: View\Auctions\index.ctp:41
 #: View\Galleries\index.ctp:40
 msgid "Code"
 msgstr ""
 
-#: View\Auctions\index.ctp:44
+#: View\Auctions\index.ctp:46
 msgid "Are you sure you want to delete that auction?"
 msgstr ""
 
@@ -1384,28 +1432,28 @@ msgstr ""
 msgid "Save Picasa User"
 msgstr ""
 
-#: View\Galleries\add.ctp:155
+#: View\Galleries\add.ctp:188
 msgid "First select an album, then photos (bottom of page)"
 msgstr ""
 
-#: View\Galleries\add.ctp:161
+#: View\Galleries\add.ctp:195
 msgid "Selected images"
 msgstr ""
 
-#: View\Galleries\add.ctp:182
+#: View\Galleries\add.ctp:216
 msgid "Put your Picasa username eg. <i>%s</i>"
 msgstr ""
 
-#: View\Galleries\add.ctp:192
+#: View\Galleries\add.ctp:228
 msgid "Your web albums, click to select"
 msgstr ""
 
-#: View\Galleries\add.ctp:210
+#: View\Galleries\add.ctp:246
 msgid "Available images in <i>%s</i> album, click to add to gallery"
 msgstr ""
 
 #: View\Galleries\index.ctp:10
-#: View\Layouts\default.ctp:116;193
+#: View\Layouts\default.ctp:130;229
 msgid "Galleries"
 msgstr ""
 
@@ -1421,32 +1469,31 @@ msgstr ""
 msgid "Are you sure you want to delete that gallery??"
 msgstr ""
 
-#: View\Layouts\default.ctp:119;196
+#: View\Layouts\default.ctp:133;232
 msgid "Contact"
 msgstr ""
 
-#: View\Layouts\default.ctp:122;199
+#: View\Layouts\default.ctp:136;235
 msgid "Blog"
 msgstr ""
 
-#: View\Layouts\default.ctp:162
+#: View\Layouts\default.ctp:147
 msgid "Settings"
 msgstr ""
 
-#: View\Layouts\default.ctp:166
+#: View\Layouts\default.ctp:149
 msgid "Logout"
 msgstr ""
 
-#: View\Layouts\default.ctp:171
-#: View\Users\login.ctp:18
-msgid "Login"
+#: View\Layouts\default.ctp:158
+msgid "Sign in/up"
 msgstr ""
 
-#: View\Layouts\default.ctp:187
+#: View\Layouts\default.ctp:223
 msgid "Navigate"
 msgstr ""
 
-#: View\Layouts\default.ctp:202
+#: View\Layouts\default.ctp:238
 msgid "Help"
 msgstr ""
 
@@ -1460,6 +1507,10 @@ msgstr ""
 
 #: View\Users\login.ctp:12
 msgid "Please enter your username and password"
+msgstr ""
+
+#: View\Users\login.ctp:18
+msgid "Login"
 msgstr ""
 
 #: Model\Contact.php:validation for field Name;validation for field Message

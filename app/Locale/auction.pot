@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-02-12 10:59+0100\n"
+"POT-Creation-Date: 2013-02-15 19:15+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,7 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: View\Auctions\form.ctp:108
+#: View\Auctions\form.ctp:130
 msgid "Save auction"
+msgstr ""
+
+#: View\Auctions\index.ctp:63
+msgid "No auctions to list"
 msgstr ""
 
