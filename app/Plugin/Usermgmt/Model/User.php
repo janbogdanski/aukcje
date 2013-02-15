@@ -228,7 +228,7 @@ class User extends UserMgmtAppModel {
 	 */
 	public function sendVerificationMail($user) {
 		$userId=$user['User']['id'];
-		$email = new CakeEmail();
+		$email = new CakeEmail('register');
 		$fromConfig = EMAIL_FROM_ADDRESS;
 		$fromNameConfig = EMAIL_FROM_NAME;
 		$email->from(array( $fromConfig => $fromNameConfig));
@@ -266,7 +266,7 @@ class User extends UserMgmtAppModel {
 	 */
 	public function forgotPassword($user) {
 		$userId=$user['User']['id'];
-		$email = new CakeEmail();
+		$email = new CakeEmail('register');
 		$fromConfig = EMAIL_FROM_ADDRESS;
 		$fromNameConfig = EMAIL_FROM_NAME;
 		$email->from(array( $fromConfig => $fromNameConfig));

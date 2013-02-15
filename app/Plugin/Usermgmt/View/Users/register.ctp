@@ -23,8 +23,8 @@
 	<div class="um_box_mid">
 		<div class="um_box_mid_content">
 			<div class="um_box_mid_content_top">
-				<h2><?php echo __('Sign Up or'); ?></h2>
-				<span  class="umstyle2"><?php echo $this->Html->link(__("Sign In",true),"/login") ?></span>
+				<h2 class="form-header"><?php echo __('Sign Up or'); ?></h2>
+				<span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign In",true),"/login") ?></span>
                 <div style="clear:both"></div>
             </div>
 			<div class="umhr"></div>
