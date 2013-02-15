@@ -57,7 +57,7 @@ $events['instanceReady'] = 'function (ev) {
     <label><?php echo __('Content'); ?></label>
     <?php echo $this->cksource->ckeditor('Auction.contents', array('config'=>$config, 'events'=>$events, 'escape' => false));?>
 
-    <?php echo $this->Form->input('field_1_header', array('class' => 'span3','label' => __('1st section header')));
+    <?php
 
 $config['toolbar'] = array(
     array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'gmap' ),
@@ -72,21 +72,42 @@ $config['height'] = 200;
 $config['extraPlugins'] = 'gmap';
 
     ?>
-    <label><?php echo __('Field %s content', __('first')); ?></label>
-    <?php echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
+    <fieldset style="margin-top: 20px;">
+        <legend>Dodatkowe sekcje (kontakt,informacje o przesyłce, płatnościach...)</legend>
+    <div class="row">
 
-    <?php echo $this->Form->input('field_2_header', array('class' => 'span3','label' => __('2nd section header'))); ?>
+        <div class="span4"><?php echo $this->Form->input('field_1_header', array('class' => 'span','label' => __('1st section header'))); ?></div>
 
+        <div class="span4">
+            <label><?php echo __('Field %s content', __('first')); ?></label>
+            <?php echo $this->cksource->ckeditor('Auction.field_1_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
+        </div>
+    </div>
 
-    <label><?php echo __('Field %s content', __('second')); ?></label>
+    <div class="row">
 
-    <?php echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
-    <?php echo $this->Form->input('field_3_header', array('class' => 'span3','label' => __('3rd section header'))); ?>
+        <div class="span4"><?php echo $this->Form->input('field_2_header', array('class' => 'span','label' => __('2nd section header'))); ?>
+        </div>
 
-    <label><?php echo __('Field %s content', __('third')); ?></label>
+        <div class="span4">
+            <label><?php echo __('Field %s content', __('second')); ?></label>
 
-    <?php echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false));
+            <?php echo $this->cksource->ckeditor('Auction.field_2_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
+        </div>
+    </div>
+    <div class="row">
 
+        <div class="span4">    <?php echo $this->Form->input('field_3_header', array('class' => 'span','label' => __('3rd section header'))); ?></div>
+
+        <div class="span4">
+            <label><?php echo __('Field %s content', __('third')); ?></label>
+            <?php echo $this->cksource->ckeditor('Auction.field_3_content', array('config'=>$config, 'events'=>$events, 'escape' => false)); ?>
+        </div>
+    </div>
+    </fieldset>
+    <fieldset>
+        <legend>Dostępne szablony</legend>
+<?php
 //echo $this->Form->select('template_id');
 
     echo $this->Form->input('template_id', array(
@@ -104,6 +125,7 @@ $config['extraPlugins'] = 'gmap';
     );
 
     ?>
+    </fieldset>
     <div class="clearfix"></div>
     <?php echo $this->Form->submit(__d('auction', 'Save auction'), array('id' => 'save', 'name' => 'saveGallery', 'div' => false, 'class' => 'm-btn blue',)); ?>
     <?php echo $this->Form->end(); ?>
