@@ -45,8 +45,8 @@ class PagesController extends AppController {
  * @var array
  */
 	public $uses = array('Contact', 'Blog.BlogPost');
-    public $helpers = array('Text');
-
+    public $helpers = array('Text','Time');
+    public $components = array('RequestHandler');
 
 
     public function contact(){
@@ -139,6 +139,19 @@ class PagesController extends AppController {
         $this->set(compact('blogPosts'));
 
 
+    }
+
+
+
+    function sitemap(){
+        $this->RequestHandler->respondAs('xml');
+//        print_r($this->Page->find('all', array( 'conditions' => array('Page.status' => 1 ), 'fields' => array('modified','id','slug'))));
+
+        $this->layout = "xml/sitemap";
+        $this->set('blogPosts', $this->BlogPost->find('all',array('fields' => array('modified','id','slug'), 'recursive' => 0)));
+//        $this->set('pages', '');
+//debug logs will destroy xml format, make sure were not in drbug mode
+//        Configure::write ('debug', 0);
     }
 
 }

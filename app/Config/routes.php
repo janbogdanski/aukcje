@@ -39,6 +39,7 @@ Router::connect('/aukcje/:action/*', array('controller' => 'auctions',));
 Router::connect('/aukcje', array('controller' => 'auctions',));
 Router::connect('/galerie/:action/*', array('controller' => 'galleries',));
 Router::connect('/galerie', array('controller' => 'galleries',));
+Router::connect('/sitemap.xml', array('controller' => 'pages', 'action' => 'sitemap'));
 
 //Router::redirect(
 //    '/auctions/*',
