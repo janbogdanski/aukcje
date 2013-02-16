@@ -31,7 +31,7 @@ class BlogPostsController extends AppController {
   public $paginate = array(
     'limit' => 10,
     'order' => array(
-      'BlogPost.created DESC'
+      'BlogPost.created' => ' DESC'
     ),
     'recursive' => 0,
   );
