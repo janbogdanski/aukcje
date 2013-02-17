@@ -34,25 +34,21 @@
     <link rel='stylesheet' id='fp_webfont_Oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.4.1' type='text/css' media='all' />
 
     <?php
-    echo $this->Html->css('frontend');
-    echo $this->Html->css('style');
     echo $this->Html->css('bootstrap/css/bootstrap');
 //    echo $this->Html->css('bootstrap/css/bootstrap-responsive.min');
-
 //    echo $this->Html->css('microsoft/css/bootstrap.min');
     echo $this->Html->css('microsoft/css/bootstrap-responsive.min');
     echo $this->Html->css('microsoft/css/styles');
     echo $this->Html->css('microsoft/css/m-styles.min');
 //    <link href="./js/google-code-prettify/prettify.css" rel="stylesheet">
-
     echo $this->Html->css('bootstrap/css/font-awesome');
     echo $this->Html->css('bootstrap/css/font-awesome-ie7');
     echo $this->Html->css('shortcodes');
 //    echo $this->Html->css('prettyPhoto');
 //    echo $this->Html->css('flexslider');
     echo $this->Html->css('flip');
-    echo $this->Html->css('flipit');
-    echo $this->Html->css('joyride-2.0.2');
+//    echo $this->Html->css('joyride-2.0.2');
+    echo $this->Html->css('frontend');
     echo $this->Html->css('moje');
 
 

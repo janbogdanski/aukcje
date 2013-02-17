@@ -337,6 +337,70 @@ p{
     /*vertical-align: text-top;*/
     /*width: 14px;*/
 }
+
+
+div.fp_sc_div {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Open Sans";
+    color: #008fd5 !important;}
+.flex-caption-title, .flipIcon {
+    font-family: "Oswald";
+    color: #ffffff !important;}
+.flex-caption-container h6 {
+    font-family: "Open Sans";
+    font-size: 12px !important;
+    color: #ffffff !important;}
+a.portfolio_link {
+    font-family: "Open Sans";
+    font-size: 22px !important;
+    color: #ffffff !important;}
+#content h4 {
+    font-family: "Open Sans";
+    font-size: 22px !important;
+    color: #008fd5 !important;}
+.navbar .nav > li {
+    font-family: "Open Sans";
+    font-size: 11px !important;
+    color: #444444 !important;}
+font.fp_wf_Open_Sans, font.fp_wf_Open_Sans * {
+    font-family: "Open Sans";
+}
+font.fp_wf_Oswald, font.fp_wf_Oswald * {
+    font-family: "Oswald";
+}#content h3, h1, h4{
+     font-weight: 300;
+ }
+
+.flex-caption-title {
+    font-weight: 400;
+}
+a.portfolio_link {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+#content h5 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #008fd5;
+}
+
+
+
+#content h4 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.stat .fact {
+    font-weight: 300;
+}
+
 /********************************************************************8mojee moje moje ************************************************************/
 /********************************************************************8mojee moje moje ************************************************************/
 /********************************************************************8mojee moje moje ************************************************************/

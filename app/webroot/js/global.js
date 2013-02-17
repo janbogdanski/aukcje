@@ -22,13 +22,13 @@ $(document).ready(function(){
         }
         return false;
     });
-    $('#joyRideTipContent').joyride({
-        'tipLocation': 'bottom',
-        'tipAnimation': 'fade',
-        'cookieMonster': true,           // true/false for whether cookies are used
-        'cookieName': 'GuidedTour',
-        'cookieDomain': 'aukcje.local'
-    });
+//    $('#joyRideTipContent').joyride({
+//        'tipLocation': 'bottom',
+//        'tipAnimation': 'fade',
+//        'cookieMonster': true,           // true/false for whether cookies are used
+//        'cookieName': 'GuidedTour',
+//        'cookieDomain': 'aukcje.local'
+//    });
 });
 
 function picasaImgScaledUrl(url, size) {

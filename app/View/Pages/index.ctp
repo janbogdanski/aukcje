@@ -17,10 +17,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $('.flexslider').flexslider({
-                animation: "fade",
-                directionNav: true
-            });
+//            $('.flexslider').flexslider({
+//                animation: "fade",
+//                directionNav: true
+//            });
         });
       	</script>
 </div>
