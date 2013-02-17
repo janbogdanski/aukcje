@@ -1,10 +1,3 @@
-/*Shortcodes---------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------*/
-
-/* ------- Preloader ------- */
-.preloader { background:url(../images/loading.gif) center center no-repeat #ffffff;  }
-
-
 /*-------- Button Styles ---------- */
 .btn-large {
     padding: 9px 14px;
@@ -31,21 +24,6 @@
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-}
-
-
-
-
-
-
-
-/* ------- Hr ------- */
-.hr-1{
-    background:url(../images/hr_bck.jpg) repeat-x;
-    height:33px;
-    border:none!important;
-    outline:none!important;
-    display:block;
 }
 
 
@@ -145,46 +123,6 @@ p.one_half, .one_third, .two_third, .three_fourth, .one_fourth,.two_fourth, .one
     clear:both;
     padding:25px;
 }
-/* ------- Video Shortcodes ------- */
-.video_frame {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    /*padding-top: 25px;*/
-    height: 0;
-}
-.video_frame iframe, .video_frame object, .video_frame embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* ------- Dropcaps ------- */
-.dropcap1, .dropcap2, .dropcap3, .dropcap4 {
-    float:left;
-    overflow:hidden;
-    text-align:center;
-}
-.dropcap1 {
-    font-size:28px;
-    height:35px;
-    line-height:35px;
-    margin:0 0 -4px;
-    width:35px;
-}
-.dropcap2 {
-    font-size: 3em;
-    height:50px;
-    line-height:50px;
-
-    margin:0 5px -4px 0 ;
-    width:50px;
-    color:#fff;
-;
-}
-
-
 
 /* ------- Quotes ------- */
 #content blockquote.alignleft {
@@ -372,56 +310,6 @@ img.alignright{
     padding:8px 8px 8px 8px;
     margin:15px 0;
 }
-
-
-
-
-
-
-
-/* ------- Contact Form ------- */
-#contact-form .input{
-    margin:10px 0;
-    position:relative;
-}
-#contact-form input{
-    font-size: inherit;
-}
-#contact-form .input label{
-    width: 10px;
-}
-#contact-form textarea{
-    width: 100%;
-}
-
-#contact-form #submit-form{
-    font-size: 12px;
-}
-#commentform p a{
-    font-weight:bold;
-    color:#595858;
-}
-#contact-form .name-error, #contact-form .email-error, #contact-form .comments-error{
-    display:none;
-    position:relative;
-    top:5px;
-}
-#contact-form .comments-error{
-    position:absolute;
-    right:5px;
-    top:5px;
-}
-#contact-form .form-actions{
-
-    background-color: transparent;
-    border:none;
-}
-
-
-
-
-
-
 /* ------- Toggle ------- */
 h3.trigger {
     padding: 0 0 0 20px;

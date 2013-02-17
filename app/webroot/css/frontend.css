@@ -8,10 +8,6 @@ div.fp_sc_div {
 h1,h2,h3,h4,h5,h6 {
     font-family: "Open Sans";
     color: #008fd5 !important;}
-.widget h4, .stats li a {
-    font-family: "Open Sans";
-    font-size: 14px !important;
-    color: #008fd5 !important;}
 .flex-caption-title, .flipIcon {
     font-family: "Oswald";
     color: #ffffff !important;}
@@ -27,13 +23,6 @@ a.portfolio_link {
     font-family: "Open Sans";
     font-size: 22px !important;
     color: #008fd5 !important;}
-.folio_desc h3 {
-    font-family: "Open Sans";
-    color: #ffffff !important;}
-.stats li em {
-    font-family: "Oswald";
-    font-size: 18px !important;
-    color: #30beda !important;}
 .navbar .nav > li {
     font-family: "Open Sans";
     font-size: 11px !important;
@@ -47,11 +36,7 @@ font.fp_wf_Oswald, font.fp_wf_Oswald * {
      font-weight: 300;
  }
 
-.stats li em {
-    font-weight: 400;
-}
-
-.stat, .flex-caption-title, .img_post_hf2 {
+.flex-caption-title {
     font-weight: 400;
 }
 a.portfolio_link {
