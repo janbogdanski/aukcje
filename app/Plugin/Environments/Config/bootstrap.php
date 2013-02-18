@@ -58,7 +58,7 @@ Environment::configure('jbogdanski',
 Environment::configure('development',
     true, //default
     array(
-        'debug'                   => 2,
+        'debug'                   => 1,
         'Cache.disable'           => true,
     )
 );
