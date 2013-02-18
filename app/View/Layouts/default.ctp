@@ -60,7 +60,7 @@
     if(isset($this->request->params['prefix']) && 'admin' == $this->request->params['prefix'] ){
         echo   $this->Html->script('admin');
     }
-    echo $this->Html->meta('icon');
+    echo $this->Html->meta('icon','favicon.png');
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
