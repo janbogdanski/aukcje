@@ -35,6 +35,7 @@
 	Configure::write('debug', 2);
 Configure::write('Routing.prefixes', array('admin'));
 Configure::write('site.name', 'Proaukcje');
+Configure::write('Site.header', 'Kreator aukcji online');
 
 /**
  * Configure the Error handler used to handle errors for your application.  By default

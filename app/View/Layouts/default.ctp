@@ -11,10 +11,7 @@
 <head>
     <?php echo $this->Html->charset(); ?>
     <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
-    <title>
-
-        <?php echo $this->get('title_for_layout');?>
-    </title>
+    <title><?php echo $this->get('title_for_layout');?></title>
 
     <!--    <meta property="og:title" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
     <!--    <meta property="og:url" content="--><?php //echo @$metaOgUrl; ?><!--" />-->
@@ -88,6 +85,7 @@
                 <div class="container">
                     <div class="logo_holder">
                         <?php echo $this->Html->link($this->Html->image('logo.png', array("alt" => "Brownies", 'id' => 'logo')),'/',array('escape' => false));?>
+                        <h1><?php echo Configure::read('Site.header'); ?></h1>
                     </div>
                     <a class="btn-flat" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
