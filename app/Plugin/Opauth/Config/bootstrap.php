@@ -14,7 +14,7 @@
  * Begins and ends with /
  * eg. if Opauth is reached via http://example.org/auth/, path is '/auth/'
  */
-Configure::write('Opauth.path', '/auth/');
+Configure::write('Opauth.path', '/oauth/');
 
 /**
  * Whether to view Opauth debug messages

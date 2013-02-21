@@ -127,7 +127,7 @@ class OpauthAppController extends AppController {
 	 */
 	protected function _loadOpauth($config = null, $run = false){
 		// Update dependent config in case the dependency is overwritten at app-level
-		if (Configure::read('Opauth.callback_url') == '/auth/callback') {
+		if (Configure::read('Opauth.callback_url') == '/oauth/callback') {
 			Configure::write('Opauth.callback_url', Configure::read('Opauth.path').'callback');
 		}
 		
