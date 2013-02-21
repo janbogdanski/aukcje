@@ -27,10 +27,10 @@
     <div ><?php echo $this->Form->input("user_group_id" ,array('type' => 'select', 'label' => false,'div' => false,'class'=>"span3" ))?></div>
 </div>
 <?php   }   ?>
-<div>
-    <div><?php echo __('Username');?><font color='red'>*</font></div>
-    <div ><?php echo $this->Form->input("username" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
-</div>
+<!--<div>-->
+<!--    <div>--><?php //echo __('Username');?><!--<font color='red'>*</font></div>-->
+<!--    <div >--><?php //echo $this->Form->input("username" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->
+<!--</div>-->
 <!--					<div>-->
 <!--						<div>--><?php //echo __('First Name');?><!--<font color='red'>*</font></div>-->
 <!--						<div >--><?php //echo $this->Form->input("first_name" ,array('label' => false,'div' => false,'class'=>"span3" ))?><!--</div>-->

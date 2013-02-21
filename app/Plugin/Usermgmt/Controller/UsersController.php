@@ -483,14 +483,14 @@ class UsersController extends UserMgmtAppController {
 			$this->User->set($this->data);
 			if ($this->User->LoginValidate()) {
 				$email  = $this->data['User']['email'];
-				$user = $this->User->findByUsername($email);
-				if (empty($user)) {
+//				$user = $this->User->findByUsername($email);
+//				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
 						$this->Session->setFlash(__('Incorrect Email/Username'),'error');
 						return;
 					}
-				}
+//				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
 					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'),'info');

@@ -115,7 +115,7 @@
                                     <?php if($this->UserAuth->isLogged()): ?>
                                     <div class="m-btn-group">
                                         <a class="m-btn dropdown-toggle blue" data-toggle="dropdown" href="#">
-                                            <?php echo $user['User']['username']; ?> <span class="caret white"></span>
+                                            <?php echo $user['User']['email']; ?> <span class="caret white"></span>
                                         </a>
                                         <div class="m-dropdown-menu">
                                             <p><?php echo $this->Html->link(__('Settings'),"/dashboard") ?></p>
@@ -134,7 +134,7 @@
                                         <div class="m-dropdown-menu" style="padding: 15px; padding-bottom: 0;" id="login-dropdown">
 
                                             <?php echo $this->Form->create('User', array('url' => array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'))); ?>
-                                            <div><?php echo __('Email / Username');?></div>
+                                            <div><?php echo __('Email');?></div>
                                             <div><?php echo $this->Form->input("email" ,array('label' => false,'div' => false, 'error' => false,'class'=>"span2" ))?>
                                             </div>
                                             <div><?php echo __('Password');?></div>
