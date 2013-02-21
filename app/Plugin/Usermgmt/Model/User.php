@@ -80,20 +80,20 @@ class User extends UserMgmtAppModel {
 				"user_group_id" => array(
 					'rule' => array('comparison', '!=', 0),
 					'message'=> __('Please select group')),
-				'username'=> array(
-					'mustNotEmpty'=>array(
-						'rule' => 'notEmpty',
-						'message'=> __('Please enter username'),
-						'last'=>true),
-					'mustUnique'=>array(
-						'rule' =>'isUnique',
-						'message' => __('This username already taken'),
-					'last'=>true),
-					'mustBeLonger'=>array(
-						'rule' => array('minLength', 4),
-						'message'=> __('Username must be greater than %s characters', 3),
-						'last'=>true),
-					),
+//				'username'=> array(
+//					'mustNotEmpty'=>array(
+//						'rule' => 'notEmpty',
+//						'message'=> __('Please enter username'),
+//						'last'=>true),
+//					'mustUnique'=>array(
+//						'rule' =>'isUnique',
+//						'message' => __('This username already taken'),
+//					'last'=>true),
+//					'mustBeLonger'=>array(
+//						'rule' => array('minLength', 4),
+//						'message'=> __('Username must be greater than %s characters', 3),
+//						'last'=>true),
+//					),
 //				'first_name'=> array(
 //					'mustNotEmpty'=>array(
 //						'rule' => 'notEmpty',

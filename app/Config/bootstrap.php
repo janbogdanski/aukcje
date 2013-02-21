@@ -183,4 +183,15 @@ CakePlugin::load('Environments',array('bootstrap' => true));
 // load Usermgmt plugin and apply plugin routes. Keep all the other plugins you are using here
 CakePlugin::loadAll(array(
     'Usermgmt' => array('routes' => true, 'bootstrap' => true),
+    'Opauth' =>  array('routes' => true, 'bootstrap' => true)
+));
+Configure::write('Opauth.Strategy.Facebook', array(
+    'app_id' => '422131874535612',
+    'app_secret' => '222582c3c0c2b5e307514e00c9693213'
+));
+
+// Google strategy
+Configure::write('Opauth.Strategy.Google', array(
+    'client_id' => '569871263983.apps.googleusercontent.com',
+    'client_secret' => 'M7SU4O_2Xi1zzUqWvsK63HFF'
 ));

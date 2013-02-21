@@ -74,7 +74,56 @@ class UsersController extends UserMgmtAppController {
 		$user = $this->User->read(null, $userId);
 		$this->set('user', $user);
 	}
-	/**
+
+    /**
+     * Autoryzacja oauth przez fb, google... - metoda wywolywana po zakonczeniu
+     *
+     * Gdy ok - $this->data['validated'] = 1
+     * @access public
+     * @return void
+     */
+    public  function opauth_complete(){
+
+        if($this->data['validated']){
+
+            //tzn OK - loguj lub rejestruj i loguj
+           $registered = $this->User->find('first', array(
+                'conditions' => array(
+                    'User.oauth_provider' => $this->data['auth']['provider'],
+                    'User.oauth_uid' => $this->data['auth']['uid']
+                )
+            ));
+            if($registered){
+
+                //mamy w db - loguj
+                $this->UserAuth->login($registered);
+            } else{
+
+                //rejestracja
+                $user = array(
+                    'user_group_id' => DEFAULT_GROUP_ID,
+                    'email' => $this->data['auth']['info']['email'],
+                    'username' => $this->data['auth']['uid'],
+                    'oauth_provider' => $this->data['auth']['provider'],
+                    'oauth_uid' => $this->data['auth']['uid'],
+                    'email_verified' => 1,
+                    'active' => 1,
+                );
+                $this->User->save($user);
+
+                //pobieramy z bazy, wraz z zaleznosciami
+                $user = $this->User->find('first', array(
+                    'conditions' => array('User.id' => $this->User->getLastInsertID())
+                ));
+                $this->UserAuth->login($user);
+            }
+        } else{
+            $this->Session->setFlash('Access revoked by User','error');
+            $this->redirect('/');
+        }
+    }
+
+    /**
 	 * Used to logged in the site
 	 *
 	 * @access public
@@ -434,14 +483,14 @@ class UsersController extends UserMgmtAppController {
 			$this->User->set($this->data);
 			if ($this->User->LoginValidate()) {
 				$email  = $this->data['User']['email'];
-				$user = $this->User->findByUsername($email);
-				if (empty($user)) {
+//				$user = $this->User->findByUsername($email);
+//				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
 						$this->Session->setFlash(__('Incorrect Email/Username'),'error');
 						return;
 					}
-				}
+//				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['email_verified']==0) {
 					$this->Session->setFlash(__('Your registration has not been confirmed yet please verify your email before reset password'),'info');
