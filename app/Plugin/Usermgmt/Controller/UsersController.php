@@ -138,14 +138,14 @@ class UsersController extends UserMgmtAppController {
 				$email  = $this->data['User']['email'];
 				$password = $this->data['User']['password'];
 
-				$user = $this->User->findByUsername($email);
-				if (empty($user)) {
+//				$user = $this->User->findByUsername($email);
+//				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
 						$this->Session->setFlash(__('Incorrect Email/Username or Password'),'error');
 						return;
 					}
-				}
+//				}
 				// check for inactive account
 				if ($user['User']['id'] != 1 and $user['User']['active']==0) {
 					$this->Session->setFlash(__('Sorry your account is not active, please contact to Administrator'),'info');
@@ -559,14 +559,14 @@ class UsersController extends UserMgmtAppController {
 			$this->User->set($this->data);
 			if ($this->User->LoginValidate()) {
 				$email  = $this->data['User']['email'];
-				$user = $this->User->findByUsername($email);
-				if (empty($user)) {
+//				$user = $this->User->findByUsername($email);
+//				if (empty($user)) {
 					$user = $this->User->findByEmail($email);
 					if (empty($user)) {
 						$this->Session->setFlash(__('Incorrect Email/Username'),'error');
 						return;
 					}
-				}
+//				}
 				if($user['User']['email_verified']==0) {
 					$this->User->sendVerificationMail($user);
 					$this->Session->setFlash(__('Please check your mail to verify your email'),'good');
