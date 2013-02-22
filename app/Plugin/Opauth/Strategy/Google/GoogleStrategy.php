@@ -77,7 +77,7 @@ class GoogleStrategy extends OpauthStrategy{
 			
 			if (!empty($results) && !empty($results->access_token)){
 				$userinfo = $this->userinfo($results->access_token);
-                print_r($userinfo);
+//                print_r($userinfo);
 //                die();
                 
 				$this->auth = array(
