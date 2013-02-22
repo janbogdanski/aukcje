@@ -117,8 +117,10 @@ class UsersController extends UserMgmtAppController {
                 ));
                 $this->UserAuth->login($user);
             }
+            $this->Session->setFlash(__('Logged in with %s',$this->data['auth']['provider']),'good');
+            $this->redirect('/');
         } else{
-            $this->Session->setFlash('Access revoked by User','error');
+            $this->Session->setFlash(__('Access revoked by User'),'error');
             $this->redirect('/');
         }
     }
