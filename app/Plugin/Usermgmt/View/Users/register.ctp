@@ -20,7 +20,10 @@
 ?>
 <h2 class="form-header"><?php echo __('Sign Up or'); ?></h2>
 <span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign In",true),"/login") ?></span>
-<?php echo $this->Form->create('User', array('action' => 'register')); ?>
+<div class="clearfix"></div>
+<div class="span3">
+    <?php echo $this->Form->create('User', array('action' => 'register')); ?>
+
 <?php   if (count($userGroups) >2) { ?>
 <div>
     <div><?php echo __('Group');?><font color='red'>*</font></div>
@@ -63,6 +66,11 @@
     <div><?php echo $this->Form->Submit(__('Sign Up'),array('class' => 'm-btn blue'));?></div>
 </div>
 <?php echo $this->Form->end(); ?>
+</div>
+<div class="span3 loginwith">
+    <div><a href="/oauth/google" class="m-btn blue"><i class="icon-google-plus-sign icon-large"></i>&nbsp; <?php echo __('Login with Google'); ?></a></div>
+    <div><a href="/oauth/facebook" class="m-btn blue"><i class="icon-facebook-sign icon-large"></i>&nbsp; <?php echo __('Login with Fb'); ?></a></div>
+</div>
 <script type="text/javascript">
     document.getElementById("UserUsername").focus();
 </script>

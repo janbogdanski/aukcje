@@ -143,12 +143,19 @@
                                             ?>
                                             <div class="pull-left"><?php echo __('Remember me');?>
                                                 <?php echo $this->Form->input("remember" ,array("type"=>"checkbox",'div' => false, 'label' => false))?> </div>
-                                            <div class="pull-right"><?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?>
+                                            <div class="pull-right">
+                                                <?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?>
+                                                <a href="/oauth/google" class="m-btn blue"><i class="icon-google-plus-sign icon-large"></i>&nbsp; <?php echo __('Login with Google'); ?></a>
+                                                <a href="/oauth/facebook" class="m-btn blue"><i class="icon-facebook-sign icon-large"></i>&nbsp; <?php echo __('Login with Fb'); ?></a>
                                             </div>
-                                            <div class="clearfix">
+
+                                            <div class="clearfix"></div>
+
+                                            <div>
                                                 <?php echo $this->Html->link(__("Sign Up",true),"/register", array('class' => 'create-account')) ?>
                                             </div>
                                             <?php echo $this->Form->end(); ?>
+
                                         </div>
                                     </div>
                                     <?php endif;?>

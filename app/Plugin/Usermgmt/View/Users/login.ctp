@@ -5,10 +5,11 @@
         ?>
 <h2 class="form-header"><?php echo __('Sign In or'); ?></h2>
 <span><?php echo ' '.__("or").' '.$this->Html->link(__("Sign Up",true),"/register") ?></span>
-<div>
+    <div class="clearfix"></div>
+<div class="span3">
     <?php echo $this->Form->create('User', array('action' => 'login')); ?>
     <div>
-        <div><?php echo __('Email / Username');?></div>
+        <div><?php echo __('Email');?></div>
         <div ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
     </div>
     <div>
@@ -30,6 +31,10 @@
     <div><?php echo $this->Html->link(__("Forgot Password?",true),"/forgotPassword",array("class"=>"style30")) ?></div>
     <div><?php echo $this->Html->link(__("Email Verification",true),"/emailVerification",array("class"=>"style30")) ?></div>
 </div>
+    <div class="span3 loginwith">
+        <div><a href="/oauth/google" class="m-btn blue"><i class="icon-google-plus-sign icon-large"></i>&nbsp; <?php echo __('Login with Google'); ?></a></div>
+        <div><a href="/oauth/facebook" class="m-btn blue"><i class="icon-facebook-sign icon-large"></i>&nbsp; <?php echo __('Login with Fb'); ?></a></div>
+    </div>
 
 <script type="text/javascript">
     document.getElementById("UserEmail").focus();
