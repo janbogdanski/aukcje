@@ -42,6 +42,7 @@ App::uses('Controller', 'Controller');
  * @property Contact $Contact
  * @property Metum $Metum
  * @property BlogPost $BlogPost
+ * @property UploadComponent $Upload
  */
 class AppController extends Controller {
 
