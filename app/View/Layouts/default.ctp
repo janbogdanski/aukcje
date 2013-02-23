@@ -45,7 +45,6 @@
 //    echo $this->Html->css('flexslider');
     echo $this->Html->css('flip');
 //    echo $this->Html->css('joyride-2.0.2');
-    echo $this->Html->css('frontend');
     echo $this->Html->css('moje');
 
 
