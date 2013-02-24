@@ -8,7 +8,7 @@
 //App::uses('Image', 'Model');
 class ImagesController extends AppController {
 
-    public $components = array('Upload' => array('max_size' => 3145728, 'file_types' => array('image/jpeg','image/gif','image/png')));
+    public $components = array('Upload' => array('max_size' => 3145728, 'file_types' => array('image/jpeg','image/gif','image/png')),
 
     public function beforeFilter(){
         parent::beforeFilter();
@@ -25,6 +25,16 @@ class ImagesController extends AppController {
                 try{
 
                     $uploaded  = $this->Upload->upload($file,'files');
+                    $image = $this->Picasa->picasa_upload($uploaded);
+
+                    $data = array(
+                        'user_id' => $this->UserAuth->getUserId(),
+                        'image' => $image['full_link'],
+                        'thumb' => $image['thumb_link'],
+                    );
+                    $this->Image->create();
+                    $this->Image->save($data);
+                    unlink($uploaded);
                 } catch(Exception $e){
                     var_dump($e->getMessage());
                 }
