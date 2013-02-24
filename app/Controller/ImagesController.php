@@ -9,21 +9,30 @@
 class ImagesController extends AppController {
 
     public $components = array('Upload' => array('max_size' => 3145728, 'file_types' => array('image/jpeg','image/gif','image/png')),
-
+                               'Picasa');
+    public $paginate = array(
+        'limit' => 25,
+        'order' => array(
+            'Image.created' => 'desc'
+        )
+    );
     public function beforeFilter(){
         parent::beforeFilter();
 
     }
 
     public function index(){
+        $data = $this->paginate('Image');
+        $this->set('data', $data);
     }
 
     function upload(){
+        $this->layout = 'ajax';
+        $image = '';
         if($_POST){
         $files = $this->data['file']['image'];
             foreach ($files as $file){
                 try{
-
                     $uploaded  = $this->Upload->upload($file,'files');
                     $image = $this->Picasa->picasa_upload($uploaded);
 
@@ -35,13 +44,12 @@ class ImagesController extends AppController {
                     $this->Image->create();
                     $this->Image->save($data);
                     unlink($uploaded);
+
                 } catch(Exception $e){
                     var_dump($e->getMessage());
                 }
             } //end foreach
         }
-    }
-    private function _upload(){
-
+        $this->set(compact('image'));
     }
 }

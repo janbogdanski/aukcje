@@ -6,4 +6,4 @@
  * @var $this View
  */
 
-echo json_encode(array('files' => ''));
+echo json_encode($image);

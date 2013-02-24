@@ -33,6 +33,28 @@
     #dropzone.in {
         width: 400px;
     }
+    .galery {
+        background: none repeat scroll 0 0 #FFFFFF;
+        box-shadow: 0 0 1px 1px #CCCCCC;
+        height: 150px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+    .galery img{
+        /*vertical-align: middle;*/
+        margin: 0 auto;
+        /*text-align: center;*/
+        /*border: 1px solid red;*/
+        /*display: table-cell;*/
+    }
+    .image-galery{
+        height: 150px;
+        width: 170px;
+        vertical-align: middle;
+        display: table-cell;
+        margin: auto;
+        text-align: center;
+    }
 </style>
 <!--<input id="fileupload" type="file" name="data[file][image]" multiple>-->
 <?php echo $this->Form->create(false, array('id'=> 'fileupload',
@@ -49,6 +71,25 @@
     <?php echo $this->Form->file('file.image.',array('multiple')); ?>
 </span>
 <?php echo $this->Form->end(); ?>
+<div class="clearfix"></div>
+<div id="result" style="display: none">
+<?php echo __('Added now'); ?>
+    <div class="content"></div>
+</div>
+
+        <div class="containetr">
+            <h1>Galeria</h1>
+        <?php foreach($data as $image): ?>
+<!--    --><?php //print_r($image); ?>
+
+            <div class="span2 galery">
+<!--                <div class="image-galery" style="background: url(--><?php //echo $image['Image']['thumb']; ?><!--) no-repeat center center;  height:100%;-->
+                <div class="image-galery">
+                    <?php echo $this->Html->image($image['Image']['thumb']); ?>
+                </div>
+            </div>
+    <?php endforeach; ?>
+    </div>
 <!--<div id="progress">-->
 <!--    <div class="bar" style="width: 0%;">aaa</div>-->
 <!--</div>-->
@@ -60,16 +101,21 @@
             url: '/images/upload',
             dataType: 'json',
             done: function (e, data) {
-//                alert('a');
-                console.log('finished ok');
-//                data.context.text('Upload finished.');
+                if(data.result.thumb_link != undefined){
+                    var $result = $("#result");
+                    if($result.is(":hidden")){
+                        $result.fadeIn();
+                    }
+                    $("#result .content").prepend('<img src="' + data.result.thumb_link +'" />');
+                }
             },
             fail: function (e, data) {
 //                alert('fail');
-                console.log('finished fail');
+//                console.log('finished fail');
+//                console.log(data);
+//                console.log(e);
 //                data.context.text('Upload finished.');
             },
-
 
             dropZone: $('#dropzone'),
             dragover: function (e) {
