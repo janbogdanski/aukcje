@@ -9,7 +9,9 @@
 class ImagesController extends AppController {
 
     public $components = array('Upload' => array('max_size' => 3145728, 'file_types' => array('image/jpeg','image/gif','image/png')),
-                               'Picasa');
+                               'Picasa','RequestHandler');
+
+    public $helpers = array('Js' => 'Jquery', 'PicasaImageSize');
 
     public function beforeFilter(){
         parent::beforeFilter();

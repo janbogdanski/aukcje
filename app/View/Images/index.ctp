@@ -20,6 +20,12 @@
 <?php
 
 ?>
+<?php $this->Paginator->options(array(
+    'evalScripts' => true,
+    'update' => '#content',
+    'before' => '$(".loading").fadeIn();',
+    'complete' => '$(".loading").fadeOut();',
+)); ?>
 <style type="text/css">
     .bar {
         height: 18px;
@@ -57,7 +63,7 @@
     }
 </style>
 <h2><?php echo __('Images'); ?></h2>
-
+<div id="cnt"></div>
 <!--<input id="fileupload" type="file" name="data[file][image]" multiple>-->
 <?php echo $this->Form->create(false, array('id'=> 'fileupload',
     'enctype' => 'multipart/form-data','url' => array('controller' => 'Images', 'action' => 'index'))); ?>
@@ -81,6 +87,12 @@
 </div>
 
         <div class="containetr">
+            <div class="row">
+            <?php  echo    $this->Paginator->prev();?>
+            <?php  echo    $this->Paginator->numbers();?>
+            <?php  echo    $this->Paginator->next();?>
+                <span class="loading"><?php echo __('Loading...'); ?></span>
+            </div>
             <?php foreach($data as $image): ?>
 
             <div class="span2 galery">
@@ -98,6 +110,12 @@
             </div>
 
             <?php endforeach; ?>
+            <div class="clearfix"></div>
+            <div class="row">
+                <?php  echo    $this->Paginator->prev();?>
+                <?php  echo    $this->Paginator->numbers();?>
+                <?php  echo    $this->Paginator->next();?>
+            </div>
     </div>
 <!--<div id="progress">-->
 <!--    <div class="bar" style="width: 0%;">aaa</div>-->
@@ -222,5 +240,5 @@
 </script>
 
 
-
+<?php echo $this->Js->writeBuffer(); ?>
 
