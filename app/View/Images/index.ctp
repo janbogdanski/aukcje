@@ -36,7 +36,7 @@
     .galery {
         background: none repeat scroll 0 0 #FFFFFF;
         box-shadow: 0 0 1px 1px #CCCCCC;
-        height: 150px;
+        height: 170px;
         margin-bottom: 30px;
         overflow: hidden;
     }
@@ -56,6 +56,8 @@
         text-align: center;
     }
 </style>
+<h2><?php echo __('Images'); ?></h2>
+
 <!--<input id="fileupload" type="file" name="data[file][image]" multiple>-->
 <?php echo $this->Form->create(false, array('id'=> 'fileupload',
     'enctype' => 'multipart/form-data','url' => array('controller' => 'Images', 'action' => 'index'))); ?>
@@ -70,6 +72,7 @@
     <span><?php echo __('or click to add its traditionaly'); ?></span>
     <?php echo $this->Form->file('file.image.',array('multiple')); ?>
 </span>
+    <div class="ajax-loader"></div>
 <?php echo $this->Form->end(); ?>
 <div class="clearfix"></div>
 <div id="result" style="display: none">
@@ -78,28 +81,90 @@
 </div>
 
         <div class="containetr">
-            <h1>Galeria</h1>
-        <?php foreach($data as $image): ?>
-<!--    --><?php //print_r($image); ?>
+            <?php foreach($data as $image): ?>
 
             <div class="span2 galery">
-<!--                <div class="image-galery" style="background: url(--><?php //echo $image['Image']['thumb']; ?><!--) no-repeat center center;  height:100%;-->
+                <div>
+                    <?php echo $this->Html->link(__('Edit'), '#', array('class' => 'm-btn mini  editImage', 'data-id' => $image['Image']['id']) );?>
+                    <?php echo $this->Form->postLink(__('Delete'), array(
+                    'action' => 'delete',
+                    $image['Image']['id']), array(
+                    'confirm'=> __('Are you sure you want to delete that image?'),
+                    'class' => 'm-btn mini ') );?>
+                </div>
                 <div class="image-galery">
-                    <?php echo $this->Html->image($image['Image']['thumb']); ?>
+                    <?php echo $this->Html->image($image['Image']['thumb'],array('id' => 'image-'.$image['Image']['id'], 'class' => 'editImage', 'data-image' => $image['Image']['image'])); ?>
                 </div>
             </div>
-    <?php endforeach; ?>
+
+            <?php endforeach; ?>
     </div>
 <!--<div id="progress">-->
 <!--    <div class="bar" style="width: 0%;">aaa</div>-->
 <!--</div>-->
-
+<script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
 <script type="text/javascript">
+    var featherEditor = new Aviary.Feather({
+        apiKey: '4CMLZdc7eEqIKE8EhKIQHg',
+        apiVersion: 2,
+        tools: 'all',
+        appendTo: '',
+        language: 'pl',
+        minimumStyling: true,
+        onSave: function(imageID, newURL) {
+            $("#" +imageID).attr('src','/img/ajax-loader.gif');//.attr('data-image',data.full_link);
+
+            $.ajax({
+                type: 'POST',
+                url: "/images/edit",
+                dataType: "json",
+                data: "imageUrl=" + newURL + "&imageId=" + imageID,
+                success: function(data){
+                    console.log(data.thumb_link);
+                    $("#" +imageID).attr('src',data.thumb_link).attr('data-image',data.full_link);
+                }
+            });
+
+//            var img = document.getElementById(imageID);
+//            img.src = newURL;
+        },
+        onError: function(errorObj) {
+            alert(errorObj.message);
+        }
+    });
+    function launchEditor(id, src) {
+        featherEditor.launch({
+            image: id,
+            url: src
+        });
+        return false;
+    }
     $(function () {
+        $(".editImage").click(function(){
+
+            var $image = $("#image-"+$(this).attr("data-id"));
+            console.log($image);
+            launchEditor($image.attr("id"), $image.attr("data-image"));
+            return false;
+        });
+        var $loader = $(".ajax-loader");
+
         $('#fileupload').fileupload({
             progressInterval: 70,
             url: '/images/upload',
             dataType: 'json',
+            add: function (e, data) {
+                if($loader.is(":hidden")){
+                    $loader.fadeIn();
+                }
+                data.submit();
+
+            },
+            always: function (e, data) {
+//                alert('a');
+                $loader.fadeOut();
+
+            },
             done: function (e, data) {
                 if(data.result.thumb_link != undefined){
                     var $result = $("#result");
@@ -152,7 +217,10 @@
 //                );
             }
         });
+
     });
 </script>
+
+
 
 

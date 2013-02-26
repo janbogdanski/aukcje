@@ -10,15 +10,18 @@ class ImagesController extends AppController {
 
     public $components = array('Upload' => array('max_size' => 3145728, 'file_types' => array('image/jpeg','image/gif','image/png')),
                                'Picasa');
-    public $paginate = array(
-        'limit' => 25,
-        'order' => array(
-            'Image.created' => 'desc'
-        )
-    );
+
     public function beforeFilter(){
         parent::beforeFilter();
 
+        $this->paginate = array(
+            'limit' => 16,
+            'order' => array(
+                'Image.created' => 'desc',
+            ),
+            'conditions' => array('Image.user_id' => $this->UserAuth->getUserId()),
+
+        );
     }
 
     public function index(){
@@ -51,5 +54,70 @@ class ImagesController extends AppController {
             } //end foreach
         }
         $this->set(compact('image'));
+    }
+    public function edit(){
+        $this->layout = 'ajax';
+        $id = str_replace('image-','',$_POST['imageId']);
+        $url = $_POST['imageUrl'];
+        $ext = explode('.',$url);
+        $ext = end($ext);
+
+        $uploaded = 'files/'.date("Ymdhis").rand(10,9876).'.'.$ext;
+        file_put_contents($uploaded,file_get_contents($url));
+        $image = $this->Picasa->picasa_upload($uploaded);
+
+        $this->Image->id = (int)$id;
+        $data = array(
+            'user_id' => $this->UserAuth->getUserId(),
+            'image' => $image['full_link'],
+            'thumb' => $image['thumb_link'],
+        );
+        $this->Image->save($data);
+        unlink($uploaded);
+        $this->set(compact('image'));
+        $this->render('upload');
+    }
+
+    public function delete(){
+
+        $id = $this->request->params['pass'][0];
+
+        //the request must be a post request
+        //that's why we use postLink method on our view for deleting user
+        if( $this->request->is('get') ){
+
+            $this->Session->setFlash(__('Delete method is not allowed.'),'info');
+            $this->redirect(array('action' => 'index'));
+
+            //since we are using php5, we can also throw an exception like:
+            //throw new MethodNotAllowedException();
+        }else{
+
+            if( !$id ) {
+                $this->Session->setFlash(__('Invalid id for image'),'info');
+                $this->redirect(array('action'=>'index'));
+
+            }else{
+                //delete user
+                $image = $this->Image->find('first', array(
+                    'conditions' => array('Image.id' => $id,  'Image.user_id' => $this->UserAuth->getUserId())
+                ));
+                if(($image)){
+
+                    if( $this->Image->delete($id) ){
+                        //set to screen
+                        $this->Session->setFlash(__('Image was deleted.'),'good');
+                        //redirect to users's list
+                        $this->redirect(array('action'=>'index'));
+
+                    }else{
+                        //if unable to delete
+                        $this->Session->setFlash(__('Unable to delete image.'),'info');
+                        $this->redirect(array('action' => 'index'));
+                    }
+                }
+            }
+        }
+        $this->redirect(array('action' => 'index'));
     }
 }
