@@ -26,9 +26,46 @@ class ImagesController extends AppController {
         );
     }
 
-    public function index(){
+
+    function index() {
+
+        if (!empty($this->passedArgs['updateId'])) {
+            $this->set('updateId', $this->passedArgs['updateId']);
+        }
+
+        $images = $this->paginate();
+        $this->set('images', $images);
+
+        if ($this->request->is('ajax')) {
+            $this->autoRender = false;
+
+            //ajax pagination
+            $this->render('/elements/images');
+            return;
+        }
+
+        if ($this->request->is('requested')) {
+            $this->autoRender = false;
+
+            //gdy strona wczytywana jest 'nprmalnie' ale jako element (czyli np. z modulu galerii
+            return array('images' => $images, 'paging' => $this->params['paging']);
+        } else {
+
+            //uruchamiana normalnie, np. index - lista obrazkow
+            $this->set('data', $images);
+        }
+    }
+
+    public function browser(){
+
+        $this->layout = 'minimal';
         $data = $this->paginate('Image');
-        $this->set('data', $data);
+//        if ($this->request->is('requested')) {
+//            return $data;
+//        } else{
+
+            $this->set('data', $data);
+//        }
     }
 
     function upload(){
@@ -40,7 +77,7 @@ class ImagesController extends AppController {
                 try{
                     $uploaded  = $this->Upload->upload($file,'files');
                     $image = $this->Picasa->picasa_upload($uploaded);
-
+                    print_r($image);
                     $data = array(
                         'user_id' => $this->UserAuth->getUserId(),
                         'image' => $image['full_link'],

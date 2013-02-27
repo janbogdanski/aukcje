@@ -91,7 +91,7 @@
             <?php  echo    $this->Paginator->prev();?>
             <?php  echo    $this->Paginator->numbers();?>
             <?php  echo    $this->Paginator->next();?>
-                <span class="loading"><?php echo __('Loading...'); ?></span>
+                <span class="loading" style="display: none"><?php echo __('Loading...'); ?></span>
             </div>
             <?php foreach($data as $image): ?>
 

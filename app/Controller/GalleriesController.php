@@ -9,7 +9,8 @@ App::uses('Gallery', 'Model');
 class GalleriesController extends AppController {
 
     public $uses = array('Auction','Gallery','GalleriesDetails', 'Usermgmt.User', 'Usermgmt.UserGroup', 'Usermgmt.LoginToken');
-    public $helpers = array('PicasaImageSize');
+    public $helpers = array('Js' => 'Jquery', 'PicasaImageSize');
+    public $components = array('RequestHandler');
 
 
     /**
