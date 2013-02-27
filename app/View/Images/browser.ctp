@@ -6,7 +6,18 @@
  * @var $this View
  */
 
+$this->Paginator->options(array(
+    'update' => '#content',
+    'evalScripts' => true,
+    'before' => '$(".loading").fadeIn();',
+    'complete' => '$(".loading").fadeOut();',
+//    'url' => array('controller' => 'images', 'action' => 'index'),
+));
 ?>
+
+<?php  echo    $this->Paginator->prev();?>
+<?php  echo    $this->Paginator->numbers();?>
+<?php  echo    $this->Paginator->next();?>
 <?php  foreach($data as $photo): ?>
 <!--    --><?php //print_r($photo); ?>
 <?php $url = "javascript:editor.insertHtml('<img src=\"{$photo['Image']['image']}\" />')";?>
@@ -19,12 +30,5 @@
         $url,
         array('escape' => false)
     );?>
-<!--    echo '<a href="javascript:select_image(\''.$photo['image'].'\')">';-->
-<!--        echo '<img src="'.$photo['thumbnail'].'">';-->
-<!--        echo '</a>';-->
-
 <?php endforeach; ?>
-<!-- echo $this->element('images', array("updateId" => "categoriesList"));-->
-<!--?>-->
-
-<!--?>-->
+<?php echo $this->Js->writeBuffer(); ?>

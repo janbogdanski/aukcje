@@ -9,7 +9,7 @@
 <?php
 // if we dont have data, go get it with requestAction
 if (empty($images)) {
-    $images = $this->requestAction(array('controller' => 'images', 'action' => 'index'));
+    $images = $this->requestAction(array('controller' => 'images', 'action' => 'listing'));
 //    print_r($images);
     $this->Paginator->params['paging'] = $images['paging'];
     $images = $images['images'];
@@ -20,7 +20,7 @@ $this->Paginator->options(array(
     'evalScripts' => true,
     'before' => '$(".loading").fadeIn();',
     'complete' => '$(".loading").fadeOut();',
-    'url' => array('controller' => 'images', 'action' => 'index', 'updateId' => $updateId),
+    'url' => array('controller' => 'images', 'action' => 'listing', 'updateId' => $updateId),
 ));
 
 ?>

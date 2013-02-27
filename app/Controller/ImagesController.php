@@ -27,7 +27,11 @@ class ImagesController extends AppController {
     }
 
 
-    function index() {
+    public function index() {
+        $images = $this->paginate();
+        $this->set('data', $images);
+    }
+    public function listing() {
 
         if (!empty($this->passedArgs['updateId'])) {
             $this->set('updateId', $this->passedArgs['updateId']);
@@ -60,12 +64,10 @@ class ImagesController extends AppController {
 
         $this->layout = 'minimal';
         $data = $this->paginate('Image');
-//        if ($this->request->is('requested')) {
-//            return $data;
-//        } else{
-
+        if ($this->request->is('ajax')) {
+            $this->layout = 'ajax';
+        }
             $this->set('data', $data);
-//        }
     }
 
     function upload(){
