@@ -16,6 +16,22 @@
  */
 
 $width = $gallery['Gallery']['size'];
+if(isset($gallery['action'])){
+    if('previewGallery' == $gallery['action']){
+
+        //pobrane jako wyslany formularz (tworzenie galerii)
+        $big = $gallery['GalleriesDetails']['image'][0];
+
+    } else{
+
+        //to pobrane jako has many - wstawianie galerii
+        $big = $gallery['Gallery']['GalleriesDetails'][0]['image'];
+    }
+} else{
+
+    //to pobrane jako has many - wstawianie galerii
+    $big = $gallery['GalleriesDetails'][0]['image'];
+}
 //print_r($gallery);
 //die();
 
@@ -148,12 +164,12 @@ $width = $gallery['Gallery']['size'];
                 <?php echo $galleryUrl; ?>
             </div>
             <div>
-                <?php if(isset($gallery['GalleriesDetails']['image'][0])): ?>
+                <?php if($big): ?>
 
                 <div class="big">
                     <?php
                     echo $this->Html->link(
-                        $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($gallery['GalleriesDetails']['image'][0],PicasaImageSizeHelper::PHOTO_GALLERY_FIRST),
+                        $this->Html->image($this->PicasaImageSize->picasaImgScaledUrl($big,PicasaImageSizeHelper::PHOTO_GALLERY_FIRST),
                             array("alt" => "Brownies")),
                         array(
 //                    'controller' => 'images',
@@ -207,7 +223,7 @@ $width = $gallery['Gallery']['size'];
             </div>
             <div class="footborder" style="">
 
-                <a href="<?php echo $this->Html->url('/',true);?>" target="_blank" title="darmowa galeria allegro" class="foot"><?php echo $this->Html->url('/',true);?></a><img src="http://www.galerieallegro.pl/views/<?php echo $gallery['Gallery']['id']; ?>/" alt="GalerieAllegro.pl" class="noborder" width="1" height="1"/>
+                <a href="<?php echo $this->Html->url('/',true);?>" target="_blank" title="darmowa galeria allegro" class="foot"><?php echo $this->Html->url('/',true);?></a>
             </div>
         </div>
     </div>
