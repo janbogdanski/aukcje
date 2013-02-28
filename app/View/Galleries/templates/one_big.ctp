@@ -16,22 +16,22 @@
  */
 
 $width = $gallery['Gallery']['size'];
-if(isset($gallery['action'])){
-    if('previewGallery' == $gallery['action']){
+//if(isset($gallery['action'])){
+//    if('previewGallery' == $gallery['action']){
 
         //pobrane jako wyslany formularz (tworzenie galerii)
-        $big = $gallery['GalleriesDetails']['image'][0];
+//        $big = $gallery['GalleriesDetails']['image'][0];
 
-    } else{
+//    } else{
 
         //to pobrane jako has many - wstawianie galerii
-        $big = $gallery['Gallery']['GalleriesDetails'][0]['image'];
-    }
-} else{
+//        $big = $gallery['Gallery']['GalleriesDetails'][0]['image'];
+//    }
+//} else{
 
     //to pobrane jako has many - wstawianie galerii
     $big = $gallery['GalleriesDetails'][0]['image'];
-}
+//}
 //print_r($gallery);
 //die();
 

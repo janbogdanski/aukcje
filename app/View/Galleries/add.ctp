@@ -30,7 +30,7 @@
             var full = ($(this).attr('data-full'));
             var thumb = ($(this).attr('data-thumb'));
 
-            var el = $('<div class="span1"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'+ full +'" checked="checked" /></div>');
+            var el = $('<div class="span1"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][][image]" value="'+ full +'" checked="checked" /></div>');
             $("#images").append(el);
             $("#preview").click();
 
@@ -197,7 +197,7 @@
 
         <?php foreach ($gallery['GalleriesDetails'] as  $detail) : ?>
 
-            <?php echo '<div class="span1"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
+            <?php echo '<div class="span1"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][][image]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
             <?php endforeach;?>
 
         <?php else: ?>
