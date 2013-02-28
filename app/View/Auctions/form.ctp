@@ -21,8 +21,8 @@ $config['width'] = 660;
 $config['height'] = 200;
 $config['extraPlugins'] = 'ajax,gmap,autogrow,qrcodes,gallery,proaukcje_insertimage,proaukcje_insertgallery';
 $config['autoGrow_maxHeight'] = '650';
-$config['filebrowserImageBrowseUrl'] = '/galleries/imageBrowser';
-$config['filebrowserBrowseUrl'] = '/galleries/imageBrowser33';
+//$config['filebrowserImageBrowseUrl'] = '/images/browser'; //wymaga sprawdzenia w GET CKEditorFuncNum
+//$config['filebrowserBrowseUrl'] = '/galleries/imageBrowser33';
 $events['instanceReady'] = 'function (ev) {
 //alert("Loaded: " + ev.editor.name);
 }';
