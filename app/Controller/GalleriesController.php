@@ -27,7 +27,7 @@ class GalleriesController extends AppController {
 
         //potrzebne do pobrania
         $this->user = @$this->UserAuth->getUser();
-        $this->picasa = new Picasa($this->user['User']['picasa'], $start,$limit);
+//        $this->picasa = new Picasa($this->user['User']['picasa'], $start,$limit);
 
 
     }
@@ -120,13 +120,13 @@ class GalleriesController extends AppController {
 
             if ($this->request->is('post') || ($this->request->is('put'))){
                 //save new user
-                if(count($this->request->data['GalleriesDetails']['image']) < 1){
+                if(count($this->request->data['GalleriesDetails']) < 1){
                     $this->Session->setFlash(__('Select images, gallery not saved'), 'error');
                     $this->redirect(array('action'=>'add', $id));
                 }
 
                 $this->request->data['Gallery']['user_id'] = $this->UserAuth->getUserId();
-                $this->request->data['Gallery']['mini'] = $this->request->data['GalleriesDetails']['image'][0];
+                $this->request->data['Gallery']['mini'] = $this->request->data['GalleriesDetails'][0]['image'];
                 $this->request->data['Gallery']['status'] = Gallery::STATUS_ACTIVE;
 
 //                print_r($this->request->data);
@@ -140,7 +140,7 @@ class GalleriesController extends AppController {
 
 
                     $order = 1;
-                    foreach ($this->request->data['GalleriesDetails']['image'] as $image){
+                    foreach ($this->request->data['GalleriesDetails'] as $image){
 
 
 
@@ -149,7 +149,7 @@ class GalleriesController extends AppController {
                         $data = array(
                             'GalleriesDetails' => array(
                                 'gallery_id' => $id,
-                                'image' => $image,
+                                'image' => $image['image'],
                                 'order' => $order,
                             ),
                         );
@@ -180,19 +180,19 @@ class GalleriesController extends AppController {
             $this->set('gallery', $gallery);
         }
 
-        if(isset($this->passedArgs['albumid']) && !empty($this->passedArgs['albumid'])){
-
-            $photos = $this->picasa->getAlbumPhotos($this->passedArgs['albumid']);
-             $album_title = $this->picasa->album_title;
-
-            $this->set('photos', $photos);
-            $this->set('album_title', $album_title);
-
-        } else{
-
-            $albums = $this->picasa->getAlbums();
-            $this->set('albums', $albums);
-        }
+//        if(isset($this->passedArgs['albumid']) && !empty($this->passedArgs['albumid'])){
+//
+//            $photos = $this->picasa->getAlbumPhotos($this->passedArgs['albumid']);
+//             $album_title = $this->picasa->album_title;
+//
+//            $this->set('photos', $photos);
+//            $this->set('album_title', $album_title);
+//
+//        } else{
+//
+//            $albums = $this->picasa->getAlbums();
+//            $this->set('albums', $albums);
+//        }
 
         $this->view = 'add';
     }
@@ -239,57 +239,57 @@ class GalleriesController extends AppController {
         }
     }
 
-    private function albums(){
-        $albums = $this->picasa->getAlbums();
-        $this->set('albums', $albums);
-        $this->set('hasPicasa', $albums);
-        $this->view = 'albums';
-        return true;
-
-    }
-    private function photos($albumid = null){
-        if(!is_null($albumid)){
-            $photos = $this->picasa->getAlbumPhotos($albumid);
-
-        } else{
-            $albumid = $_GET['albumid'];
-            $photos = $this->picasa->getAlbumPhotos($_GET['albumid']);
-        }
-
-
-        $query = http_build_query(array(
-            'albumid' => $albumid,
-            'start' => $this->picasa->getStart() + $this->picasa->getLimit(),
-            'limit' => $this->picasa->getLimit(),
-        ));
-
-        $this->set('photos', $photos);
-        $this->set('query', $query);
-
-        $this->view = 'photos';
-
-        return true;
-
-    }
-    private function setUser(){
-
-        $this->view = 'setUser';
-    }
-    public function imageBrowser(){
-        $this->layout = 'imageBrowser';
-
-        if(isset($_GET['albumid']) && !empty($_GET['albumid'])){
-
-            return $this->photos();
-        } else{
-            return $this->albums();
-
-        }
-
-    }
+//    private function albums(){
+//        $albums = $this->picasa->getAlbums();
+//        $this->set('albums', $albums);
+//        $this->set('hasPicasa', $albums);
+//        $this->view = 'albums';
+//        return true;
+//
+//    }
+//    private function photos($albumid = null){
+//        if(!is_null($albumid)){
+//            $photos = $this->picasa->getAlbumPhotos($albumid);
+//
+//        } else{
+//            $albumid = $_GET['albumid'];
+//            $photos = $this->picasa->getAlbumPhotos($_GET['albumid']);
+//        }
+//
+//
+//        $query = http_build_query(array(
+//            'albumid' => $albumid,
+//            'start' => $this->picasa->getStart() + $this->picasa->getLimit(),
+//            'limit' => $this->picasa->getLimit(),
+//        ));
+//
+//        $this->set('photos', $photos);
+//        $this->set('query', $query);
+//
+//        $this->view = 'photos';
+//
+//        return true;
+//
+//    }
+//    private function setUser(){
+//
+//        $this->view = 'setUser';
+//    }
+//    public function imageBrowser(){
+//        $this->layout = 'imageBrowser';
+//
+//        if(isset($_GET['albumid']) && !empty($_GET['albumid'])){
+//
+//            return $this->photos();
+//        } else{
+//            return $this->albums();
+//
+//        }
+//
+//    }
 
     public function galleryBrowser(){
-        $this->layout = 'imageBrowser';
+        $this->layout = 'minimal';
 
         $options['conditions'] = array('Gallery.user_id' => $this->UserAuth->getUserId(),
             'Gallery.status !=' =>  Gallery::STATUS_NEW,
@@ -341,11 +341,9 @@ class GalleriesController extends AppController {
 
             return $this->previewGallery();
         }
-        if(isset($_POST['action']) && 'getAlbumPhotos' == $_POST['action']){
-
-
-            return $this->photos($_POST['albumid']);
-        }
+//        if(isset($_POST['action']) && 'getAlbumPhotos' == $_POST['action']){
+//            return $this->photos($_POST['albumid']);
+//        }
         if(isset($_POST['action']) && 'getGalleryCode' == $_POST['action']){
 
             $this->Gallery->id = $_POST['gallery'];
