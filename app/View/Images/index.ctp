@@ -138,7 +138,7 @@
                 dataType: "json",
                 data: "imageUrl=" + newURL + "&imageId=" + imageID,
                 success: function(data){
-                    console.log(data.thumb_link);
+//                    console.log(data.thumb_link);
                     $("#" +imageID).attr('src',data.thumb_link).attr('data-image',data.full_link);
                 }
             });
@@ -161,7 +161,7 @@
         $(".editImage").click(function(){
 
             var $image = $("#image-"+$(this).attr("data-id"));
-            console.log($image);
+//            console.log($image);
             launchEditor($image.attr("id"), $image.attr("data-image"));
             return false;
         });
@@ -222,13 +222,13 @@
             },
             progress: function (e, data) {
                 // Log the current bitrate for this upload:
-                console.log(data.bitrate);
+//                console.log(data.bitrate);
             },
 
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
 //                alert(progress);
-                console.log(progress);
+//                console.log(progress);
 //                $("#progress .bar").css(
 //                        'width',
 //                        progress + '%'

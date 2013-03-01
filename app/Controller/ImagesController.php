@@ -79,7 +79,6 @@ class ImagesController extends AppController {
                 try{
                     $uploaded  = $this->Upload->upload($file,'files');
                     $image = $this->Picasa->picasa_upload($uploaded);
-                    print_r($image);
                     $data = array(
                         'user_id' => $this->UserAuth->getUserId(),
                         'image' => $image['full_link'],
