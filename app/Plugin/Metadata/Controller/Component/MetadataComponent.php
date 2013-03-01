@@ -73,7 +73,8 @@ class MetadataComponent extends Component  {
         $data['controller'] = $controller->request->controller;
         $data['action'] = $controller->request->action;
 
-        $this->metadata = $this->Metadata->getMeta($data)['Metadata'];
+        $meta = $this->Metadata->getMeta($data);
+        $this->metadata = $meta['Metadata'];
         return;
 	}
 
