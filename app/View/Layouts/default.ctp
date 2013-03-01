@@ -10,15 +10,13 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 <head>
     <?php echo $this->Html->charset(); ?>
-    <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
-    <title><?php echo $this->get('title_for_layout');?></title>
-
-    <!--    <meta property="og:title" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:url" content="--><?php //echo @$metaOgUrl; ?><!--" />-->
-    <!--    <meta property="og:description" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:site_name" content="--><?php //echo @$metaOgSiteName; ?><!--" />-->
-    <!--    <meta property="og:image" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:type" content="--><?php //echo @$metaOgType; ?><!--" />-->
+    <?php $this->Metadata->meta(); ?>
+    <title><?php echo $this->get('TITLE');?></title>
+    <?php echo $this->get('DESCRIPTION'); ?>
+    <?php echo $this->get('KEYWORDS'); ?>
+    <?php echo $this->get('OG_TITLE'); ?>
+    <?php echo $this->get('OG_DESCRIPTION'); ?>
+    <?php echo $this->get('OG_IMAGE'); ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
