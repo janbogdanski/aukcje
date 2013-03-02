@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-02-15 19:15+0100\n"
+"POT-Creation-Date: 2013-03-02 19:23+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -40,7 +40,8 @@ msgid "Auction does not exist."
 msgstr ""
 
 #: Controller\AuctionsController.php:160
-#: Controller\GalleriesController.php:207
+#: Controller\GalleriesController.php:208
+#: Controller\ImagesController.php:131
 #: Plugin\Meta\Controller\MetaController.php:118
 msgid "Delete method is not allowed."
 msgstr ""
@@ -53,28 +54,40 @@ msgstr ""
 msgid "Unable to delete auction."
 msgstr ""
 
-#: Controller\GalleriesController.php:68;110;215
+#: Controller\GalleriesController.php:69;111;216
 msgid "Invalid id for gallery"
 msgstr ""
 
-#: Controller\GalleriesController.php:123
+#: Controller\GalleriesController.php:124
 msgid "Select images, gallery not saved"
 msgstr ""
 
-#: Controller\GalleriesController.php:164
+#: Controller\GalleriesController.php:165
 msgid "Gallery successfully saved"
 msgstr ""
 
-#: Controller\GalleriesController.php:171
+#: Controller\GalleriesController.php:172
 msgid "Unable to add gallery. Please, try again."
 msgstr ""
 
-#: Controller\GalleriesController.php:227
+#: Controller\GalleriesController.php:228
 msgid "Gallery was deleted."
 msgstr ""
 
-#: Controller\GalleriesController.php:233
+#: Controller\GalleriesController.php:234
 msgid "Unable to delete gallery."
+msgstr ""
+
+#: Controller\ImagesController.php:139
+msgid "Invalid id for image"
+msgstr ""
+
+#: Controller\ImagesController.php:151
+msgid "Image was deleted."
+msgstr ""
+
+#: Controller\ImagesController.php:157
+msgid "Unable to delete image."
 msgstr ""
 
 #: Plugin\Blog\Controller\BlogPostCategoriesController.php:35;68;96
@@ -304,6 +317,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\index.ctp:85
 #: View\Auctions\index.ctp:43
 #: View\Galleries\index.ctp:44
+#: View\Images\index.ctp:104
 #: View\Plugin\Blog\BlogPostCategories\admin_edit.ctp:23
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:39
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:108;162
@@ -368,6 +382,7 @@ msgstr ""
 #: Plugin\Blog\View\BlogSettings\admin_index.ctp:26
 #: View\Auctions\index.ctp:39
 #: View\Galleries\index.ctp:38
+#: View\Images\index.ctp:103
 #: View\Plugin\Blog\BlogPostCategories\admin_index.ctp:38
 #: View\Plugin\Blog\BlogPostCategories\admin_view.ctp:107;161
 #: View\Plugin\Blog\BlogPostTags\admin_index.ctp:30
@@ -854,107 +869,115 @@ msgstr ""
 msgid "Group is successfully deleted"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:94;130
+#: Plugin\Usermgmt\Controller\UsersController.php:120
+msgid "Logged in with %s"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:123
+msgid "Access revoked by User"
+msgstr ""
+
+#: Plugin\Usermgmt\Controller\UsersController.php:145;181
 msgid "Incorrect Email/Username or Password"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:100
+#: Plugin\Usermgmt\Controller\UsersController.php:151
 msgid "Sorry your account is not active, please contact to Administrator"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:105
+#: Plugin\Usermgmt\Controller\UsersController.php:156
 msgid "Your registration has not been confirmed please verify your email or contact to Administrator"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:144
+#: Plugin\Usermgmt\Controller\UsersController.php:195
 msgid "You are successfully signed out"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:170
+#: Plugin\Usermgmt\Controller\UsersController.php:221
 msgid "Please select correct register as"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:198
+#: Plugin\Usermgmt\Controller\UsersController.php:249
 msgid "Please check your mail and confirm your registration"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:204
+#: Plugin\Usermgmt\Controller\UsersController.php:255
 msgid "Sorry new registration is currently disabled, please try again later"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:226
+#: Plugin\Usermgmt\Controller\UsersController.php:277
 msgid "Password changed successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:252
+#: Plugin\Usermgmt\Controller\UsersController.php:303
 msgid "Password for %s changed successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:278
+#: Plugin\Usermgmt\Controller\UsersController.php:329
 msgid "The user is successfully added"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:298
+#: Plugin\Usermgmt\Controller\UsersController.php:349
 msgid "The user is successfully updated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:325
+#: Plugin\Usermgmt\Controller\UsersController.php:376
 msgid "User is successfully deleted"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:359
+#: Plugin\Usermgmt\Controller\UsersController.php:410
 msgid "User is successfully activated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:361
+#: Plugin\Usermgmt\Controller\UsersController.php:412
 msgid "User is successfully deactivated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:379
+#: Plugin\Usermgmt\Controller\UsersController.php:430
 msgid "User email is successfully verified"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:413
+#: Plugin\Usermgmt\Controller\UsersController.php:464
 msgid "Thank you, your account is activated now"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:416
+#: Plugin\Usermgmt\Controller\UsersController.php:467
 msgid "Thank you, your account is already activated"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:419;422
+#: Plugin\Usermgmt\Controller\UsersController.php:470;473
 msgid "Sorry something went wrong, please click on the link again"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:441;515
+#: Plugin\Usermgmt\Controller\UsersController.php:492;566
 msgid "Incorrect Email/Username"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:447
+#: Plugin\Usermgmt\Controller\UsersController.php:498
 msgid "Your registration has not been confirmed yet please verify your email before reset password"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:451
+#: Plugin\Usermgmt\Controller\UsersController.php:502
 msgid "Please check your mail for reset your password"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:481
+#: Plugin\Usermgmt\Controller\UsersController.php:532
 msgid "Your password has been reset successfully"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:484
+#: Plugin\Usermgmt\Controller\UsersController.php:535
 msgid "Something went wrong, please send password reset link again"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:487;491
+#: Plugin\Usermgmt\Controller\UsersController.php:538;542
 msgid "Something went wrong, please click again on the link in email"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:521
+#: Plugin\Usermgmt\Controller\UsersController.php:572
 msgid "Please check your mail to verify your email"
 msgstr ""
 
-#: Plugin\Usermgmt\Controller\UsersController.php:523
+#: Plugin\Usermgmt\Controller\UsersController.php:574
 msgid "Your email is already verified"
 msgstr ""
 
@@ -966,59 +989,47 @@ msgstr ""
 msgid "Please enter email or username"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:65;134
-msgid "Please enter password"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:82
-msgid "Please select group"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:86
-msgid "Please enter username"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:90
-msgid "This username already taken"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:94
-msgid "Username must be greater than %s characters"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:111
-msgid "Please enter email"
-msgstr ""
-
-#: Plugin\Usermgmt\Model\User.php:115
+#: Plugin\Usermgmt\Model\User.php:63;119
 msgid "Please enter valid email"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:119
+#: Plugin\Usermgmt\Model\User.php:69;138
+msgid "Please enter password"
+msgstr ""
+
+#: Plugin\Usermgmt\Model\User.php:86
+msgid "Please select group"
+msgstr ""
+
+#: Plugin\Usermgmt\Model\User.php:115
+msgid "Please enter email"
+msgstr ""
+
+#: Plugin\Usermgmt\Model\User.php:123
 msgid "This email is already registered"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:125
+#: Plugin\Usermgmt\Model\User.php:129
 msgid "Please enter old password"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:129
+#: Plugin\Usermgmt\Model\User.php:133
 msgid "Please enter correct old password"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:139
+#: Plugin\Usermgmt\Model\User.php:143
 msgid "Password must be greater than %s characters"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:144
+#: Plugin\Usermgmt\Model\User.php:148
 msgid "Both passwords must match"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:211
+#: Plugin\Usermgmt\Model\User.php:215
 msgid "Your registration is complete"
 msgstr ""
 
-#: Plugin\Usermgmt\Model\User.php:240
+#: Plugin\Usermgmt\Model\User.php:243
 msgid "Email Verification Mail"
 msgstr ""
 
@@ -1079,8 +1090,6 @@ msgid "Change Password"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\login.ctp:12
-#: Plugin\Usermgmt\View\Users\login.ctp:11
-#: View\Layouts\default.ctp:163
 msgid "Email / Username"
 msgstr ""
 
@@ -1088,33 +1097,33 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\activate_password.ctp:34
 #: Plugin\Usermgmt\View\Users\add_user.ctp:62
 #: Plugin\Usermgmt\View\Users\change_user_password.ctp:35
-#: Plugin\Usermgmt\View\Users\login.ctp:15
-#: Plugin\Usermgmt\View\Users\register.ctp:49
-#: View\Layouts\default.ctp:166
+#: Plugin\Usermgmt\View\Users\login.ctp:16
+#: Plugin\Usermgmt\View\Users\register.ctp:52
+#: View\Layouts\default.ctp:135
 msgid "Password"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\login.ctp:23
-#: Plugin\Usermgmt\View\Users\login.ctp:22
-#: View\Layouts\default.ctp:172
+#: Plugin\Usermgmt\View\Users\login.ctp:23
+#: View\Layouts\default.ctp:141
 msgid "Remember me"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\login.ctp:28
-#: Plugin\Usermgmt\View\Users\login.ctp:27
+#: Plugin\Usermgmt\View\Users\login.ctp:28
 #: Plugin\Usermgmt\View\Users\register.ctp:22
-#: View\Layouts\default.ctp:174
+#: View\Layouts\default.ctp:144
 msgid "Sign In"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\login.ctp:31
-#: Plugin\Usermgmt\View\Users\login.ctp:30
+#: Plugin\Usermgmt\View\Users\login.ctp:31
 msgid "Forgot Password?"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Elements\login.ctp:32
 #: Plugin\Usermgmt\View\Users\email_verification.ctp:26
-#: Plugin\Usermgmt\View\Users\login.ctp:31
+#: Plugin\Usermgmt\View\Users\login.ctp:32
 msgid "Email Verification"
 msgstr ""
 
@@ -1192,7 +1201,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\add_user.ctp:67
 #: Plugin\Usermgmt\View\Users\change_password.ctp:45
 #: Plugin\Usermgmt\View\Users\change_user_password.ctp:40
-#: Plugin\Usermgmt\View\Users\register.ctp:53
+#: Plugin\Usermgmt\View\Users\register.ctp:56
 msgid "Confirm Password"
 msgstr ""
 
@@ -1203,7 +1212,7 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\add_user.ctp:36
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:37
 #: Plugin\Usermgmt\View\Users\index.ctp:39
-#: Plugin\Usermgmt\View\Users\register.ctp:26
+#: Plugin\Usermgmt\View\Users\register.ctp:29
 msgid "Group"
 msgstr ""
 
@@ -1211,7 +1220,6 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:43
 #: Plugin\Usermgmt\View\Users\index.ctp:37
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:44
-#: Plugin\Usermgmt\View\Users\register.ctp:31
 #: Plugin\Usermgmt\View\Users\view_user.ctp:44
 msgid "Username"
 msgstr ""
@@ -1233,9 +1241,11 @@ msgstr ""
 #: Plugin\Usermgmt\View\Users\add_user.ctp:57
 #: Plugin\Usermgmt\View\Users\edit_user.ctp:58
 #: Plugin\Usermgmt\View\Users\index.ctp:38
+#: Plugin\Usermgmt\View\Users\login.ctp:12
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:56
-#: Plugin\Usermgmt\View\Users\register.ctp:45
+#: Plugin\Usermgmt\View\Users\register.ctp:48
 #: Plugin\Usermgmt\View\Users\view_user.ctp:56
+#: View\Layouts\default.ctp:132
 msgid "Email"
 msgstr ""
 
@@ -1265,7 +1275,6 @@ msgid "Update User"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\email_verification.ctp:33
-#: Plugin\Usermgmt\View\Users\forgot_password.ctp:34
 msgid "Enter Email / Username"
 msgstr ""
 
@@ -1276,6 +1285,10 @@ msgstr ""
 
 #: Plugin\Usermgmt\View\Users\forgot_password.ctp:26
 msgid "Forgot Password"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\forgot_password.ctp:34
+msgid "Enter Email"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\index.ctp:35
@@ -1308,9 +1321,21 @@ msgid "or"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\login.ctp:7
-#: Plugin\Usermgmt\View\Users\register.ctp:63
-#: View\Layouts\default.ctp:177
+#: Plugin\Usermgmt\View\Users\register.ctp:66
+#: View\Layouts\default.ctp:152
 msgid "Sign Up"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:35
+#: Plugin\Usermgmt\View\Users\register.ctp:71
+#: View\Layouts\default.ctp:145
+msgid "Login with Google"
+msgstr ""
+
+#: Plugin\Usermgmt\View\Users\login.ctp:36
+#: Plugin\Usermgmt\View\Users\register.ctp:72
+#: View\Layouts\default.ctp:146
+msgid "Login with Fb"
 msgstr ""
 
 #: Plugin\Usermgmt\View\Users\myprofile.ctp:27
@@ -1392,7 +1417,7 @@ msgid "Select Template"
 msgstr ""
 
 #: View\Auctions\index.ctp:12
-#: View\Layouts\default.ctp:127;226
+#: View\Layouts\default.ctp:96;189
 msgid "Auctions"
 msgstr ""
 
@@ -1424,6 +1449,11 @@ msgstr ""
 msgid "Are you sure you want to delete that auction?"
 msgstr ""
 
+#: View\Elements\images.ctp:36
+#: View\Images\index.ctp:97
+msgid "Loading..."
+msgstr ""
+
 #: View\Elements\picasa_set_user.ctp:28
 msgid "Picasa username"
 msgstr ""
@@ -1433,27 +1463,33 @@ msgid "Save Picasa User"
 msgstr ""
 
 #: View\Galleries\add.ctp:188
+#: View\Galleries\add_old.ctp:188
 msgid "First select an album, then photos (bottom of page)"
 msgstr ""
 
 #: View\Galleries\add.ctp:195
+#: View\Galleries\add_old.ctp:195
 msgid "Selected images"
 msgstr ""
 
-#: View\Galleries\add.ctp:216
+#: View\Galleries\add.ctp:217
+msgid "Your images"
+msgstr ""
+
+#: View\Galleries\add_old.ctp:216
 msgid "Put your Picasa username eg. <i>%s</i>"
 msgstr ""
 
-#: View\Galleries\add.ctp:228
+#: View\Galleries\add_old.ctp:228
 msgid "Your web albums, click to select"
 msgstr ""
 
-#: View\Galleries\add.ctp:246
+#: View\Galleries\add_old.ctp:246
 msgid "Available images in <i>%s</i> album, click to add to gallery"
 msgstr ""
 
 #: View\Galleries\index.ctp:10
-#: View\Layouts\default.ctp:130;229
+#: View\Layouts\default.ctp:99;190
 msgid "Galleries"
 msgstr ""
 
@@ -1469,31 +1505,52 @@ msgstr ""
 msgid "Are you sure you want to delete that gallery??"
 msgstr ""
 
-#: View\Layouts\default.ctp:133;232
+#: View\Images\index.ctp:65
+#: View\Layouts\default.ctp:193
+msgid "Images"
+msgstr ""
+
+#: View\Images\index.ctp:73
+msgid "Drop file(s) here!"
+msgstr ""
+
+#: View\Images\index.ctp:81
+msgid "or click to add its traditionaly"
+msgstr ""
+
+#: View\Images\index.ctp:88
+msgid "Added now"
+msgstr ""
+
+#: View\Images\index.ctp:107
+msgid "Are you sure you want to delete that image?"
+msgstr ""
+
+#: View\Layouts\default.ctp:102;196
 msgid "Contact"
 msgstr ""
 
-#: View\Layouts\default.ctp:136;235
-msgid "Blog"
+#: View\Layouts\default.ctp:105;197
+msgid "News"
 msgstr ""
 
-#: View\Layouts\default.ctp:147
+#: View\Layouts\default.ctp:116
 msgid "Settings"
 msgstr ""
 
-#: View\Layouts\default.ctp:149
+#: View\Layouts\default.ctp:118
 msgid "Logout"
 msgstr ""
 
-#: View\Layouts\default.ctp:158
+#: View\Layouts\default.ctp:127
 msgid "Sign in/up"
 msgstr ""
 
-#: View\Layouts\default.ctp:223
+#: View\Layouts\default.ctp:187
 msgid "Navigate"
 msgstr ""
 
-#: View\Layouts\default.ctp:238
+#: View\Layouts\default.ctp:198
 msgid "Help"
 msgstr ""
 
@@ -1511,25 +1568,5 @@ msgstr ""
 
 #: View\Users\login.ctp:18
 msgid "Login"
-msgstr ""
-
-#: Model\Contact.php:validation for field Name;validation for field Message
-msgid "notempty"
-msgstr ""
-
-#: Model\Contact.php:validation for field Mail
-msgid "email"
-msgstr ""
-
-#: Model\User.php:validation for field username
-msgid "A username is required"
-msgstr ""
-
-#: Model\User.php:validation for field password
-msgid "A password is required"
-msgstr ""
-
-#: Model\User.php:validation for field role
-msgid "Please enter a valid role"
 msgstr ""
 
