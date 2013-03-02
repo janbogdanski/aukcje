@@ -17,9 +17,10 @@ class PicasaImageSizeHelper extends AppHelper {
     const PHOTO_FULL  = 0;
     public function picasaImgScaledUrl($url, $size) {
 
-        $suffix = basename($url);
+//        $suffix = basename($url);
+//      return  $image = str_replace($suffix, "s{$size}/{$suffix}",$url);
 
-      return  $image = str_replace($suffix, "s{$size}/{$suffix}",$url);
-
+        //przez zaprzeczenie - ostatnie wystapienie /s{liczba}/
+        return preg_replace('~/s\d+/(?!.*/s\d+/)~', "/s{$size}/", $url);
     }
 }

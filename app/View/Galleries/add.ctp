@@ -25,12 +25,12 @@
     $(document).ready(function(){
 
 
-        $(".pickImg").click(function(){
+        $(".pickImg").live('click', function(){
 
             var full = ($(this).attr('data-full'));
             var thumb = ($(this).attr('data-thumb'));
 
-            var el = $('<div class="span1"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'+ full +'" checked="checked" /></div>');
+            var el = $('<div class="span1"><label><img src="' + thumb + '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][][image]" value="'+ full +'" checked="checked" /></div>');
             $("#images").append(el);
             $("#preview").click();
 
@@ -197,7 +197,7 @@
 
         <?php foreach ($gallery['GalleriesDetails'] as  $detail) : ?>
 
-            <?php echo '<div class="span1"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][image][]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
+            <?php echo '<div class="span1"><label><img src="' . $detail['image'] . '" /></label><input class="chk" type="checkbox" name="data[GalleriesDetails][][image]" value="'. $detail['image'] .'" checked="checked" /></div>'; ?>
             <?php endforeach;?>
 
         <?php else: ?>
@@ -211,54 +211,12 @@
 
 
 
-    <div class="row">
-        <fieldset>
-            <legend><?php echo __('Put your Picasa username eg. <i>%s</i>', 'proaukcje@gmail.com'); ?></legend>
-            <span><?php echo __d('gallery', 'First save your gallery - button Save & Stay'); ?>
-            </span>
 
-            <?php echo $this->element('picasa_set_user'); ?>
-        </fieldset>
-
-    </div>
         <div class="row">
-
-    <?php    if(isset($albums)) :?>
-                <fieldset>
-            <legend><?php echo __('Your web albums, click to select'); ?></legend>
-
-        <?php foreach($albums as $album): ?>
-
-        <?php  $url = 'edit' == $this->request->params['action'] ? '/galleries/edit/'.$this->request->params['pass'][0].'/albumid:'.$album['id'] : '/galleries/add/albumid:'.$album['id']; ?>
-        <?php  echo $this->Html->link(
-            $this->Html->image($album['thumbnail'], array("alt" => "Brownies")),
-            $url,
-            array('escape' => false)
-        );
-                    ?>
-                    <?php endforeach;?>
-                </fieldset>
-        <?php endif;?>
-
-
-        <?php if(isset($photos)) : ?>
-                        <fieldset>
-            <legend><?php echo __('Available images in <i>%s</i> album, click to add to gallery', $album_title); ?></legend>
-    <?php foreach($photos as $photo): ?>
-
-        <?php $url = 'edit' == $this->request->params['action'] ? '/galleries/edit/'.$this->request->params['pass'][0].'/albumid:'.$photo['image'] : '/galleries/add/albumid:'.$album['id'];?>
-
-        <?php echo $this->Html->link(
-            $this->Html->image($photo['thumbnail'], array("alt" => "Brownies", 'class' => 'pickImg',
-                'data-full' => $photo['image'],
-                'data-thumb' => $photo['thumbnail'],
-            )),
-            $url,
-            array('escape' => false)
-        );?>
-        <?php endforeach;?>
-                        </fieldset>
-        <?php endif;?>
+            <fieldset>
+                <legend><?php echo __('Your images'); ?></legend>
+                <?php echo $this->element('images', array("updateId" => "categoriesList")); ?>
+            </fieldset>
 
         </div>
 </div>

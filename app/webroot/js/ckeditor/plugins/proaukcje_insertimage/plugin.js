@@ -8,7 +8,7 @@ CKEDITOR.plugins.add( 'proaukcje_insertimage',
                     {
                         //dataitem.zmienna - jest dostepna jako 'zmienna' w otwartym oknie
                         //przekazujemy instancje editor, do ktorego mozemy pisac editor.insertHtml(data);
-                        dataitem = window.open("/galleries/imageBrowser","dataitem", "toolbar=no,menubar=no,scrollbars=yes,top=100,width=700,height=500");
+                        dataitem = window.open("/images/browser","dataitem", "toolbar=no,menubar=no,scrollbars=yes,top=100,width=700,height=500");
                         dataitem.editor = editor;
                     }
                 });

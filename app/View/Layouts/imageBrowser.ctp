@@ -45,11 +45,7 @@ function select_image(imagePath) {
 <?php
 $user = $this->UserAuth->getUser();
 ?>
-    <?php echo $this->element('picasa_set_user'); ?>
-
 			<?php echo $this->fetch('content'); ?>
-
             <?php echo $this->element('sql_dump'); ?>
-
 </body>
 </html>

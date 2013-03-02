@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-02-15 19:15+0100\n"
+"POT-Creation-Date: 2013-03-02 20:39+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,75 +14,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller\PagesController.php:71
+#: \Controller\PagesController.php:71
 msgid "contact form request"
 msgstr ""
 
-#: Controller\PagesController.php:73;85
+#: \Controller\PagesController.php:73;85
 msgid "name"
 msgstr ""
 
-#: Controller\PagesController.php:74;86
+#: \Controller\PagesController.php:74;86
 msgid "email"
 msgstr ""
 
-#: Controller\PagesController.php:75;87
+#: \Controller\PagesController.php:75;87
 msgid "message"
 msgstr ""
 
-#: Controller\PagesController.php:78;91
+#: \Controller\PagesController.php:78;91
 msgid "sent from"
 msgstr ""
 
-#: Controller\PagesController.php:83
+#: \Controller\PagesController.php:83
 msgid "Copy - contact form request"
 msgstr ""
 
-#: Controller\PagesController.php:90
+#: \Controller\PagesController.php:90
 msgid "this is copy of your message sent to proaukcje admin"
 msgstr ""
 
-#: Controller\PagesController.php:94
+#: \Controller\PagesController.php:94
 msgid "Message sent!"
 msgstr ""
 
-#: Controller\PagesController.php:97
+#: \Controller\PagesController.php:97
 msgid "Message not sent!"
 msgstr ""
 
-#: Model\Contact.php:41
+#: \Model\Contact.php:41
 msgid "please insert your name"
 msgstr ""
 
-#: Model\Contact.php:42
+#: \Model\Contact.php:42
 msgid "please insert your email address"
 msgstr ""
 
-#: Model\Contact.php:43
+#: \Model\Contact.php:43
 msgid "please enter your message"
 msgstr ""
 
-#: View\Pages\contact.ctp:9
+#: \View\Pages\contact.ctp:9
 msgid "Contact form"
 msgstr ""
 
-#: View\Pages\contact.ctp:12
+#: \View\Pages\contact.ctp:12
 msgid "Name"
 msgstr ""
 
-#: View\Pages\contact.ctp:13
+#: \View\Pages\contact.ctp:13
 msgid "Email"
 msgstr ""
 
-#: View\Pages\contact.ctp:14
+#: \View\Pages\contact.ctp:14
 msgid "Message"
 msgstr ""
 
-#: View\Pages\contact.ctp:16
+#: \View\Pages\contact.ctp:16
 msgid "Send"
 msgstr ""
 
-#: View\Pages\contact.ctp:16
+#: \View\Pages\contact.ctp:16
 msgid "Submit"
 msgstr ""
 

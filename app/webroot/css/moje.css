@@ -406,6 +406,7 @@ a.portfolio_link {
 
 .stat .fact {
     font-weight: 300;
+    font-size: 2.5em;
 }
 
 /********************************************************************8mojee moje moje ************************************************************/
@@ -483,4 +484,9 @@ section{
 
 .loginwith{
     padding: 17px 0 0 20px;
+}
+
+li.active{
+    font-weight: bold;
+    color: #008FD5;
 }

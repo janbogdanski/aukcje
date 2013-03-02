@@ -10,15 +10,13 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 <head>
     <?php echo $this->Html->charset(); ?>
-    <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
-    <title><?php echo $this->get('title_for_layout');?></title>
-
-    <!--    <meta property="og:title" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:url" content="--><?php //echo @$metaOgUrl; ?><!--" />-->
-    <!--    <meta property="og:description" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:site_name" content="--><?php //echo @$metaOgSiteName; ?><!--" />-->
-    <!--    <meta property="og:image" content="--><?php //echo @$metaOgTitle; ?><!--" />-->
-    <!--    <meta property="og:type" content="--><?php //echo @$metaOgType; ?><!--" />-->
+    <?php $this->Metadata->meta(); ?>
+    <title><?php echo $this->get('TITLE');?></title>
+    <?php echo $this->get('DESCRIPTION'); ?>
+    <?php echo $this->get('KEYWORDS'); ?>
+    <?php echo $this->get('OG_TITLE'); ?>
+    <?php echo $this->get('OG_DESCRIPTION'); ?>
+    <?php echo $this->get('OG_IMAGE'); ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +43,6 @@
 //    echo $this->Html->css('flexslider');
     echo $this->Html->css('flip');
 //    echo $this->Html->css('joyride-2.0.2');
-    echo $this->Html->css('frontend');
     echo $this->Html->css('moje');
 
 
@@ -105,7 +102,7 @@
                                     <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
                                 </li>
                                 <li>
-                                    <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
+                                    <?php echo $this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
                                 </li>
                                 <li>
 
@@ -189,21 +186,16 @@
 
             <div class="widget widget_pages"><h4><?php echo __('Navigate'); ?></h4>
                 <ul>
+                    <?php echo $this->Menu->item($this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false))); ?>
+                    <?php echo $this->Menu->item($this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false))); ?>
                     <li>
-                        <?php echo $this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false)); ?>
+                        <ul>
+                        <?php echo $this->Menu->item($this->Html->link(__('Images'), array('plugin' => null, 'controller' => 'images', 'action' => 'index', 'admin' => false))); ?>
+                        </ul>
                     </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'tag' => 'pomoc', 'admin' => false)); ?>
-                    </li>
+                    <?php echo $this->Menu->item($this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false))); ?>
+                    <?php echo $this->Menu->item($this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false))); ?>
+                    <?php echo '<li>'.$this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'tag' => 'pomoc', 'admin' => false)).'</li>'; ?>
                 </ul>
             </div>
             <div>
