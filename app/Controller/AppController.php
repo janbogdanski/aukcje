@@ -48,7 +48,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public $helpers = array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth','Metadata.Metadata');
+    public $helpers = array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth','Metadata.Metadata','Menu');
     public $components = array('Session','RequestHandler', 'Usermgmt.UserAuth','Metadata.Metadata');
     function beforeFilter(){
         $this->userAuth();

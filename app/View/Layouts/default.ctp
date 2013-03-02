@@ -102,7 +102,7 @@
                                     <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
                                 </li>
                                 <li>
-                                    <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
+                                    <?php echo $this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
                                 </li>
                                 <li>
 
@@ -186,21 +186,16 @@
 
             <div class="widget widget_pages"><h4><?php echo __('Navigate'); ?></h4>
                 <ul>
+                    <?php echo $this->Menu->item($this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false))); ?>
+                    <?php echo $this->Menu->item($this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false))); ?>
                     <li>
-                        <?php echo $this->Html->link(__('Auctions'), array('plugin' => null, 'controller' => 'auctions', 'action' => 'index', 'admin' => false)); ?>
+                        <ul>
+                        <?php echo $this->Menu->item($this->Html->link(__('Images'), array('plugin' => null, 'controller' => 'images', 'action' => 'index', 'admin' => false))); ?>
+                        </ul>
                     </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Galleries'), array('plugin' => null, 'controller' => 'galleries', 'action' => 'index', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Blog'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false)); ?>
-                    </li>
-                    <li>
-                        <?php echo $this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'tag' => 'pomoc', 'admin' => false)); ?>
-                    </li>
+                    <?php echo $this->Menu->item($this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false))); ?>
+                    <?php echo $this->Menu->item($this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false))); ?>
+                    <?php echo '<li>'.$this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'tag' => 'pomoc', 'admin' => false)).'</li>'; ?>
                 </ul>
             </div>
             <div>

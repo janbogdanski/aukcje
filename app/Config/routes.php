@@ -42,6 +42,7 @@ Router::connect('/galerie', array('controller' => 'galleries',));
 Router::connect('/sitemap.xml', array('controller' => 'pages', 'action' => 'sitemap'));
 Router::connect('/opauth-complete/*', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
 Router::connect('/opauth-complete', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
+Router::connect('/pomoc', array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index','tag' => 'pomoc',));
 //Router::redirect(
 //    '/auctions/*',
 //    array('controller' => 'posts', 'action' => 'view'),
