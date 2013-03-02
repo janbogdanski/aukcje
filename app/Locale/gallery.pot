@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-03-02 19:23+0100\n"
+"POT-Creation-Date: 2013-03-02 20:39+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,22 +14,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: View\Galleries\add.ctp:172
-#: View\Galleries\add_old.ctp:172
+#: \View\Galleries\add.ctp:172
+#: \View\Galleries\add_old.ctp:172
 msgid "Preview"
 msgstr ""
 
-#: View\Galleries\add.ctp:173
-#: View\Galleries\add_old.ctp:173
+#: \View\Galleries\add.ctp:173
+#: \View\Galleries\add_old.ctp:173
 msgid "Save"
 msgstr ""
 
-#: View\Galleries\add.ctp:174
-#: View\Galleries\add_old.ctp:174
+#: \View\Galleries\add.ctp:174
+#: \View\Galleries\add_old.ctp:174
 msgid "Save & Stay"
 msgstr ""
 
-#: View\Galleries\add_old.ctp:217
+#: \View\Galleries\add_old.ctp:217
 msgid "First save your gallery - button Save & Stay"
 msgstr ""
 

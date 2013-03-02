@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-03-02 19:23+0100\n"
+"POT-Creation-Date: 2013-03-02 20:39+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Plugin\Meta\Controller\MetaController.php:196
+#: \Plugin\Meta\Controller\MetaController.php:196
 msgid "%s new paths found and saved."
 msgstr ""
 
-#: Plugin\Meta\Controller\MetaController.php:198
+#: \Plugin\Meta\Controller\MetaController.php:198
 msgid "No new paths found."
 msgstr ""
 
