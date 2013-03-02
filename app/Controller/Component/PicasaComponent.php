@@ -49,7 +49,7 @@ class PicasaComponent extends Component {
     }
     public function picasa_upload_helper(){
 
-        $return = '';
+        $return = array();
 
         //autoryzacja
         $this->_picasa_upload_helper();
@@ -76,8 +76,11 @@ class PicasaComponent extends Component {
             $content = $uploaded->getMediaGroup()->getContent();
             $image_url = $content[0]->getUrl();
             $links = $this->prepareLinks($image_url, $this->_picasa_size);
+            $return = $links;
+            $return['albumid'] = $this->_picasa_albumid;
+            $return['photoid'] = $uploaded->getGphotoId()->getText();
 
-            return $links;
+            return $return;
         } else{
             return false;
         }
@@ -180,7 +183,7 @@ class PicasaComponent extends Component {
 //        }
 //
         $this->_picasa_image_link = $image_url;
-      return  $links = $this->picasa_upload_helper();
+      return  $image = $this->picasa_upload_helper();
     }
     public function prepareLinks($full_link, $size = false){
         if($size){

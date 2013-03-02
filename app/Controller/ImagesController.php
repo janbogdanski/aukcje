@@ -83,6 +83,8 @@ class ImagesController extends AppController {
                         'user_id' => $this->UserAuth->getUserId(),
                         'image' => $image['full_link'],
                         'thumb' => $image['thumb_link'],
+                        'albumid' => $image['albumid'],
+                        'photoid' => $image['photoid'],
                     );
                     $this->Image->create();
                     $this->Image->save($data);
