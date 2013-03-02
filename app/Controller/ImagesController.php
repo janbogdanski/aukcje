@@ -17,7 +17,7 @@ class ImagesController extends AppController {
         parent::beforeFilter();
 
         $this->paginate = array(
-            'limit' => 16,
+            'limit' => 12,
             'order' => array(
                 'Image.created' => 'desc',
             ),

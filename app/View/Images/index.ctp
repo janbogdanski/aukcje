@@ -69,16 +69,19 @@
     'enctype' => 'multipart/form-data','url' => array('controller' => 'Images', 'action' => 'index'))); ?>
 
 
-<div id="dropzone" class="stat">
+<div id="dropzone" class="stat span5">
     <span class="fact"><?php echo __('Drop file(s) here!'); ?></span>
 </div>
+<div class="ajax-loader span3"></div>
+<div class="clearfix"></div>
 
-<span class="m-btn blue fileinput-button">
-    <i class="icon-plus icon-white"></i>
-    <span><?php echo __('or click to add its traditionaly'); ?></span>
-    <?php echo $this->Form->file('file.image.',array('multiple')); ?>
-</span>
-    <div class="ajax-loader"></div>
+<div class="span5">
+    <span class="m-btn blue fileinput-button">
+        <i class="icon-plus icon-white"></i>
+        <span><?php echo __('or click to add its traditionaly'); ?></span>
+        <?php echo $this->Form->file('file.image.',array('multiple')); ?>
+    </span>
+    </div>
 <?php echo $this->Form->end(); ?>
 <div class="clearfix"></div>
 <div id="result" style="display: none">
