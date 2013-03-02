@@ -90,13 +90,16 @@
 </div>
 
         <div class="containetr">
+        <?php if($data): ?>
             <div class="row">
             <?php  echo    $this->Paginator->prev();?>
             <?php  echo    $this->Paginator->numbers();?>
             <?php  echo    $this->Paginator->next();?>
                 <span class="loading" style="display: none"><?php echo __('Loading...'); ?></span>
             </div>
-            <?php foreach($data as $image): ?>
+                        <div class="row">
+
+                        <?php foreach($data as $image): ?>
 
             <div class="span2 galery">
                 <div>
@@ -113,12 +116,17 @@
             </div>
 
             <?php endforeach; ?>
-            <div class="clearfix"></div>
+                        </div>
+
+    <div class="clearfix"></div>
             <div class="row">
                 <?php  echo    $this->Paginator->prev();?>
                 <?php  echo    $this->Paginator->numbers();?>
                 <?php  echo    $this->Paginator->next();?>
             </div>
+            <?php else: ?>
+                <p class="noimages"><?php echo __('Hm, first add images!'); ?></p>
+            <?php endif; ?>
     </div>
 <!--<div id="progress">-->
 <!--    <div class="bar" style="width: 0%;">aaa</div>-->
@@ -184,6 +192,7 @@
             always: function (e, data) {
 //                alert('a');
                 $loader.fadeOut();
+                $(".noimages").hide();
 
             },
             done: function (e, data) {

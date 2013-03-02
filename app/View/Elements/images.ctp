@@ -29,6 +29,8 @@ $this->Paginator->options(array(
 
 <?php //$images = $this->requestAction('images/index'); ?>
 <div class="containetr">
+    <?php if($images): ?>
+
     <div class="row">
         <?php  echo    $this->Paginator->prev();?>
         <?php  echo    $this->Paginator->numbers();?>
@@ -63,6 +65,10 @@ $this->Paginator->options(array(
         <?php  echo    $this->Paginator->numbers();?>
         <?php  echo    $this->Paginator->next();?>
     </div>
+    <?php else: ?>
+        <p class="noimages"><?php echo __('Hm, first add images! Then you can insert them to the gallery'). ' >> '; ?>
+        <?php echo $this->Html->link(__('Add images'), array('plugin' => null, 'controller' => 'images', 'action' => 'index', 'admin' => false)); ?></p>
+    <?php endif; ?>
 </div>
 </div>
 
