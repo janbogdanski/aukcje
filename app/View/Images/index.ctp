@@ -63,6 +63,8 @@
     }
 </style>
 <h2><?php echo __('Images'); ?></h2>
+<?php if($this->UserAuth->isLogged()): ?>
+
 <div id="cnt"></div>
 <!--<input id="fileupload" type="file" name="data[file][image]" multiple>-->
 <?php echo $this->Form->create(false, array('id'=> 'fileupload',
@@ -126,6 +128,20 @@
             </div>
             <?php else: ?>
                 <p class="noimages"><?php echo __('Hm, first add images!'); ?></p>
+            <?php endif; ?>
+            <?php else: ?>
+            <div class="row">
+                <div class="span5">
+                    <p>Moduł obrazów jest miejscem, z którego zarządzać można swoimi zdjęciami. Same zdjęcia można wykorzystać wstawiając je pojedyńczo do opisu aukcji lub do tworzenia galerii zdjęć.</p>
+                    <p>W pierwszej kolejności dodaj zdjęcia z dysku / albumu picasa / photobucket / flickr / z dowolnego miejsca w sieci. Sprytny uploader pozwala dodać zdjęcia metodą przeciągnij i upuść (lub tradycyjnie), przeciągać można więcej niż jedno zdjęcie na raz.</p>
+                    <p>W <strong>edytorze zdjęć</strong> można przygotować zdjęcie (zdjęcia) przed wstawieniem ich do opisu aukcji. Wśród wielu narzędzi warto wymienić rozjaśnianie i przyciemnianie, przycinanie, obracanie, wyostrzanie, rozmywanie, dodawanie tekstu (najróżniejsze czcionki i kolory) i swobodne rysowanie (gdy np. nie życzysz sobie ujawniać rejestracji sprzedawanego samochodu, albo twarzy modeliki) (nad tym drugim dwa razy się zastanów:)</p>
+                    <p>W skrócie, "obrazy" to miejsce w którym zarządzasz swoimi obrazami, które wykorzystane będą w innych modułach przy tworzeniu opisu aukcji lub galerii zdjęć.</p>
+                </div>
+                <div class="span4">
+                    <h4><?php echo __('Log in to manage your %s', __('images')); ?></h4>
+                    <?php echo $this->element('login', array(), array('plugin' => 'Usermgmt')); ?>
+                </div>
+            </div>
             <?php endif; ?>
     </div>
 <!--<div id="progress">-->
