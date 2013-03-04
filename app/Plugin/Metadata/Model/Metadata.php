@@ -10,10 +10,16 @@
  */
 class Metadata extends AppModel {
     public $name = 'Metadata';
+    private $default = array('Metadata' => array('title' => '','keywords' => '','description' => '',));
     public $cleanData = false;
     private function _getMeta($options = array()){
-
-        return $meta = $this->find('first', $options);
+        $meta = $this->find('first', $options);
+        if($meta){
+            $meta['Metadata']['title'] =   !empty($meta['Metadata']['title']) ? $meta['Metadata']['title'] :$this->default['Metadata']['title'];
+            $meta['Metadata']['keywords'] = !empty($meta['Metadata']['keywords']) ? $meta['Metadata']['keywords'] :$this->default['Metadata']['keywords'];
+            $meta['Metadata']['description'] = !empty($meta['Metadata']['description']) ? $meta['Metadata']['description']  : $this->default['Metadata']['description'];
+        }
+        return $meta;
     }
 
     /**
@@ -22,7 +28,19 @@ class Metadata extends AppModel {
      */
     public function getMeta($args = array()){
 
+        //pobierz default i wybierz, gdy jakies pole jest puste w konkretnym przypadku
         //ustaw startowe wartosci na podstawie argumentow - plugin i path sa opcjonalne
+        $options = array(
+            'conditions' => array(
+                'Metadata.path' => 'default',
+                'Metadata.plugin' => 'default',
+                'Metadata.controller' => 'default',
+                'Metadata.action' => 'default',
+            ),
+
+        );
+        $this->default = $this->_getMeta($options);
+
         $options = array();
         $path = false;
         $plugin = false;
