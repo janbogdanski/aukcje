@@ -23,6 +23,11 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc><?php echo Router::url('/obrazy',true); ?></loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc><?php echo Router::url('/blog',true); ?></loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
