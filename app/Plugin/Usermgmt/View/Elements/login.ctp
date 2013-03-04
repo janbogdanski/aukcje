@@ -1,13 +1,13 @@
 <?php
 /**
  * @author          Jan Bogdanski <janek.bogdanski@gmail.com>
- *
+ * @var $this View
  * Creation date    15.02.13 10:29
  */
 
 ?>
 <div>
-    <?php echo $this->Form->create('User', array('action' => 'login')); ?>
+    <?php echo $this->Form->create('User', array('url' => array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'login'))); ?>
     <div>
         <div><?php echo __('Email / Username');?></div>
         <div ><?php echo $this->Form->input("email" ,array('label' => false,'div' => false,'class'=>"span3" ))?></div>
