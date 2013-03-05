@@ -35,12 +35,12 @@ Router::connect('/kontakt', array('controller' => 'pages', 'action' => 'contact'
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-Router::connect('/aukcje/:action/*', array('controller' => 'auctions',));
 Router::connect('/aukcje', array('controller' => 'auctions',));
-Router::connect('/galerie/:action/*', array('controller' => 'galleries',));
+Router::connect('/aukcje/:action/*', array('controller' => 'auctions',));
 Router::connect('/galerie', array('controller' => 'galleries',));
-Router::connect('/obrazy/:action/*', array('controller' => 'images',));
+Router::connect('/galerie/:action/*', array('controller' => 'galleries',));
 Router::connect('/obrazy', array('controller' => 'images',));
+Router::connect('/obrazy/:action/*', array('controller' => 'images',));
 Router::connect('/sitemap.xml', array('controller' => 'pages', 'action' => 'sitemap'));
 Router::connect('/opauth-complete/*', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
 Router::connect('/opauth-complete', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
