@@ -13,17 +13,19 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc><?php echo Router::url('/aukcje',true); ?></loc>
+        <loc><?php echo Router::url(array('controller' => 'auctions',
+            'action' => '/'),true); ?></loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc><?php echo Router::url('/galerie',true); ?></loc>
+        <loc><?php echo Router::url(array('controller' => 'galleries',
+            'action' => '/'),true); ?></loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc><?php echo Router::url('/obrazy',true); ?></loc>
+        <loc><?php echo Router::url(array('controller' => 'images', 'action' => '/'),true); ?></loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
