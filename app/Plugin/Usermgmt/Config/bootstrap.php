@@ -79,14 +79,14 @@ function UsermgmtInIt(&$controller) {
 		set login redirect url, it means when user gets logged in then site will redirect to this url.
 	*/
 	if(!defined("LOGIN_REDIRECT_URL")) {
-		define("LOGIN_REDIRECT_URL", '/dashboard');
+		define("LOGIN_REDIRECT_URL", '/aukcje');
 	}
 
 	/*
 		set logout redirect url, it means when user gets logged out then site will redirect to this url.
 	*/
 	if(!defined("LOGOUT_REDIRECT_URL")) {
-		define("LOGOUT_REDIRECT_URL", '/login');
+		define("LOGOUT_REDIRECT_URL", '/');
 	}
 
 	/*
@@ -145,7 +145,7 @@ function UsermgmtInIt(&$controller) {
 		set login cookie name
 	*/
 	if(!defined("LOGIN_COOKIE_NAME")) {
-		define("LOGIN_COOKIE_NAME", 'UsermgmtCookie');
+		define("LOGIN_COOKIE_NAME", 'pa_logged');
 	}
 	Cache::config('UserMgmt', array(
 		'engine' => 'File',
