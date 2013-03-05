@@ -26,6 +26,12 @@
     </div>
     <div>
         <div><?php echo $this->Form->Submit(__('Sign In'),array('class' => 'm-btn blue'));?></div>
+        <div>
+            <a href="/oauth/google" class="m-btn blue"><i
+                    class="icon-google-plus-sign icon-large"></i>&nbsp; <?php echo __('Login with Google'); ?></a>
+            <a href="/oauth/facebook" class="m-btn blue"><i
+                    class="icon-facebook-sign icon-large"></i>&nbsp; <?php echo __('Login with Fb'); ?></a>
+        </div>
     </div>
     <?php echo $this->Form->end(); ?>
     <div><?php echo $this->Html->link(__("Forgot Password?",true),"/forgotPassword",array("class"=>"style30")) ?></div>
