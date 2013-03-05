@@ -39,6 +39,8 @@ Router::connect('/aukcje/:action/*', array('controller' => 'auctions',));
 Router::connect('/aukcje', array('controller' => 'auctions',));
 Router::connect('/galerie/:action/*', array('controller' => 'galleries',));
 Router::connect('/galerie', array('controller' => 'galleries',));
+Router::connect('/obrazy/:action/*', array('controller' => 'images',));
+Router::connect('/obrazy', array('controller' => 'images',));
 Router::connect('/sitemap.xml', array('controller' => 'pages', 'action' => 'sitemap'));
 Router::connect('/opauth-complete/*', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
 Router::connect('/opauth-complete', array('plugin' => 'Usermgmt', 'controller' => 'users', 'action' => 'opauth_complete'));
