@@ -164,7 +164,7 @@
     var featherEditor = new Aviary.Feather({
         apiKey: '4CMLZdc7eEqIKE8EhKIQHg',
         apiVersion: 2,
-        tools: 'all',
+        tools:'enhance,resize,crop,contrast,sharpness,text,blemish,draw,brightness,warmth,orientation,effects',
         appendTo: '',
         language: 'pl',
         minimumStyling: true,
