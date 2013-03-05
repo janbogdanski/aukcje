@@ -3,6 +3,9 @@
     {
 	 title:'QR Code',
 	 commonTab:'Info',
-	 HelpInfo:'Insert a URL and get back a QR code for mobile devices'
+        labelName:'Name, surname or firm',
+        labelPhone:'Phone',
+        labelEmail:'Email',
+        labelUrl:'Url'
 	}
 });

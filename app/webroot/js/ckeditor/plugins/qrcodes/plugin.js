@@ -9,7 +9,7 @@
 CKEDITOR.plugins.add('qrcodes',
     {
         requires: ['dialog'],
-        lang : ['en', 'fr'],
+        lang : ['pl','en', 'fr'],
         init:function(a) {
             var b="qrcodes";
             var c=a.addCommand(b,new CKEDITOR.dialogCommand(b));
