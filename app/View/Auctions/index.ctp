@@ -90,7 +90,9 @@
             <li>Pogrubienia, podkreślenia...</li>
             <li>Wstawianie pojedyńczych obrazków</li>
             <li>Wstawianie galerii zdjęć</li>
-            <li>Wstawianie kodów QR (np. adres strony www, kontakt do biura) - skanowanie kodu QR aparatem telefonu komórkowego może być atrakcyjne dla zabieganych klientów!</li>
+            <li><strong>Wstawianie kodów QR</strong> (np. adres strony www, kontakt do biura) - skanowanie kodu QR aparatem telefonu komórkowego może być atrakcyjne dla zabieganych klientów!
+                <br /><?php echo $this->Html->image('proaukcje_qr.png', array('alt' => 'Proaukcje - narzędzia na aukcje - kody QR')); ?>
+            </li>
             <li>Wstawianie odnośników do innych stron</li>
             <li>Wyrównywanie tekstu, kolorowanie, zmiana czcionki (typu i rozmiaru)</li>
             <li>Wstawianie tabel - gdy chcesz porównać cechy swego doskonałego produtu z marnym produktem konkutencji :)</li>
