@@ -27,9 +27,8 @@
     'complete' => '$(".loading").fadeOut();',
 )); ?>
 <style type="text/css">
-    .bar {
-        height: 18px;
-        background: green;
+    .previewImage {
+        cursor: pointer;
     }
     #dropzone {
         width: 250px;
@@ -113,7 +112,7 @@
                     'class' => 'm-btn mini ') );?>
                 </div>
                 <div class="image-galery">
-                    <?php echo $this->Html->image($image['Image']['thumb'],array('id' => 'image-'.$image['Image']['id'], 'class' => 'editImage', 'data-image' => $image['Image']['image'])); ?>
+                    <?php echo $this->Html->image($image['Image']['thumb'],array('id' => 'image-'.$image['Image']['id'], 'class' => 'previewImage', 'data-image' => $image['Image']['image'])); ?>
                 </div>
             </div>
 
@@ -144,6 +143,19 @@
             </div>
             <?php endif; ?>
     </div>
+        <div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Modal header</h3>
+            </div>
+            <div class="modal-body">
+                <p><img src="" alt="" class="modal-image"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="m-btn blue" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
 <!--<div id="progress">-->
 <!--    <div class="bar" style="width: 0%;">aaa</div>-->
 <!--</div>-->
@@ -185,6 +197,11 @@
         return false;
     }
     $(function () {
+        $('.previewImage').click(function(){
+
+            $("#myModal .modal-image").attr('src',$(this).attr('data-image'));
+            $("#myModal").modal('show');
+        });
         $(".editImage").click(function(){
 
             var $image = $("#image-"+$(this).attr("data-id"));
