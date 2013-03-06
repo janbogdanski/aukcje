@@ -193,7 +193,6 @@
                         <?php echo $this->Menu->item($this->Html->link(__('Images'), array('plugin' => null, 'controller' => 'images', 'action' => 'index', 'admin' => false))); ?>
                         </ul>
                     </li>
-                    <?php echo '<li>'.$this->Html->link(__('Contact'), array('plugin' => null, 'controller' => 'pages', 'action' => 'contact', 'admin' => false)). '</li>'; ?>
                     <?php echo $this->Menu->item($this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false))); ?>
                     <?php echo '<li>'.$this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'tag' => 'pomoc', 'admin' => false)).'</li>'; ?>
                 </ul>
@@ -257,7 +256,13 @@
     <div class="row">
         <div class="span9">
             <div class="footer_left">
-                <p>Copyright © <?php echo date('Y'); ?> proaukcje.eu</p>
+                <span>Copyright © <?php echo date('Y'); ?> proaukcje.eu</span>
+                    <ul class="inline pull-right">
+                        <li><?php echo $this->Html->link(__('Contact'), array('plugin' => null,'controller' => 'pages','action' => 'contact','admin' => false)); ?></li>
+                        <li><?php echo $this->Html->link(__('Rules'), array('plugin' => null, 'controller' => 'pages', 'action' => 'display','rules', 'admin' => false)); ?></li>
+                        <li><?php echo $this->Html->link(__('Privacy Policy'), array('plugin' => null, 'controller' => 'pages', 'action' => 'display','policy', 'admin' => false)); ?></li>
+                    </ul>
+
             </div>
         </div>
     </div><!-- /row -->

@@ -30,6 +30,8 @@
 Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 //Router::connect('/contact', array('controller' => 'pages', 'action' => 'contact'));
 Router::connect('/kontakt', array('controller' => 'pages', 'action' => 'contact'));
+Router::connect('/polityka-prywatnosci', array('controller' => 'pages', 'action' => 'display', 'policy'));
+Router::connect('/regulamin', array('controller' => 'pages', 'action' => 'display', 'rules'));
 
 /**
  * ...and connect the rest of 'Pages' controller's urls.
