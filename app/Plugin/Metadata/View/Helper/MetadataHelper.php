@@ -66,7 +66,7 @@ class MetadataHelper extends AppHelper {
             }
 
             if(array_key_exists('og_description',$this->metadata)){
-                $this->view->set('OG_DESCRIPTION','<meta property="og:title" content="'.$this->metadata['og_description'].'" />');
+                $this->view->set('OG_DESCRIPTION','<meta property="og:description" content="'.$this->metadata['og_description'].'" />');
 
             }
             if(array_key_exists('og_image',$this->metadata) || Configure::read('Site.og.image')){
