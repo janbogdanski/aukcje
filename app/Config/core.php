@@ -39,7 +39,8 @@ Configure::write('Site.title', 'Kreator aukcji online');
 Configure::write('Site.header', 'Kreator aukcji online');
 Configure::write('Picasa.email', 'proaukcje@gmail.com');
 Configure::write('Picasa.pass', 'jan180388');
-Configure::write('Site.og.image', array('http://'.$_SERVER['HTTP_HOST'].'/img/logo.png'));
+Configure::write('Site.og.image', array('http://' . $_SERVER['HTTP_HOST'] . '/img/logo.png',
+    'http://' . $_SERVER['HTTP_HOST'] . '/img/facebook-image.png'));
 
 /**
  * Configure the Error handler used to handle errors for your application.  By default
