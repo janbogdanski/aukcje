@@ -138,9 +138,7 @@
 
             <header class="clearfix">
                 <h3>|| <?php echo $this->Html->link($blogPost['BlogPost']['title'], array( 'plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'view', 'slug' => $blogPost['BlogPost']['slug']), array('title' => $blogPost['BlogPost']['title'], 'rel' => 'bookmark')); ?></h3>
-                <time pubdate datetime="<?php echo date('c', $createdTimestamp = strtotime($blogPost['BlogPost']['created'])); ?>">
-                    <i class="icon-calendar"></i>&nbsp;<?php echo date($blogSettings['published_format_on_post_index'], $createdTimestamp); ?>
-                </time>
+
                 <?php if (strtolower($blogSettings['use_disqus']) == 'yes') : ?>
                 <?php echo $this->Html->link(__('View comments'), $this->Blog->permalink($blogPost) . '#disqus_thread', array('data-disqus-identifier' => 'blog-post-' . $blogPost['BlogPost']['id'])); ?>
                 <?php endif; ?>
