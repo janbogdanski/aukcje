@@ -504,3 +504,7 @@ ul.inline > li, ol.inline > li {
 li {
     line-height: 20px;
 }
+
+.navbar-inner{
+    filter:none;
+}
