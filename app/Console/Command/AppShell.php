@@ -25,6 +25,7 @@ App::uses('Shell', 'Console');
  * will inherit them.
  *
  * @package       app.Console.Command
+ * @property Mail $Mail
  */
 class AppShell extends Shell {
 
