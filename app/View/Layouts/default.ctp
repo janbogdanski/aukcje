@@ -259,6 +259,7 @@
                 <span>Copyright © <?php echo date('Y'); ?> proaukcje.eu</span>
                     <ul class="inline pull-right">
                         <li><?php echo $this->Html->link(__('Contact'), array('plugin' => null,'controller' => 'pages','action' => 'contact','admin' => false)); ?></li>
+                        <li><a href="#" data-uv-lightbox="classic_widget" data-uv-mode="feedback" data-uv-primary-color="#008ed5" data-uv-link-color="#008ed5" data-uv-forum-id="162739"><?php echo __('Feedback'); ?></a></li>
                         <li><?php echo $this->Html->link(__('Rules'), array('plugin' => null, 'controller' => 'pages', 'action' => 'display','rules', 'admin' => false)); ?></li>
                         <li><?php echo $this->Html->link(__('Privacy Policy'), array('plugin' => null, 'controller' => 'pages', 'action' => 'display','policy', 'admin' => false)); ?></li>
                     </ul>
@@ -267,6 +268,16 @@
         </div>
     </div><!-- /row -->
 </div>
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function () {
+    var uv = document.createElement('script');
+    uv.type = 'text/javascript';
+    uv.async = true;
+    uv.src = '//widget.uservoice.com/aJRyivI0rAjqJMxLHo0e8w.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(uv, s)
+})()</script>
+
 
 <?php //echo $this->Html->script('jquery.flexslider-min'); ?>
 <?php echo $this->Html->script('/css/bootstrap/js/bootstrap.min.js'); ?>
