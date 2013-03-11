@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: proaukcje\n"
 "POT-Creation-Date: 2013-03-11 20:28+0100\n"
-"PO-Revision-Date: 2013-03-11 20:34+0100\n"
+"PO-Revision-Date: 2013-03-11 20:37+0100\n"
 "Last-Translator: Jan Bo <janek.bogdanski@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1460,7 +1460,7 @@ msgstr ""
 
 #: View\Auctions\index.ctp:104
 msgid "auctions"
-msgstr "aukcjami"
+msgstr ""
 
 #: View\Elements\images.ctp:38
 #: View\Images\index.ctp:99
@@ -1516,7 +1516,7 @@ msgstr "Jesteś pewien, że chcesz usunąć tę galerię??"
 
 #: View\Galleries\index.ctp:90
 msgid "galleries"
-msgstr "galeriami"
+msgstr ""
 
 #: View\Images\index.ctp:64
 #: View\Layouts\default.ctp:193
@@ -1545,7 +1545,7 @@ msgstr "Hm, najpierw dodaj obrazy!"
 
 #: View\Images\index.ctp:140
 msgid "images"
-msgstr "obrazami"
+msgstr ""
 
 #: View\Layouts\default.ctp:102;261
 msgid "Contact"

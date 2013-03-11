@@ -17,8 +17,8 @@ class Metadata extends AppModel {
         if($meta){
             $meta['Metadata']['title'] =   !empty($meta['Metadata']['title']) ? $meta['Metadata']['title'] :$this->default['Metadata']['title'];
             $meta['Metadata']['keywords'] = !empty($meta['Metadata']['keywords']) ? $meta['Metadata']['keywords'] :$this->default['Metadata']['keywords'];
-            $meta['Metadata']['og_title'] = !empty($meta['Metadata']['og_title']) ? $meta['Metadata']['og_title']  : $this->default['Metadata']['og_title'];
-            $meta['Metadata']['og_description'] = !empty($meta['Metadata']['og_description']) ? $meta['Metadata']['og_description']  : $this->default['Metadata']['og_description'];
+            $meta['Metadata']['og_title'] = !empty($meta['Metadata']['og_title']) ? @$meta['Metadata']['og_title']  : @$this->default['Metadata']['og_title'];
+            $meta['Metadata']['og_description'] = !empty($meta['Metadata']['og_description']) ? @$meta['Metadata']['og_description']  : @$this->default['Metadata']['og_description'];
         }
         return $meta;
     }
