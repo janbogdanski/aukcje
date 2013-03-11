@@ -63,7 +63,7 @@ class AuctionsController extends AppController {
 
         $auction = $this->Auction->find('first', array(
             'fields' => array('Auction.*', 'Template.*'),
-            'conditions' => array('Auction.id' => $id, 'Auction.user_id' => $this->UserAuth->getUserId()),
+            'conditions' => array('Auction.id' => $id),
             'joins' => array(
                 array('table' => 'templates',
                     'alias' => 'Template',
