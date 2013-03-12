@@ -53,12 +53,12 @@ class MailShell extends AppShell
                 $result = $email->send();
                 $this->Mail->id = $user['Mail']['id'];
                 $this->Mail->save(array('sent' => 1));
+                $this->out('Hello mail. ' . $user['Mail']['email']);
             } catch (Exception $ex) {
                 // we could not send the email, ignore it
-                $result = "Could not send registration email to userid-" . $user['Mail']['id'];
+                $result = "Could not send registration email to userid-" . $user['Mail']['id']. ' '.$ex->getMessage();
+                $this->log($result, LOG_DEBUG);
             }
-//            $this->log($result, LOG_DEBUG);
-            $this->out('Hello mail. '. $user['Mail']['email']);
 //            sleep(1);
         } //end foreach
     }
