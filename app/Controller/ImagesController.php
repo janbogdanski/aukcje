@@ -32,6 +32,7 @@ class ImagesController extends AppController {
         $this->set('data', $images);
     }
     public function listing() {
+        $this->autoRender = false;
 
         if (!empty($this->passedArgs['updateId'])) {
             $this->set('updateId', $this->passedArgs['updateId']);
@@ -41,10 +42,8 @@ class ImagesController extends AppController {
         $this->set('images', $images);
 
         if ($this->request->is('ajax')) {
-            $this->autoRender = false;
-
             //ajax pagination
-            $this->render('/elements/images');
+            $this->render('/Elements/images');
             return;
         }
 
