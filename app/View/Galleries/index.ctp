@@ -61,6 +61,8 @@
 <?php else: ?>
     <div class="row">
         <div class="span5">
+            <p>Zobacz przykładowe galerie zdjęć: <br/> <?php echo $this->Html->link('Telefon Galaxy S',array('controller' => 'galleries', 'action' => 'view', 10), array('target' => '_blank')); ?> i <?php echo $this->Html->link('Rodzina muminków',array('controller' => 'galleries', 'action' => 'view', 5), array('target' => '_blank')); ?>
+            </p>
             <p>Jak głosi prastare chińskie przysłowie
             <blockquote>
                 <p>Jeśli kto przez całe życie poluje na dzikie gęsi, w końcu mu dzika gęś oko wydłubie.</p>

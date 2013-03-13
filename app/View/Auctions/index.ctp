@@ -68,7 +68,13 @@
     <div class="span5">
 
         <p><strong>Kreator aukcji proaukcje.eu</strong> to narzędzie online umożliwiające tworzenie atrakcyjnych pod
-            względem wizualnym i treści aukcji. W wizualnym edytorze wykorzystać można takie narzędzia jak:
+            względem wizualnym i treści aukcji.</p>
+        <p>
+            <strong>Zobacz przykładowe aukcje:</strong> <?php echo $this->Html->link('Telefon Galaxy S',array('controller' => 'auctions', 'action' => 'preview', 32), array('target' => '_blank')); ?> i <?php echo $this->Html->link('Rodzina muminków',array('controller' => 'auctions', 'action' => 'preview', 31), array('target' => '_blank')); ?>
+            (aukcje tworzone wyłącznie narzędziami dostępnymi w proaukcje.eu)
+        </p>
+        <p>
+        W wizualnym edytorze wykorzystać można takie narzędzia jak:
         <ul>
             <li>Szablony aukcji z wydzielonymi sekcjami na nagłówek, treść aukcji, dane teleadresowe, info o przesyłce czy regulamin.</li>
             <li>Galeria zdjęć - <strong>zapewniamy hosting obrazów</strong> nawet dla konta darmowego</li>
@@ -89,7 +95,7 @@
         <ul>
             <li>Pogrubienia, podkreślenia...</li>
             <li>Wstawianie pojedyńczych obrazków</li>
-            <li>Wstawianie galerii zdjęć</li>
+            <li><strong>Wstawianie galerii zdjęć</strong></li>
             <li><strong>Wstawianie kodów QR</strong> (np. adres strony www, kontakt do biura) - skanowanie kodu QR aparatem telefonu komórkowego może być atrakcyjne dla zabieganych klientów!
                 <br /><?php echo $this->Html->image('proaukcje_qr.png', array('alt' => 'Proaukcje - narzędzia na aukcje - kody QR')); ?>
             </li>

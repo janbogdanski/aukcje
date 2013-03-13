@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var $this View
+ */
+?>
 <div class="row-fluid">
     <!-- Place somewhere in the <body> of your page -->
     <!--<div class="flexslider">
@@ -37,7 +42,8 @@
         </h3>
         <p style="text-align: center;">
             Wspomaga tworzenie opisów aukcji. Umożliwia wybranie <strong>szablonu aukcji</strong>, dodanie <strong>galerii zdjęć</strong>, sformatowanie tekstu opisu aukcji. <br />
-            Moduły są zintegrowane, przez co aukcję stworzysz w jednym serwisie, takie małe All in One.
+            Moduły są zintegrowane, przez co aukcję stworzysz w jednym serwisie, takie małe All in One.<br />
+            Zobacz przykładowe: <br/> <?php echo $this->Html->link('Telefon Galaxy S',array('controller' => 'auctions', 'action' => 'preview', 32), array('target' => '_blank')); ?> i <?php echo $this->Html->link('Rodzina muminków',array('controller' => 'auctions', 'action' => 'preview', 31), array('target' => '_blank')); ?>
 <!--            Łączy w sobie wszystkie moduły serwisu, pozwala stworzyć atrakcyjny opis aukcji, intuicyjnie, bez znajomości jakiejkolwiek 'technologii' (html etc.) <br>-->
 <!--            Dodasz galerię zdjęć, mapę Google'a, sformatujesz tekst, wybierzesz szablon aukcji...-->
         </p>
