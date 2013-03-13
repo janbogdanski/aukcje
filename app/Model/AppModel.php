@@ -79,7 +79,7 @@ class AppModel extends Model {
                 $data[$key] = $this->cleanData($val, $options);
             }
         } else{
-            $data = Sanitize::clean($data,$options);
+            $data = Sanitize::stripScripts($data);
         }
         return $data;
     }

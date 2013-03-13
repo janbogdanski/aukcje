@@ -141,7 +141,7 @@ class AuctionsController extends AppController {
 
         }else{
             //if not found, we will tell the user that user does not exist
-            $this->Session->setFlash(__('Auction does not exist.'), 'info');
+            $this->Session->setFlash(__('Auction does not exist.'), 'good');
             $this->redirect(array('action' => 'index'));
 
             //or, since it we are using php5, we can throw an exception

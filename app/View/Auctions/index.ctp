@@ -30,7 +30,7 @@
 
     <tr>
         <td><?php echo $auction['Auction']['id'];?></td>
-        <td><?php echo $auction['Auction']['title_list'];?></td>
+        <td><?php echo Sanitize::html($auction['Auction']['title_list']);?></td>
 
 
         <td class="options">

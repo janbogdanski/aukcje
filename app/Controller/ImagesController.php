@@ -71,6 +71,7 @@ class ImagesController extends AppController {
     }
 
     function upload(){
+        ignore_user_abort(true);
         $this->layout = 'ajax';
         $image = '';
         if($_POST){

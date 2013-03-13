@@ -18,7 +18,6 @@
 }
 img {
         border:none;
-        display:block
 }
 hr {
         margin: 1em 0;
@@ -158,7 +157,7 @@ li {margin-left:0em}
     /* TYPOGRAPHY */
 
 p, ul, ol {
-    margin: 0 0 1.5em
+    margin: 0 0 1em
 
 }
 h1, h2, h3, h4, h5, h6 {
