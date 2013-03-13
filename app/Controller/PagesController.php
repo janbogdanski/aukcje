@@ -44,7 +44,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Contact', 'Blog.BlogPost');
+	public $uses = array('Contact', 'Blog.BlogPost','Auction', 'Gallery');
     public $helpers = array('Text','Time');
     public $components = array('RequestHandler');
 
@@ -149,6 +149,8 @@ class PagesController extends AppController {
 
         $this->layout = "xml/sitemap";
         $this->set('blogPosts', $this->BlogPost->find('all',array('fields' => array('modified','id','slug'), 'recursive' => 0)));
+        $this->set('auctions', $this->Auction->find('all',array('fields' => array('modified','id'), 'recursive' => 0, 'order' => 'id desc')));
+        $this->set('galleries', $this->Gallery->find('all',array('fields' => array('modified','id'), 'recursive' => 0, 'order' => 'id desc')));
 //        $this->set('pages', '');
 //debug logs will destroy xml format, make sure were not in drbug mode
 //        Configure::write ('debug', 0);

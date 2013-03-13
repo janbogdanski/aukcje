@@ -42,6 +42,13 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+<?php foreach ($auctions as $auction):?>
+    <url>
+        <loc><?php echo Router::url(array('plugin' => false, 'controller' => 'auctions', 'action' => 'preview', $auction['Auction']['id']),true); ?></loc>
+        <lastmod><?php echo $this->Time->toAtom($auction['Auction']['modified']); ?></lastmod>
+        <priority>0.8</priority>
+    </url>
+<?php endforeach; ?>
 <?php foreach ($blogPosts as $blogPost):?>
     <url>
         <loc><?php echo Router::url(array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'view', 'slug' => $blogPost['BlogPost']['slug']),true); ?></loc>
@@ -49,4 +56,12 @@
         <priority>0.8</priority>
     </url>
 <?php endforeach; ?>
+
+    <?php foreach ($galleries as $gallery):?>
+    <url>
+        <loc><?php echo Router::url(array('plugin' => false, 'controller' => 'galleries', 'action' => 'view', $gallery['Gallery']['id']),true); ?></loc>
+        <lastmod><?php echo $this->Time->toAtom($gallery['Gallery']['modified']); ?></lastmod>
+        <priority>0.8</priority>
+    </url>
+    <?php endforeach; ?>
 </urlset>
