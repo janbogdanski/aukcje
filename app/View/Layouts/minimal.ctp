@@ -12,6 +12,7 @@
     <?php echo $this->Html->charset(); ?>
     <?php echo $this->element('meta', array(), array('plugin' => 'Meta'));?>
     <title><?php echo $this->get('title_for_layout');?></title>
+    <?php echo $this->Html->meta('icon','/favicon.png'); ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

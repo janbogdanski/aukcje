@@ -12,7 +12,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
     <?php echo $this->Html->css('http://twitter.github.com/bootstrap/assets/css/bootstrap.css'); ?>
-
+    <?php echo $this->Html->meta('icon','/favicon.png'); ?>
 
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>

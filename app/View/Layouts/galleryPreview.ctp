@@ -1,7 +1,7 @@
 <?php
 /**
  * @author          Jan Bogdanski <janek.bogdanski@gmail.com>
- *
+ * @var $this View
  * Creation date    14.02.13 18:16
  */
 
@@ -17,6 +17,8 @@
     echo $this->Html->css('bootstrap/css/bootstrap');
     echo $this->Html->css('microsoft/css/bootstrap-responsive.min');
     echo $this->Html->script('jquery-1.8.3.min');
+    echo $this->Html->meta('icon','/favicon.png');
+
 
     ?>
     <style type="text/css">
