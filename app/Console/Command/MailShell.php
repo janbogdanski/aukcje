@@ -54,6 +54,7 @@ class MailShell extends AppShell
                 $this->Mail->id = $user['Mail']['id'];
                 $this->Mail->save(array('sent' => 1));
                 $this->out('Hello mail. ' . $user['Mail']['email']);
+                sleep(1);
             } catch (Exception $ex) {
                 // we could not send the email, ignore it
                 $result = "Could not send registration email to userid-" . $user['Mail']['id']. ' '.$ex->getMessage();
