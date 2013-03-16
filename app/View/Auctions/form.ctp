@@ -10,15 +10,17 @@ echo $this->Html->script('ckeditor/ckeditor');
 //echo $this->cksource->ckeditor('example1');
 
 $config['toolbar'] = array(
-array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike','gmap','qrcodes','proaukcje_insertimage','proaukcje_insertgallery' ),
-array( 'Image', 'Link', 'Unlink', 'Anchor' ),
-array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
-array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'ShowBlocks'),
-
+array('Undo','Redo','-','Bold', 'Italic', 'Underline', 'Strike',
+    'Font','FontSize','Format','TextColor','BGColor',),
+array( 'Image', 'Link', 'Unlink'),
+array( 'NumberedList','BulletedList','-','Outdent','Indent',
+'-','JustifyLeft','JustifyCenter','JustifyRight',), array('Table','HorizontalRule' ),  array('Source'),
+    '/',
+array('gmap','qrcodes','proaukcje_insertimage','proaukcje_insertgallery'),
 );
 $config['width'] = 660;
 $config['height'] = 200;
+$config['language'] = 'pl';
 $config['extraPlugins'] = 'ajax,gmap,autogrow,qrcodes,gallery,proaukcje_insertimage,proaukcje_insertgallery';
 $config['autoGrow_maxHeight'] = '650';
 //$config['filebrowserImageBrowseUrl'] = '/images/browser'; //wymaga sprawdzenia w GET CKEditorFuncNum
@@ -59,17 +61,18 @@ $events['instanceReady'] = 'function (ev) {
 
     <?php
 
-$config['toolbar'] = array(
-    array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'gmap' ),
-    array( 'Image', 'Link', 'Unlink', 'Anchor' ),
-    array( 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-        '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ),
-    array( 'Styles','Format','Font','FontSize','TextColor','BGColor' ,'Maximize', 'ShowBlocks'),
-
-);
-$config['width'] = 400;
+    $config['toolbar'] = array(
+        array('Undo','Redo','-','Bold', 'Italic', 'Underline', 'Strike',
+            'Font','FontSize','TextColor','BGColor',),
+        array( 'Image', 'Link', 'Unlink'),
+        array( 'NumberedList','BulletedList','-','Outdent','Indent',
+            '-','JustifyLeft','JustifyCenter','JustifyRight',), array('Table','HorizontalRule' ),
+        '/',
+        array('gmap','qrcodes'),array('Source')
+    );
+$config['width'] = 420;
 $config['height'] = 200;
-$config['extraPlugins'] = 'gmap';
+$config['extraPlugins'] = 'gmap,qrcodes';
 
     ?>
     <fieldset style="margin-top: 20px;">
@@ -110,6 +113,17 @@ $config['extraPlugins'] = 'gmap';
 <?php
 //echo $this->Form->select('template_id');
 
+        //wybor templatki aukcji - najpierw spr czy jest w request (np. z bazy), pozniej defaultowo 51 (ladna), ew. pierwsza z tablice
+if(isset($this->request->data['Auction']['template_id'])){
+    $template = $this->request->data['Auction']['template_id'];
+} else{
+    if(array_key_exists('51',$templates)){
+    $template = 51;
+
+    } else{
+       $template = reset(array_keys($templates));
+    }
+}
     echo $this->Form->input('template_id', array(
             'type' => 'radio',
             'before' => '<div class="templates_list span3">',
@@ -119,7 +133,7 @@ $config['extraPlugins'] = 'gmap';
             'legend' => false,
             'options' => $templates,
             'class' => '',
-            'value' => array_key_exists('51',$templates) ? 51 : reset(array_keys($templates)), // '52'
+            'value' => $template, // '52'
             'label' => __('Select Template')
     )// reset(array_keys($templates)))
     );
