@@ -64,9 +64,6 @@
         $(".savestay").click(function(){
 //          $('form input[name="title"]').bind('change', function(tid) {
             var form = this.form;
-            alert($(form).attr('method'));
-            alert($(form).attr('action'));
-            alert($(form).serialize());
             $.ajax({
                 type: $(form).attr('method'),
                 url: $(form).attr('action'),

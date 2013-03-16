@@ -68,6 +68,7 @@ class PagesController extends AppController {
                 $data = $this->request->data['Contact'];
 
                 $email->from($data['Mail'])
+                    ->replyTo($data['Mail'])
                     ->subject(__d('contact', 'contact form request'))
                     ->send(
                     __d('contact', 'name').': '.Sanitize::clean($data['Name'])."\n".

@@ -228,4 +228,5 @@ $width = $gallery['Gallery']['size'];
         </div>
     </div>
 </div>
+    <p>&nbsp;</p>
 
