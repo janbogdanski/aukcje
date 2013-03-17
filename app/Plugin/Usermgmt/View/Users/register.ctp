@@ -72,5 +72,5 @@
     <div><a href="/oauth/facebook" class="m-btn blue"><i class="icon-facebook-sign icon-large"></i>&nbsp; <?php echo __('Login with Fb'); ?></a></div>
 </div>
 <script type="text/javascript">
-    document.getElementById("UserUsername").focus();
+    document.getElementById("UserEmail").focus();
 </script>
