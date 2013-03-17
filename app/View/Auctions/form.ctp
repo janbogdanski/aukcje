@@ -101,7 +101,7 @@ $events['instanceReady'] = 'function (ev) {
     });
 
     function showLogin(){
-        alert('to login');
+        $('#loginModal').modal();
         return false;
     }
 </script>
@@ -205,3 +205,11 @@ if(isset($this->request->data['Auction']['template_id'])){
     <?php echo $this->Form->end(); ?>
 
 </div>
+    <div class="modal hide" id="loginModal">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><?php echo __('You are not logged in!'); ?></h3>
+        <p><?php echo __('Until you\'re logged out we cannot save your aucion (data will be lost!). Click link below to log in in NEW TAB (page will be opened in new tab), then return here, close that popup and try to save auction. again'); ?></p>
+        <p>
+            <?php echo $this->Html->link(__("Sign In",true),"/login", array('class' => 'm-btn blue', 'target' => '_blank')) ?>
+        </p>
+     </div>
