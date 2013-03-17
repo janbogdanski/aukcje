@@ -43,5 +43,7 @@ Router::connect('/addGroup', array('plugin' => 'usermgmt', 'controller' => 'user
 Router::connect('/editGroup/*', array('plugin' => 'usermgmt', 'controller' => 'user_groups', 'action' => 'editGroup'));
 Router::connect('/deleteGroup/*', array('plugin' => 'usermgmt', 'controller' => 'user_groups', 'action' => 'deleteGroup'));
 Router::connect('/emailVerification', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'emailVerification'));
+Router::connect('/isLogged', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'isLogged'));
+
 
 

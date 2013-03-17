@@ -76,6 +76,21 @@ class UsersController extends UserMgmtAppController {
 	}
 
     /**
+     * Sprawdza czy user zalogowany, ma router do /isLogged, uzywane przed zapisem np. aukcji, aby sprawdzic czy mozna zapisac
+     */
+    public function isLogged() {
+        if($this->request->is('ajax')){
+            $this->RequestHandler->respondAs('json');
+            $this->layout = 'ajax';
+            $logged = array('loggedin' => (int)$this->UserAuth->isLogged());
+            $this->set(compact('logged'));
+
+        } else{
+            $this->redirect('/');
+        }
+	}
+
+    /**
      * Autoryzacja oauth przez fb, google... - metoda wywolywana po zakonczeniu
      *
      * Gdy ok - $this->data['validated'] = 1

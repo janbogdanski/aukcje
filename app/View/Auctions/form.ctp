@@ -33,7 +33,63 @@ $events['instanceReady'] = 'function (ev) {
 //echo $this->cksource->end();
 ?>
 <script type="text/javascript">
+    var modified = false;
+    var isLogged = false;
+
+    //check if any ckeditor instance has focus
+
     $(document).ready(function(){
+        $('#auctionForm').submit(function() {
+
+            //sprawdz czy zalogowany
+            var d = new Date();
+
+            $.ajax({
+                async: false,
+                type: 'GET',
+                url: '/isLogged',
+                data: d.getMinutes() +''+ d.getSeconds() +''+ d.getUTCMilliseconds(),
+                dataType: 'json',
+                success: function(data) {
+                    if(data && data.loggedin != undefined){
+                        if(data.loggedin){
+
+                            //ok, zalogowany
+                            modified = false;
+                            isLogged = true;
+                            return true;
+                        } else{
+                            isLogged = false;
+                            showLogin();
+                            return false;
+                        }
+                    } else{
+                        isLogged = false;
+                        showLogin();
+                        return false;
+                    }
+                },
+                error: function(data){
+                    isLogged = false;
+                    showLogin();
+                    return false;
+                }
+            });
+            if(isLogged){
+                return true;
+            } else{
+                return false;
+            }
+        });
+        //sprawdzanie czy dokonano edycji (przez focus na inputach i cke)
+        CKEDITOR.on('currentInstance', function(){modified = true;});
+        $("input").focusin(function() {modified = true});
+        window.onbeforeunload = function(){
+            if(modified){
+                return'Chcesz opuścić stronę bez zapisywania?';
+            }
+        }
+
 
 //        $("#asd").click(function(){
 <!---->
@@ -44,6 +100,10 @@ $events['instanceReady'] = 'function (ev) {
 
     });
 
+    function showLogin(){
+        alert('to login');
+        return false;
+    }
 </script>
 <!--<a href="#" id="asd">adsf</a>-->
 <div class="row-fluid">
@@ -51,7 +111,7 @@ $events['instanceReady'] = 'function (ev) {
 
 <!--    --><?php //echo $this->Html->link(__('List Auctions'), array( 'action' => 'index' ), array('escape' => false,'class' => 'm-btn mini blue inline') ); ?>
 
-    <?php echo $this->Form->create('Auction'); ?>
+    <?php echo $this->Form->create('Auction',array('id' => 'auctionForm')); ?>
 
     <?php echo $this->Form->input('title_list', array('class' => 'span3','label' => __('Title on aukctions list'))); ?>
     <?php echo $this->Form->input('title', array('class' => 'span3','label' => __('Title (visible in auction header)'))); ?>
