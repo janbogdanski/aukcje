@@ -283,5 +283,8 @@
 <?php echo $this->Html->script('/css/bootstrap/js/bootstrap.min.js'); ?>
 </div>
 <?php echo $this->element('sql_dump'); ?>
+<script type="text/javascript">
+    cookiesDirective('bottom',2,'polityka-prywatnosci');
+</script>
 </body>
 </html>
