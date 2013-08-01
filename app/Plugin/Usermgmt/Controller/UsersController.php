@@ -114,6 +114,11 @@ class UsersController extends UserMgmtAppController {
                 $this->UserAuth->login($registered);
             } else{
 
+                $ip='';
+                if(isset($_SERVER['REMOTE_ADDR'])) {
+                    $ip=$_SERVER['REMOTE_ADDR'];
+                }
+
                 //rejestracja
                 $user = array(
                     'user_group_id' => DEFAULT_GROUP_ID,
@@ -121,6 +126,7 @@ class UsersController extends UserMgmtAppController {
                     'username' => $this->data['auth']['uid'],
                     'oauth_provider' => $this->data['auth']['provider'],
                     'oauth_uid' => $this->data['auth']['uid'],
+                    'ip_address' => $ip,
                     'email_verified' => 1,
                     'active' => 1,
                 );

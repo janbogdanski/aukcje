@@ -193,12 +193,15 @@ class UserAuthComponent extends Component {
 	 */
 	public function login($type = 'guest', $credentials = null) {
 		$user=array();
+        App::import("Model", "Usermgmt.User");
+        $userModel = new User;
 		if (is_string($type) && ($type=='guest' || $type=='cookie')) {
-			App::import("Model", "Usermgmt.User");
-			$userModel = new User;
 			$user = $userModel->authsomeLogin($type, $credentials);
 		} elseif (is_array($type)) {
 			$user =$type;
+            $userModel->id = $user['User']['id'];
+            $userModel->save(array('User' => array('last_login' => date("Y-m-d H:i:s"), 'login_counter' => ++$user['User']['login_counter'])));
+
 		}
 		Configure::write($this->configureKey, $user);
 		$this->Session->write('UserAuth', $user);
