@@ -6,9 +6,19 @@
  * To change this template use File | Settings | File Templates.
  */
 
+setTimeout(function (){
+    calm();
+
+    setInterval(function (){
+        calm();
+    }, 2*60*1000);
+
+}, 5000);
+
+
 $(document).ready(function(){
 
-
+    $("#calm").hide();
     //wyswietl modal z ajaxowa zawartoscia (data-toggle="modal" )
     $('[data-toggle="modal"]').click(function(e) {
         e.preventDefault();
@@ -22,6 +32,10 @@ $(document).ready(function(){
         }
         return false;
     });
+
+
+
+
 //    $('#joyRideTipContent').joyride({
 //        'tipLocation': 'bottom',
 //        'tipAnimation': 'fade',
@@ -55,6 +69,7 @@ var slug = function(str) {
 
     return str;
 };
+
 
 
 
@@ -424,4 +439,7 @@ function cdCreateCookie(name,value,days) {
     else var expires = "";
     document.cookie = name+"="+value+expires+"; path=/";
 
+}
+function calm(){
+    $("#calm").fadeTo("slow", 0.051).fadeTo("slow", 1.0);
 }

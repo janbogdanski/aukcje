@@ -196,6 +196,37 @@
                     <?php echo $this->Menu->item($this->Html->link(__('News'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'admin' => false))); ?>
                     <?php echo '<li>'.$this->Html->link(__('Help'), array('plugin' => 'blog', 'controller' => 'blog_posts', 'action' => 'index', 'tag' => 'pomoc', 'admin' => false)).'</li>'; ?>
                 </ul>
+
+                <div id="calm"><br />
+                    <?php
+                    //reklama system partnerski
+                    switch(date('i') % 3):
+                        case 0:
+                            ?>
+                            <a href="http://pro.systempartnerski.pl/e/lead/72/" onclick="_gaq.push(['_trackEvent', 'Lewe Menu', 'Click', 'Keep calm mbank']);" target="_blank">
+                                <img src="/img/wspieraj_proaukcje_mbank.png" alt="Załóż darmowe konto w mBank i wspieraj proaukcje.eu">
+                            </a>
+                            <?php
+                            break;
+                        case 1:
+                            ?>
+                            <a href="http://pro.systempartnerski.pl/e/lead/830/" onclick="_gaq.push(['_trackEvent', 'Lewe Menu', 'Click', 'Keep calm getin']);" target="_blank">
+                                <img src="/img/wspieraj_proaukcje_getin.png" alt="Załóż darmowe konto GETIN UP i wspieraj proaukcje.eu">
+                            </a>
+                            <?php
+                            break;
+                        case 2:
+                            ?>
+                            <a href="http://pro.systempartnerski.pl/e/lead/197/" onclick="_gaq.push(['_trackEvent', 'Lewe Menu', 'Click', 'Keep calm ing']);" target="_blank">
+                                <img src="/img/wspieraj_proaukcje_ing.png" alt="Załóż darmowe konto w ING Banku Śląskim i wspieraj proaukcje.eu">
+                            </a>
+                            <?php
+                            break;
+
+                        endswitch;
+                    ?>
+
+                </div>
             </div>
             <div>
             </div>
