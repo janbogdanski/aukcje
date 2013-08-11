@@ -317,5 +317,14 @@
 <script type="text/javascript">
     cookiesDirective('bottom',2,'polityka-prywatnosci');
 </script>
+
+<script type="text/javascript">
+    var _mfq = _mfq || [];
+    (function () {
+        var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/911edb54-1861-4966-9fb3-643785f96726.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+</script>
 </body>
 </html>
